@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toyota Decision Support System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/toyota_logo.png') }}"
+         alt="Toyota Logo"
+         class="logo-img">
+         
+        <strong>TOYOTA</strong>
+        <span>Toyota Decision Support System</span>
+    </div>
+
+</header>
+
+{% block content %}{% endblock %}
+
+<!-- ✅ ALL JAVASCRIPT GOES HERE -->
+<script>
+
+function togglePassword(icon) {
+    const container = icon.closest(".password-field");
+    const input = container.querySelector("input");
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.textContent = "🙈";
+    } else {
+        input.type = "password";
+        icon.textContent = "👁";
+    }
+}
+
+/* ===============================
+   PRIVACY DISCLOSURE (SIGNUP ONLY)
+================================ */
+let disclosureOpened = false;
+
+function openDisclosure() {
+    const modal = document.getElementById("privacyModal");
+    if (modal) modal.style.display = "flex";
+}
+
+function closeDisclosure() {
+    const modal = document.getElementById("privacyModal");
+    if (modal) modal.style.display = "none";
+
+    disclosureOpened = true;
+
+    const checkbox = document.getElementById("privacyCheck");
+    if (checkbox) checkbox.disabled = false;
+}
+
+/* ===============================
+   FORM VALIDATION
+================================ */
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.querySelector(".auth-form");
+    if (!form) return;
+
+    // ✅ detect if this is signup page
+    const checkbox = document.getElementById("privacyCheck");
+
+    // If checkbox doesn't exist → LOGIN PAGE → skip validation
+    if (!checkbox) return;
+
+    form.addEventListener("submit", function (e) {
+
+        if (!disclosureOpened) {
+            e.preventDefault();
+            alert("Please open and read the Privacy Disclosure first.");
+            return;
+        }
+
+        if (!checkbox.checked) {
+            e.preventDefault();
+            alert("Please confirm the Privacy Disclosure.");
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="auth-container">
+
+    <h1>Sign Up</h1>
+    <p class="auth-subtitle">
+        Sign in or register your electric vehicle.
+    </p>
+
+    <!-- Tabs -->
+    <div class="auth-tabs">
+        <a href="/">Home</a>
+        <a href="/login">Sign In</a>
+        <a href="/signup" class="active">Sign Up</a>
+    </div>
+
+    <form method="POST" class="auth-form">
+
+        <label>First Name</label>
+        <input type="text" name="fname" required>
+
+        <label>Last Name</label>
+        <input type="text" name="lname" required>
+
+        <label>Username</label>
+        <input type="text" name="username" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <!-- Password -->
+        <label>Password</label>
+        <div class="password-field">
+            <input type="password" name="password" required>
+            <span class="eye" onclick="togglePassword(this)">👁</span>
+        </div>
+
+        <!-- Confirm Password -->
+        <label>Confirm Password</label>
+        <div class="password-field">
+            <input type="password" name="confirm" required>
+            <span class="eye" onclick="togglePassword(this)">👁</span>
+        </div>
+
+        <!-- Vehicle -->
+        <label>Select Which type of Vehicle</label>
+        <select name="vehicle" required>
+            <option value="">Select Vehicle</option>
+            <option>Toyota bZ4X</option>
+            <option>Prius</option>
+            <option>Corolla Cross</option>
+        </select>
+
+        <!-- Privacy Disclosure Button -->
+        <button type="button" class="outline-btn" onclick="openDisclosure()">
+            View Privacy Disclosure
+        </button>
+
+        <!-- Disclosure Modal -->
+        <div id="privacyModal" class="modal">
+            <div class="modal-content">
+                <h2>Privacy Disclosure</h2>
+
+                <p>
+                    Your personal information will be collected and used
+                    for vehicle registration and system authentication purposes.
+                    We ensure your data is securely stored and protected.
+                </p>
+
+                <button type="button" onclick="closeDisclosure()" class="auth-btn">
+                    I Understand
+                </button>
+            </div>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="checkbox">
+            <input type="checkbox" id="privacyCheck" name="privacy" disabled>
+            <span>I have read and understood the privacy disclosure.</span>
+        </div>
+
+        <button type="submit" class="auth-btn">
+            Sign Up
+        </button>
+
+    <!-- FLASH MESSAGE -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="form-message">
+                {% for category, message in messages %}
+                <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+    </form>
+
+</div>
+
+{% endblock %}
