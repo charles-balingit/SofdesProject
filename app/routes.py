@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, logout_user, login_required, current_user
+from flask_login import login_user, logout_user, login_required, current_user, LoginManager
 
 from .models import User
 from . import db
@@ -19,23 +19,28 @@ def home():
 @main.route("/signup", methods=["GET", "POST"])
 def signup():
 
+    form_data = {}
+
     if request.method == "POST":
+
         data = signup_form()
+        form_data = data  # keep entered values
 
         username = data["username"]
         password = data["password"]
-        confirm_password = data["confirm_password"]
+        confirm_password = request.form.get("confirm_password")
+        
 
-        # ✅ Check if passwords match
+        # ✅ Password mismatch
         if password != confirm_password:
             flash("Passwords do not match.", "error")
-            return redirect(url_for("main.signup"))
+            return render_template("signup.html", form_data=form_data)
 
-        # ✅ Check if username already exists
+        # ✅ Username exists
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
             flash("Username already exists.", "error")
-            return redirect(url_for("main.signup"))
+            return render_template("signup.html", form_data=form_data)
 
         # ✅ Create user
         hashed_pw = generate_password_hash(password)
@@ -47,7 +52,7 @@ def signup():
         flash("✅ Account successfully created! You can now login.", "success")
         return redirect(url_for("main.signup"))
 
-    return render_template("signup.html")
+    return render_template("signup.html", form_data=form_data)
 
 # ---------------- LOGIN ----------------
 @main.route("/login", methods=["GET", "POST"])
@@ -89,4 +94,32 @@ def logout():
 @main.route("/dashboard")
 @login_required
 def dashboard():
-    return render_template("dashboard.html", user=current_user)
+    return render_template("dashboard.html")
+
+
+# ================= EV SMART ROUTING =================
+@main.route("/ev-routing")
+@login_required
+def ev_routing():
+    return render_template("ev_routing.html")
+
+
+# ================= SALES FORECASTING =================
+@main.route("/sales-forecasting")
+@login_required
+def sales_forecasting():
+    return render_template("sales_forecasting.html")
+
+
+# ================= PARTS PROCUREMENT =================
+@main.route("/parts-procurement")
+@login_required
+def parts_procurement():
+    return render_template("parts_procurement.html")
+
+
+# ================= PROFILE =================
+@main.route("/profile")
+@login_required
+def profile():
+    return render_template("profile.html", user=current_user)

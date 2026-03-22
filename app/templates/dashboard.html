@@ -1,34 +1,90 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<div class="dashboard-shell">
+  <nav class="dashboard-tabs">
+    <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('main.ev_routing') }}">EV Smart Routing</a>
+    <a href="{{ url_for('main.sales_forecasting') }}">Sales Forecasting</a>
+    <a href="{{ url_for('main.parts_procurement') }}">Parts Procurement</a>
+    <a href="{{ url_for('main.profile') }}">Profile</a>
+</nav>
 
-<div class="dashboard-container">
+  <main class="dashboard-page">
+    <section class="page-header">
+      <h1>Dashboard <span class="header-icon"></span></h1>
+      <p>Operational overview and module previews.</p>
+    </section>
 
-    <h1>Welcome to Toyota Dashboard</h1>
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Active Vehicles</div>
+        <div class="stat-value">128</div>
+        <div class="stat-pill positive">↑ +5</div>
+      </div>
 
-    <p>
-        You are successfully logged in.
-    </p>
+      <div class="stat-card">
+        <div class="stat-label">Routes Computed (Today)</div>
+        <div class="stat-value">42</div>
+        <div class="stat-pill positive">↑ +8</div>
+      </div>
 
-    <div class="dashboard-cards">
+      <div class="stat-card">
+        <div class="stat-label">Sales Forecasting</div>
+        <div class="stat-value">Ready</div>
+        <div class="stat-pill positive">↑ Model loaded</div>
+      </div>
 
-        <div class="card">
-            <h3>Route Planning</h3>
-            <p>Optimize delivery and logistics routes.</p>
+      <div class="stat-card">
+        <div class="stat-label">Parts Alerts</div>
+        <div class="stat-value">3</div>
+        <div class="stat-pill negative">↓ -1</div>
+      </div>
+    </section>
+
+    <section class="dashboard-section">
+      <h2>Module previews</h2>
+
+      <div class="preview-grid">
+        <div class="preview-card">
+          <h3>EV Smart Routing</h3>
+          <ul class="preview-list">
+            <li>Map</li>
+            <li>ETA list</li>
+            <li>Stations (mock)</li>
+          </ul>
+          <p>Preview of routing UI. Use EV Smart Routing tab for full view.</p>
         </div>
 
-        <div class="card">
-            <h3>Sales Forecasting</h3>
-            <p>Predict vehicle demand trends.</p>
+        <div class="preview-card">
+          <h3>Sales Forecasting</h3>
+          <ul class="preview-list">
+            <li>Random Forest</li>
+            <li>Multi-month</li>
+            <li>Vehicle-level</li>
+          </ul>
+          <p>Forecast is working. Use Sales Forecasting tab to generate charts.</p>
         </div>
 
-        <div class="card">
-            <h3>Parts Procurement</h3>
-            <p>Manage inventory efficiently.</p>
+        <div class="preview-card">
+          <h3>Parts Procurement</h3>
+          <ul class="preview-list">
+            <li>Stock vs demand</li>
+            <li>Suppliers (mock)</li>
+            <li>Alerts (mock)</li>
+          </ul>
+          <p>Preview of procurement dashboard. Use Parts Procurement tab for details.</p>
         </div>
+      </div>
+    </section>
 
-    </div>
-
+    <section class="dashboard-section notes-section">
+      <h2>Notes</h2>
+      <ul class="notes-list">
+        <li>Sales Forecasting is functional and demo-ready.</li>
+        <li>Other modules remain UI placeholders and will be refined next.</li>
+      </ul>
+    </section>
+  </main>
 </div>
-
 {% endblock %}

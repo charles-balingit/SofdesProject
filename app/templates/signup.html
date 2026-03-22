@@ -19,16 +19,20 @@
     <form method="POST" class="auth-form">
 
         <label>First Name</label>
-        <input type="text" name="fname" required>
+        <input type="text" name="firstname"
+        value="{{ form_data.firstname if form_data else '' }}">
 
         <label>Last Name</label>
-        <input type="text" name="lname" required>
+        <input type="text" name="lastname"
+        value="{{ form_data.lastname if form_data else '' }}">
 
         <label>Username</label>
-        <input type="text" name="username" required>
+        <input type="text" name="username"
+        value="{{ form_data.username if form_data else '' }}">
 
         <label>Email</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email"
+        value="{{ form_data.email if form_data else '' }}">
 
         <!-- Password -->
         <label>Password</label>
@@ -40,7 +44,7 @@
         <!-- Confirm Password -->
         <label>Confirm Password</label>
         <div class="password-field">
-            <input type="password" name="confirm" required>
+            <input type="password" name="confirm_password" required>
             <span class="eye" onclick="togglePassword(this)">👁</span>
         </div>
 
@@ -88,10 +92,12 @@
     <!-- FLASH MESSAGE -->
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
-            <div class="form-message">
-                {% for category, message in messages %}
-                <p class="{{ category }}">{{ message }}</p>
-                {% endfor %}
+            <div class="form-messages">
+              {% for category, message in messages %}
+                <div class="alert {{ category }}">
+                    {{ message }}
+                </div>
+              {% endfor %}
             </div>
           {% endif %}
         {% endwith %}

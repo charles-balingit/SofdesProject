@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="dashboard-shell">
+
+{% include "sidebar.html" %}
+
+<main class="dashboard-page">
+    <h1>Profile</h1>
+
+    <div class="profile-container">
+        <h2>User Information</h2>
+        <div class="profile-grid">
+
+            <!-- LEFT COLUMN -->
+            <div class="profile-column">
+                <p><strong>Username:</strong> {{ user.username }}</p>
+                <p><strong>First Name:</strong> {{ user.first_name }}</p>
+                <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="profile-column">
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Vehicle Type:</strong> {{ user.vehicle_type }}</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LOGOUT BUTTON -->
+    <a href="{{ url_for('main.logout') }}" class="logout-btn">
+        Log Out
+    </a>
+
+</main>
+
+</div>
+
+{% endblock %}
