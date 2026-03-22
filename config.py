@@ -1,6 +1,4 @@
-import os
-
 class Config:
     SECRET_KEY = "secret-key-123"
-    SQLALCHEMY_DATABASE_URI = os.environ.get("https://allloykgdppuballvyan.supabase.co")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("sqlite:///users.db")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
