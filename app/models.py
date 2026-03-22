@@ -10,7 +10,3 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(200))
-    firstname = db.Column(db.String(100))   # Make sure this exists
-    lastname = db.Column(db.String(100))    # Same here
-    email = db.Column(db.String(120))        # And here
-    vehicle_type = db.Column(db.String(50))  # And here
