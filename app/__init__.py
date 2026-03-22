@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from config import Config
+import os
 
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -11,6 +12,16 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
     app.secret_key = "toyota_secret_key"
+
+    # ✅ Database URL
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("https://allloykgdppuballvyan.supabase.co")
+
+    # ✅ Add this RIGHT AFTER
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+        "connect_args": {
+            "sslmode": "require"
+        }
+    }
 
     db.init_app(app)
     login_manager.init_app(app)
