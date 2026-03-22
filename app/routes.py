@@ -59,19 +59,20 @@ def signup():
 def login():
 
     if request.method == "POST":
-        data = login_form()
 
-        username = data["username"]
-        password = data["password"]
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        if not username or not password:
+            flash("Please fill in all fields.", "error")
+            return redirect(url_for("main.login"))
 
         user = User.query.filter_by(username=username).first()
 
-        # ✅ Username not found
         if not user:
             flash("Username does not exist.", "error")
             return redirect(url_for("main.login"))
 
-        # ✅ Wrong password
         if not check_password_hash(user.password, password):
             flash("Incorrect password.", "error")
             return redirect(url_for("main.login"))
