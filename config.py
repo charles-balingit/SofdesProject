@@ -1,9 +1,4 @@
-import os
-
 class Config:
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    SQLALCHEMY_ENGINE_OPTIONS = {
-        "connect_args": {
-            "sslmode": "require"
-        }
-    }
+    SECRET_KEY = "secret-key-123"
+    SQLALCHEMY_DATABASE_URI = "sqlite:///users.db"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
