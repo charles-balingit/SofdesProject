@@ -6,7 +6,7 @@ class Config:
     SECRET_KEY = os.getenv("SECRET_KEY", "secret-key-123")
 
     SQLALCHEMY_DATABASE_URI = os.getenv(
-        "DATABASE_URL",
+        "https://allloykgdppuballvyan.supabase.co",
         "sqlite:///" + os.path.join(BASE_DIR, "users.db")
     )
 
