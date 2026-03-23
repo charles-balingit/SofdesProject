@@ -2,6 +2,13 @@
 {% block content %}
 
 <div class="dashboard-shell">
+    <nav class="dashboard-tabs">
+        <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('main.ev_routing') }}">EV Smart Routing</a>
+        <a href="{{ url_for('main.sales_forecasting') }}">Sales Forecasting</a>
+        <a class="active">Parts Procurement</a>
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+    </nav>
 
 {% include "sidebar.html" %}
 
