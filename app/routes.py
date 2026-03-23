@@ -24,29 +24,34 @@ def signup():
     if request.method == "POST":
 
         data = signup_form()
-        form_data = data  # keep entered values
+        form_data = data
 
         username = data["username"]
         password = data["password"]
         email = request.form.get("email")
         confirm_password = request.form.get("confirm_password")
-        
 
-        # ✅ Password mismatch
+        # Password mismatch
         if password != confirm_password:
             flash("Passwords do not match.", "error")
             return render_template("signup.html", form_data=form_data)
 
-        # ✅ Username exists
+        # Username exists
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
             flash("Username already exists.", "error")
             return render_template("signup.html", form_data=form_data)
 
-        # ✅ Create user
+        # ✅ Hash password
         hashed_pw = generate_password_hash(password)
 
-        user = User(username=username, password=hashed_pw)
+        # ✅ CREATE USER (FIXED)
+        user = User(
+            username=username,
+            email=email,
+            password=hashed_pw
+        )
+
         db.session.add(user)
         db.session.commit()
 
