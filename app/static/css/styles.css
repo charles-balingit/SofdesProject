@@ -798,15 +798,7 @@ select {
     -moz-appearance: none;
 
     background-color: rgba(255, 255, 255, 0.06); /* semi-transparent background */
-
-    /* custom white arrow */
-    background-image: url("data:image/svg+xml;utf8,
-    <svg fill='%23FFFFFF' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'>
-        <path d='M7 10l5 5 5-5z'/>
-    </svg>");
-
     background-repeat: no-repeat;
-    background-position: right 12px center;
 }
 
 .profile-container {
