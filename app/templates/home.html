@@ -10,20 +10,83 @@
     </div>
 </div>
 
+<!-- HERO SECTION -->
 <section class="hero">
-
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
         <p class="brand">TOYOTA</p>
         <h1>Decision Support System</h1>
-
         <p class="subtitle">
-            Route planning, sales forecasting, and parts procurement
+            Route Planning, Sales Forecasting, and Parts Procurement
             in one unified interface.
         </p>
     </div>
+</section>
 
+<!-- HERO SECTION 2 -->
+<section class="hero hero-second">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="brand-alt">ABOUT</p>
+        <h1>What this system does</h1>
+        <p class="subtitle-alt">
+            A Decision Support Web Application for Electrical Vehicle Operations: 
+            Routing Assistance, Forecasting, and Procurement Insights.
+        </p>
+    </div>
+</section>
+
+<!-- HERO SECTION 3 -->
+<section class="hero hero-third">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="brand-alt2">FEATURES</p>
+        <h1>Core Features</h1>
+</section>
+
+<!-- ================= FEATURES SECTION ================= -->
+<section class="features-section">
+    <div class="features-grid">
+
+        <!-- EV SMART ROUTING -->
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/ev.jpg') }}">
+            <div class="feature-overlay">
+                <h3>EV Smart Routing</h3>
+                <p>Map + ETA visualization.</p>
+            </div>
+        </div>
+
+        <!-- SALES FORECASTING -->
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/sales.jpg') }}">
+            <div class="feature-overlay">
+                <h3>Sales Forecasting</h3>
+                <p>Forecast chart + dataset output + CSV export.</p>
+            </div>
+        </div>
+
+        <!-- PARTS PROCUREMENT -->
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/parts.jpg') }}">
+            <div class="feature-overlay">
+                <h3>Parts Procurement</h3>
+                <p>Stock vs demand monitoring.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HERO SECTION 4 -->
+<section class="hero hero-fourth">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="brand-alt3">PROCEED</p>
+        <h1>Login / Register</h1>
+        <p class="subtitle-alt3">
+            Register your EV and access the system modules.
+        </p>
+    </div>
 </section>
 
 {% endblock %}

@@ -3,18 +3,46 @@
 
 <div class="dashboard-shell">
 
-{% include "sidebar.html" %}
+    <nav class="dashboard-tabs">
+        <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
+        <a class="active">EV Smart Routing</a>
+        <a href="{{ url_for('main.sales_forecasting') }}">Sales Forecasting</a>
+        <a href="{{ url_for('main.parts_procurement') }}">Parts Procurement</a>
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+    </nav>
 
-<main class="dashboard-page">
-    <h1>EV Smart Routing</h1>
-    <p>Optimize electric vehicle routes and charging stations.</p>
+    <main class="dashboard-page">
 
-    <div class="preview-card">
-        <h3>Routing Map (Mock)</h3>
-        <p>Map visualization and ETA computation will appear here.</p>
-    </div>
-</main>
+        <h1>EV Smart Routing</h1>
 
+        <!-- STATUS -->
+        <div class="ev-status">
+            <div>📍 Location: <span id="location"></span></div>
+            <div>🔋 Battery: <span id="battery"></span>%</div>
+        </div>
+
+        <!-- OVERVIEW MAP -->
+        <h3>Charging Stations Nearby</h3>
+        <div id="map"></div>
+
+        <!-- CLICKABLE STATIONS -->
+        <h3>Available Charging Stations</h3>
+        <div id="stationTabs" class="station-tabs"></div>
+
+        <!-- ROUTE MAP -->
+        <h3>Route Navigation</h3>
+        <div id="routeMap"></div>
+
+        <div id="routeInfo" class="route-info"></div>
+
+    </main>
 </div>
+
+<link rel="stylesheet"
+ href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="{{ url_for('static', filename='js/ev_map.js') }}"></script>
 
 {% endblock %}
