@@ -5,19 +5,20 @@ from config import Config
 
 db = SQLAlchemy()
 login_manager = LoginManager()
-login_manager.login_view = "login"
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
-    app.secret_key = "toyota_secret_key"
+
+    login_manager.init_app(app)
+    login_manager.login_view = "main.login"
 
     db.init_app(app)
-    login_manager.init_app(app)
 
     from .routes import main
     app.register_blueprint(main)
 
+    # create tables automatically (SAFE for serverless)
     with app.app_context():
         db.create_all()
 
