@@ -28,6 +28,7 @@ def signup():
 
         username = data["username"]
         password = data["password"]
+        email = request.form.get("email")
         confirm_password = request.form.get("confirm_password")
         
 
