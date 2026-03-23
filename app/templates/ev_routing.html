@@ -20,18 +20,10 @@
             <div>🔋 Battery: <span id="battery"></span>%</div>
         </div>
 
-        <!-- OVERVIEW MAP -->
-        <h3>Charging Stations Nearby</h3>
+        <!-- SINGLE SMART MAP -->
         <div id="map"></div>
 
-        <!-- CLICKABLE STATIONS -->
-        <h3>Available Charging Stations</h3>
-        <div id="stationTabs" class="station-tabs"></div>
-
-        <!-- ROUTE MAP -->
-        <h3>Route Navigation</h3>
-        <div id="routeMap"></div>
-
+        <!-- ROUTE INFO -->
         <div id="routeInfo" class="route-info"></div>
 
     </main>
@@ -42,6 +34,6 @@
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<script src="{{ url_for('static', filename='js/ev_map.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ev_maps.js') }}"></script>
 
 {% endblock %}
