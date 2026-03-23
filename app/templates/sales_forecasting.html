@@ -5,13 +5,11 @@
     <nav class="dashboard-tabs">
         <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
         <a href="{{ url_for('main.ev_routing') }}">EV Smart Routing</a>
-        <a href="{{ url_for('main.sales_forecasting') }}">Sales Forecasting</a>
+        <a class="active">Sales Forecasting</a>
         <a href="{{ url_for('main.parts_procurement') }}">Parts Procurement</a>
-        <a class="active">Profile</a>
+        <a href="{{ url_for('main.profile') }}">Profile</a>
     </nav>
-
-{% include "sidebar.html" %}
-
+    
 <main class="dashboard-page">
     <h1>Sales Forecasting</h1>
     <p>Predict vehicle demand using ML models.</p>
