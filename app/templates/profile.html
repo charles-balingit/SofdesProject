@@ -8,6 +8,7 @@
         <a href="{{ url_for('main.sales_forecasting') }}">Sales Forecasting</a>
         <a href="{{ url_for('main.parts_procurement') }}">Parts Procurement</a>
         <a class="active">Profile</a>
+        <a href="{{ url_for('main.logout') }}" class="logout-btn">Log Out</a>
     </nav>
 
 <main class="dashboard-page">
@@ -32,12 +33,6 @@
 
         </div>
     </div>
-
-    <!-- LOGOUT BUTTON -->
-    <a href="{{ url_for('main.logout') }}" class="logout-btn">
-        Log Out
-    </a>
-
 </main>
 
 </div>
