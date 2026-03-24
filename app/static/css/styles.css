@@ -832,7 +832,6 @@ select {
 .dashboard-page{
     display:flex;
     flex-direction:column;
-    align-items:center;   /* ✅ center everything */
 }
 
 
