@@ -838,7 +838,7 @@ select {
 /* STATUS PANEL */
 .ev-status{
     background:#111827;
-    width:75%;
+    width:78%;
     margin:20px auto;      /* ✅ center horizontally */
     padding:10px 20px;
     border-radius:12px;
