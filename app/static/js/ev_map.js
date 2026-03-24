@@ -177,7 +177,7 @@ async function smartRouting(){
     const leg2 = await getRoute(bestStation,destination,"green");
 
     decisionBox.innerHTML = `
-        🤖 Intelligent Decision:<br><br>
+        Intelligent Decision:<br><br>
 
         🔋 Battery (${battery}%) insufficient.<br>
         ⚡ Recommended Stop: <b>${bestStation.name}</b><br><br>
