@@ -852,7 +852,7 @@ select {
 
 /* MAP */
 #map{
-    height:450px;
+    height:550px;
     width:80%;
     margin:20px auto;      /* ✅ center map */
     border-radius:12px;
