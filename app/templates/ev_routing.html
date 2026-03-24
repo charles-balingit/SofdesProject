@@ -2,7 +2,6 @@
 {% block content %}
 
 <div class="dashboard-shell">
-
     <nav class="dashboard-tabs">
         <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
         <a class="active">EV Smart Routing</a>
@@ -15,19 +14,17 @@
 
         <h1>EV Smart Routing</h1>
 
-        <!-- STATUS PANEL -->
+        <!-- STATUS -->
         <div class="ev-status">
             <div>📍 Location: <span id="location"></span></div>
-            <div>🎯 Destination: <span id="destination"></span></div>
             <div>🔋 Battery: <span id="battery"></span>%</div>
         </div>
 
-        <!-- SMART MAP -->
-        <h3>Maps</h3>
-        <div id="map"></div>
+        <!-- SINGLE SMART MAP -->
+        <div id="map" style="height:600px;"></div>
 
-        <!-- SYSTEM DECISION -->
-        <div id="decisionBox" class="route-info"></div>
+        <!-- ROUTE INFO -->
+        <div id="routeInfo" class="route-info"></div>
 
     </main>
 </div>
