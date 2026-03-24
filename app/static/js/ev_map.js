@@ -30,7 +30,7 @@ const destination = {
 // EV MODEL
 // =======================================
 
-const MAX_RANGE = 400; // km full charge
+const MAX_RANGE = 100; // km full charge
 const availableRange = (battery/100)*MAX_RANGE;
 
 
