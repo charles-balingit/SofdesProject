@@ -9,7 +9,7 @@ const locations = [
 ];
 
 const user = locations[Math.floor(Math.random()*locations.length)];
-const battery = Math.floor(Math.random()*40)+30; // 30–70%
+const battery = Math.floor(Math.random()*26)+5; // 5-30%
 
 document.getElementById("location").textContent = user.name;
 document.getElementById("battery").textContent = battery;
