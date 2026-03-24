@@ -1,200 +1,178 @@
-// =======================================
-// USER SIMULATION
-// =======================================
-
-const locations = [
-    { name:"Quezon City", lat:14.6760, lng:121.0437 },
-    { name:"Makati", lat:14.5547, lng:121.0244 },
-    { name:"Pasig", lat:14.5764, lng:121.0851 }
-];
-
-const user = locations[Math.floor(Math.random()*locations.length)];
-const battery = Math.floor(Math.random()*26)+5; // 5-30%
-
-document.getElementById("location").textContent = user.name;
-document.getElementById("battery").textContent = battery;
-
-
-// =======================================
-// DESTINATION (SCENARIO)
-// =======================================
-
-const destination = {
-    name:"NAIA Airport",
-    lat:14.5086,
-    lng:121.0198
-};
-
-
-// =======================================
-// EV MODEL
-// =======================================
-
-const MAX_RANGE = 100; // km full charge
-const availableRange = (battery/100)*MAX_RANGE;
-
-
-// =======================================
-// MAP SETUP
-// =======================================
-
-const map = L.map('map').setView([14.5995,120.9842], 11);
+// ===============================
+// MAP INITIALIZATION
+// ===============================
+const map = L.map('map').setView([14.5995,120.9842], 12);
 
 L.tileLayer(
 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 ).addTo(map);
 
-
-// ICONS
-const redIcon = new L.Icon({
-    iconUrl:'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-    iconSize:[32,32]
-});
-
-const greenIcon = new L.Icon({
-    iconUrl:'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
-    iconSize:[32,32]
-});
-
-const blueIcon = new L.Icon({
-    iconUrl:'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-    iconSize:[32,32]
-});
+let userMarker;
+let destinationMarker;
+let routeLine;
+let stationMarkers = [];
 
 
-// USER MARKER
-L.marker([user.lat,user.lng],{icon:redIcon})
-.addTo(map)
-.bindPopup("Your Location")
-.openPopup();
-
-
-// DESTINATION MARKER
-L.marker([destination.lat,destination.lng],{icon:blueIcon})
-.addTo(map)
-.bindPopup("Destination");
-
-
-// =======================================
+// ===============================
 // NCR CHARGING STATIONS
-// =======================================
-
+// ===============================
 const stations = [
-
-{ name:"SM North EDSA Charger", lat:14.6567, lng:121.0281 },
-{ name:"Trinoma EV Station", lat:14.6537, lng:121.0336 },
-{ name:"Vertis North Charging", lat:14.6590, lng:121.0390 },
-{ name:"BGC Charging Hub", lat:14.5520, lng:121.0487 },
-{ name:"Market Market Charger", lat:14.5508, lng:121.0560 },
-{ name:"SM Aura EV Station", lat:14.5453, lng:121.0535 },
-{ name:"Ortigas EV Station", lat:14.5869, lng:121.0614 },
-{ name:"Robinsons Galleria Charger", lat:14.5896, lng:121.0596 },
-{ name:"SM Megamall Charging", lat:14.5850, lng:121.0565 },
-{ name:"MOA EV Charging", lat:14.5350, lng:120.9822 },
-{ name:"Newport Mall Charger", lat:14.5176, lng:121.0180 },
-{ name:"Greenbelt Charging", lat:14.5523, lng:121.0222 }
+ {name:"SM North EDSA EV",lat:14.6567,lng:121.0281},
+ {name:"Trinoma EV Station",lat:14.6535,lng:121.0336},
+ {name:"BGC Stopover Charging",lat:14.5520,lng:121.0487},
+ {name:"Makati Circuit EV",lat:14.5636,lng:121.0190},
+ {name:"Ortigas EV Station",lat:14.5869,lng:121.0614},
+ {name:"SM Megamall EV",lat:14.5849,lng:121.0567},
+ {name:"MOA EV Charging",lat:14.5350,lng:120.9822},
+ {name:"Robinsons Manila EV",lat:14.5764,lng:120.9880}
 ];
 
 
-// ADD STATION MARKERS
-stations.forEach(s=>{
-    L.marker([s.lat,s.lng],{icon:greenIcon})
-        .addTo(map)
-        .bindPopup(s.name);
-});
+// ===============================
+// GEOCODING (TEXT → COORDS)
+// ===============================
+async function geocode(place){
+
+    const url =
+`https://nominatim.openstreetmap.org/search?format=json&q=${place}`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if(!data.length){
+        alert("Location not found: " + place);
+        return null;
+    }
+
+    return {
+        lat: parseFloat(data[0].lat),
+        lng: parseFloat(data[0].lon)
+    };
+}
 
 
-// =======================================
-// ROUTING FUNCTIONS
-// =======================================
-
-let routeLine;
-
-async function getRouteData(a,b){
+// ===============================
+// ROUTE FETCH (OSRM)
+// ===============================
+async function getRoute(start,end){
 
     const url =
 `https://router.project-osrm.org/route/v1/driving/
-${a.lng},${a.lat};
-${b.lng},${b.lat}?overview=full&geometries=geojson`;
+${start.lng},${start.lat};
+${end.lng},${end.lat}?overview=full&geometries=geojson`;
 
     const res = await fetch(url);
     return await res.json();
 }
 
 
-async function drawRoute(a,b){
+// ===============================
+// DRAW ROUTE
+// ===============================
+function drawRoute(coords){
 
-    if(routeLine){
-        map.removeLayer(routeLine);
-    }
-
-    const data = await getRouteData(a,b);
-
-    const coords =
-        data.routes[0].geometry.coordinates
-        .map(c=>[c[1],c[0]]);
+    if(routeLine) map.removeLayer(routeLine);
 
     routeLine = L.polyline(coords,{
         weight:6
     }).addTo(map);
 
     map.fitBounds(routeLine.getBounds());
-
-    return data.routes[0];
 }
 
 
-// =======================================
-// INTELLIGENT SMART ROUTING
-// =======================================
+// ===============================
+// SMART ROUTING SYSTEM
+// ===============================
+document.getElementById("routeBtn").onclick = async ()=>{
 
-async function smartRouting(){
+    const startText = document.getElementById("startInput").value;
+    const destText = document.getElementById("destinationInput").value;
+    const battery = Number(document.getElementById("batteryInput").value);
 
-    const routeToDest = await drawRoute(user,destination);
+    if(!startText || !destText){
+        alert("Enter locations");
+        return;
+    }
 
-    const destDistance = routeToDest.distance/1000;
+    const start = await geocode(startText);
+    const destination = await geocode(destText);
 
-    // CAN REACH DESTINATION?
-    if(availableRange >= destDistance){
+    if(!start || !destination) return;
 
-        document.getElementById("routeInfo").innerHTML=`
-            ✅ Destination reachable without charging
-            <br>Distance: ${destDistance.toFixed(1)} km
-            <br>Available Range: ${availableRange.toFixed(1)} km
-        `;
+    // markers
+    if(userMarker) map.removeLayer(userMarker);
+    if(destinationMarker) map.removeLayer(destinationMarker);
+
+    userMarker = L.marker([start.lat,start.lng])
+        .addTo(map)
+        .bindPopup("Start Location");
+
+    destinationMarker = L.marker([destination.lat,destination.lng])
+        .addTo(map)
+        .bindPopup("Destination");
+
+    // direct route
+    const direct = await getRoute(start,destination);
+
+    const distanceKm = direct.routes[0].distance/1000;
+    const batteryNeeded = distanceKm * 0.18;
+
+    // ===============================
+    // DECISION SYSTEM
+    // ===============================
+    if(battery >= batteryNeeded){
+
+        const coords = direct.routes[0].geometry.coordinates
+            .map(c=>[c[1],c[0]]);
+
+        drawRoute(coords);
+
+        document.getElementById("routeInfo").innerHTML =
+        `<div class="route-card">
+            ✅ Battery sufficient.<br>
+            Direct route selected.<br>
+            Distance: ${distanceKm.toFixed(1)} km
+        </div>`;
 
         return;
     }
 
-    // NEED CHARGING
+    // NEED CHARGING → FIND BEST STATION
     let bestStation=null;
-    let bestDistance=Infinity;
+    let bestDistance=99999;
 
-    for(const station of stations){
+    for(const s of stations){
 
-        const data = await getRouteData(user,station);
-        const distance=data.routes[0].distance/1000;
+        const route = await getRoute(start,s);
+        const d = route.routes[0].distance/1000;
 
-        if(distance <= availableRange && distance<bestDistance){
-            bestDistance=distance;
-            bestStation=station;
+        if(d < bestDistance){
+            bestDistance = d;
+            bestStation = s;
         }
     }
 
-    if(bestStation){
+    // route start → station
+    const toStation = await getRoute(start,bestStation);
 
-        await drawRoute(user,bestStation);
+    const coords = toStation.routes[0].geometry.coordinates
+        .map(c=>[c[1],c[0]]);
 
-        document.getElementById("routeInfo").innerHTML=`
-            ⚠ Battery insufficient!
-            <br><strong>Recommended Charging Station:</strong>
-            ${bestStation.name}
-            <br>Reachable Distance: ${bestDistance.toFixed(1)} km
-            <br>Available Range: ${availableRange.toFixed(1)} km
-        `;
-    }
-}
+    drawRoute(coords);
 
+    // station marker (green)
+    L.circleMarker(
+        [bestStation.lat,bestStation.lng],
+        {radius:8,color:"green"}
+    ).addTo(map)
+    .bindPopup(bestStation.name);
 
-// RUN SYSTEM
-smartRouting();
+    document.getElementById("routeInfo").innerHTML =
+    `<div class="route-card">
+        ⚠ Battery insufficient.<br>
+        Recommended Charging Station:<br>
+        <strong>${bestStation.name}</strong><br>
+        Distance to station: ${bestDistance.toFixed(1)} km
+    </div>`;
+};

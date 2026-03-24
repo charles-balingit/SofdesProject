@@ -17,10 +17,32 @@
 
         <!-- STATUS -->
         <div class="ev-status">
-            <div>📍 Location: <span id="location"></span></div>
-            <div>📍 Destination: NAIA Airport</div>
-            <div>🔋 Battery: <span id="battery"></span>%</div>
+
+    <div class="route-inputs">
+
+        <div>
+            📍 Start Location
+            <input type="text" id="startInput"
+                   placeholder="Enter starting location (e.g. Quezon City)">
         </div>
+
+        <div>
+            🎯 Destination
+            <input type="text" id="destinationInput"
+                   placeholder="Enter destination (e.g. Makati)">
+        </div>
+
+        <div>
+            🔋 Battery (%)
+            <input type="number" id="batteryInput"
+                   min="5" max="100" value="20">
+        </div>
+
+        <button id="routeBtn">Start Smart Routing</button>
+
+    </div>
+
+</div>
 
         <!-- SINGLE SMART MAP -->
         <div id="map" style="height:600px;"></div>
