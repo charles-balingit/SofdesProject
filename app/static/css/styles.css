@@ -841,7 +841,7 @@ select {
     background:#111827;
     width:80%;
     margin:20px auto;      /* ✅ center horizontally */
-    padding:15px 25px;
+    padding:10px 20px;
     border-radius:12px;
     display:flex;
     justify-content:space-between;
