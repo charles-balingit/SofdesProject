@@ -896,6 +896,6 @@ select {
     padding:18px;
     border-radius:10px;
     border:1px solid #1f2937;
-    text-align:center;
+    text-align: left;
     font-size:15px;
 }
