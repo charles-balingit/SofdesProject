@@ -824,32 +824,53 @@ select {
     font-size: 16px;
 }
 
-/* EV ROUTING */
-.ev-status {
+/* ===============================
+   EV ROUTING LAYOUT
+================================ */
+
+/* center main EV content */
+.dashboard-page{
+    display:flex;
+    flex-direction:column;
+    align-items:center;   /* ✅ center everything */
+}
+
+
+/* STATUS PANEL */
+.ev-status{
     background:#111827;
-    width: 80%;
-    padding:20px;
+    width:80%;
+    margin:20px auto;      /* ✅ center horizontally */
+    padding:15px 25px;
     border-radius:12px;
-    margin-bottom:20px;
     display:flex;
     justify-content:space-between;
+    align-items:center;
 }
 
-#map,
-#routeMap{
+
+/* MAP */
+#map{
     height:450px;
     width:80%;
-    margin:20px 0;
+    margin:20px auto;      /* ✅ center map */
     border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
+
+/* STATION BUTTONS */
 .station-tabs{
+    width:80%;
+    margin:15px auto;
     display:flex;
     gap:10px;
     flex-wrap:wrap;
-    margin:15px 0;
+    justify-content:center;  /* ✅ center buttons */
 }
 
+
+/* BUTTON STYLE */
 .station-btn{
     background:#111827;
     color:white;
@@ -857,17 +878,24 @@ select {
     padding:10px 16px;
     border-radius:8px;
     cursor:pointer;
-    transition:.3s;
+    transition:0.3s;
 }
 
 .station-btn:hover{
     background:#2563eb;
+    transform:translateY(-2px);
 }
 
-.route-card{
+
+/* ROUTE / DECISION CARD */
+.route-card,
+.route-info{
+    width:80%;
+    margin:20px auto;
     background:#020617;
-    padding:15px;
+    padding:18px;
     border-radius:10px;
-    margin-top:15px;
     border:1px solid #1f2937;
+    text-align:center;
+    font-size:15px;
 }
