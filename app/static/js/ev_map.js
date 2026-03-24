@@ -19,9 +19,11 @@ document.getElementById("battery").textContent = battery;
 // DESTINATION (SCENARIO)
 // =======================================
 
-const destination = [
-    { name:"NAIA Airport", lat:14.5086, lng:121.0198}
-];
+const destination = {
+    name:"NAIA Airport",
+    lat:14.5086,
+    lng:121.0198
+};
 
 
 // =======================================
