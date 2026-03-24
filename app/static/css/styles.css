@@ -827,6 +827,7 @@ select {
 /* EV ROUTING */
 .ev-status {
     background:#111827;
+    width: 80%;
     padding:20px;
     border-radius:12px;
     margin-bottom:20px;
@@ -837,7 +838,7 @@ select {
 #map,
 #routeMap{
     height:450px;
-    width:100%;
+    width:80%;
     margin:20px 0;
     border-radius:12px;
 }
