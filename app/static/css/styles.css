@@ -839,7 +839,7 @@ select {
 .ev-status{
     background:#111827;
     width:75%;
-    margin-left:20px auto;      /* ✅ center horizontally */
+    margin:20px auto;      /* ✅ center horizontally */
     padding:10px 20px;
     border-radius:12px;
     display:flex;
