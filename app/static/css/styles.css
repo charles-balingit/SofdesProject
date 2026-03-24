@@ -833,7 +833,7 @@ select {
 .dashboard-page{
     display:flex;
     flex-direction:column;
-    margin-left:50px;
+    margin:20px auto;  
 }
 
 
@@ -863,7 +863,7 @@ select {
 /* STATION BUTTONS */
 .station-tabs{
     width:80%;
-    margin:15px auto;
+    margin:20px auto;
     display:flex;
     gap:10px;
     flex-wrap:wrap;
