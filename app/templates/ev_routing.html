@@ -2,51 +2,32 @@
 {% block content %}
 
 <div class="dashboard-shell">
+
     <nav class="dashboard-tabs">
         <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
         <a class="active">EV Smart Routing</a>
         <a href="{{ url_for('main.sales_forecasting') }}">Sales Forecasting</a>
         <a href="{{ url_for('main.parts_procurement') }}">Parts Procurement</a>
         <a href="{{ url_for('main.profile') }}">Profile</a>
-        <a href="{{ url_for('main.logout') }}" class="logout-btn">Log Out</a>
     </nav>
 
     <main class="dashboard-page">
 
         <h1>EV Smart Routing</h1>
 
-        <!-- STATUS -->
+        <!-- STATUS PANEL -->
         <div class="ev-status">
-            <div class="route-inputs">
-                <div>
-                    📍 Start Location
-                    <input type="text" id="startInput"
-                        placeholder="Enter starting location (e.g. Quezon City)">
-                </div>
-
-                <div>
-                    🎯 Destination
-                    <input type="text" id="destinationInput"
-                        placeholder="Enter destination (e.g. Makati)">
-                </div>
-
-                <div>
-                    🔋 Battery (%)
-                    <input type="number" id="batteryInput"
-                        min="5" max="100" value="20">
-                </div>
-
-                <button id="routeBtn">Start Smart Routing</button>
-
-            </div>
-
+            <div>📍 Location: <span id="location"></span></div>
+            <div>🎯 Destination: <span id="destination"></span></div>
+            <div>🔋 Battery: <span id="battery"></span>%</div>
         </div>
 
-        <!-- SINGLE SMART MAP -->
-        <div id="map" style="height:600px;"></div>
+        <!-- SMART MAP -->
+        <h3>Smart Route Visualization</h3>
+        <div id="map"></div>
 
-        <!-- ROUTE INFO -->
-        <div id="routeInfo" class="route-info"></div>
+        <!-- SYSTEM DECISION -->
+        <div id="decisionBox" class="route-info"></div>
 
     </main>
 </div>
