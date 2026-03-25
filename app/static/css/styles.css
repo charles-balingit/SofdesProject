@@ -903,12 +903,12 @@ select {
 }
 
 .route-inputs{
-    background:#111827;
-    border:1px solid #374151;
-    color:white;
-    padding:14px;
-    border-radius:8px;
-    font-size:15px;
+    width:100%;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
 }
 
 .route-inputs input{
