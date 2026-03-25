@@ -910,14 +910,6 @@ select {
     align-items:center;
 }
 
-.route-inputs input{
-    padding:8px 10px;
-    border-radius:6px;
-    border:1px solid #374151;
-    background:#020617;
-    color:white;
-}
-
 #routeBtn{
     background:#2563eb;
     border:none;
