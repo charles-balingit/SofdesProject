@@ -889,14 +889,15 @@ select {
 
 
 /* ROUTE / DECISION CARD */
-.route-card,
-.route-info{
+.route-card{
     width:80%;
     margin:20px auto;
     background:#020617;
     padding:18px;
     border-radius:10px;
     border:1px solid #1f2937;
+}
+.route-info{
     text-align: left;
     font-size:15px;
 }
@@ -908,6 +909,14 @@ select {
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
+}
+
+.route-inputs input{
+    padding:8px 10px;
+    border-radius:6px;
+    border:1px solid #374151;
+    background:#020617;
+    color:white;
 }
 
 #routeBtn{
