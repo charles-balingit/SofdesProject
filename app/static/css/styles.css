@@ -836,6 +836,10 @@ select {
     margin:20px auto;  
 }
 
+.dashboard-shell{
+    width:100%;
+}
+
 /* TITLE */
 .ev-routing-container h1{
     margin-bottom:5px;
