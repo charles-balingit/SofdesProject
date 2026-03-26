@@ -85,6 +85,7 @@ function updateRouteSummary(distanceKm, batteryPercent){
 
     const MAX_RANGE = 300; // 100% = 300km
     const batteryDistance = (batteryPercent/100)*MAX_RANGE;
+    const difference = batteryDistance - distanceKm;
 
     document.getElementById("distanceValue").textContent =
         distanceKm.toFixed(1);
@@ -100,16 +101,16 @@ function updateRouteSummary(distanceKm, batteryPercent){
         "status-danger"
     );
 
-    if(distanceKm < batteryDistance){
-        statusEl.textContent="SAFE";
+    if (difference > 20) {
+        statusEl.textContent = "SAFE";
         statusEl.classList.add("status-safe");
     }
-    else if(Math.abs(distanceKm-batteryDistance)<0.5){
-        statusEl.textContent="WARNING";
+    else if (difference <= 20 && difference > 10) {
+        statusEl.textContent = "WARNING!";
         statusEl.classList.add("status-warning");
     }
-    else{
-        statusEl.textContent="DANGER";
+    else {
+        statusEl.textContent = "LOW";
         statusEl.classList.add("status-danger");
     }
 }
