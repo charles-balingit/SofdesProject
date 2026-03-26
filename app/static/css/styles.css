@@ -927,12 +927,6 @@ select {
     gap:10px;
 }
 
-.route-right{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
 .route-inputs input{
     padding:10px;
     border-radius:6px;
@@ -951,14 +945,14 @@ select {
     padding:10px;
     border:none;
     border-radius:6px;
-    background:#22c55e;
+    background:#374151;
     color:white;
     font-weight:bold;
     cursor:pointer;
 }
 
 #routeBtn:hover{
-    background:#16a34a;
+    background:#374151;
 }
 
 /* SUMMARY PANEL */
