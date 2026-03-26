@@ -908,12 +908,9 @@ select {
 }
 
 .route-inputs{
-    width:100%;
     display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    justify-content:flex-end;   /* move everything right */
-    align-items:flex-end;
+    flex-direction:column;
+    gap:18px;
 }
 
 .route-inputs input{
