@@ -911,6 +911,7 @@ select {
     display:flex;
     flex-direction:column;
     gap:18px;
+    margin-right: 20px;
 }
 
 .route-inputs input{
@@ -923,7 +924,6 @@ select {
     font-size:15px;
     outline:none;
     transition:0.25s;
-    margin-right: 20px;
 }
 
 .route-inputs input:focus{
