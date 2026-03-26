@@ -11,3 +11,6 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(200))
     email = db.Column(db.String(120), unique=True, nullable=False)
+    firstname = db.Column(db.String(200))
+    lastname = db.Column(db.String(200))
+    vehicle_type = db.Column(db.String(200))
