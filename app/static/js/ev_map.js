@@ -187,18 +187,26 @@ document.getElementById("routeBtn").onclick = async ()=>{
     // NEED CHARGING
     // ===============================
     let bestStation=null;
-    let bestDistance=99999;
+    let bestDistance=Infinity;
 
     for(const s of stations){
-
         const route=await getRoute(start,s);
         const d=route.routes[0].distance/1000;
-
-        if(d<bestDistance){
-            bestDistance=d;
-            bestStation=s;
+        if(d <= batteryDistance && d < bestDistance){
+            bestDistance = d;
+            bestStation = s;
         }
     }
+
+    if(!bestStation){
+    document.getElementById("routeInfo").innerHTML =
+    `<div class="route-card">
+        🔴 DANGER<br>
+        No reachable charging station with current battery.
+    </div>`;
+
+    return;
+}
 
     const toStation=await getRoute(start,bestStation);
 
