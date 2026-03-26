@@ -83,8 +83,10 @@ function drawRoute(coords){
 // ===============================
 function updateRouteSummary(distanceKm, batteryPercent){
 
-    const MAX_RANGE = 300; // 100% = 300km
+    const MAX_RANGE = 300;
     const batteryDistance = (batteryPercent/100)*MAX_RANGE;
+
+    // NEW LOGIC
     const difference = batteryDistance - distanceKm;
 
     document.getElementById("distanceValue").textContent =
@@ -106,13 +108,15 @@ function updateRouteSummary(distanceKm, batteryPercent){
         statusEl.classList.add("status-safe");
     }
     else if (difference <= 20 && difference > 10) {
-        statusEl.textContent = "WARNING!";
+        statusEl.textContent = "WARNING";
         statusEl.classList.add("status-warning");
     }
     else {
-        statusEl.textContent = "LOW";
+        statusEl.textContent = "DANGER";
         statusEl.classList.add("status-danger");
     }
+
+    return batteryDistance; // ⭐ return for reuse
 }
 
 
@@ -154,18 +158,23 @@ document.getElementById("routeBtn").onclick = async ()=>{
     // DIRECT ROUTE
     const direct = await getRoute(start,destination);
 
+    if(!direct.routes.length){
+        alert("Route not found");
+        return;
+    }
+
     const distanceKm =
         direct.routes[0].distance/1000;
 
-    // ⭐ UPDATE SUMMARY (ALWAYS SHOW)
-    updateRouteSummary(distanceKm,battery);
+    // ⭐ UPDATE SUMMARY
+    const batteryDistance =
+        updateRouteSummary(distanceKm,battery);
 
-    const batteryRange = (battery/100)*300;
 
     // ===============================
     // BATTERY SUFFICIENT
     // ===============================
-    if(distanceKm <= batteryRange){
+    if(distanceKm <= batteryDistance){
 
         const coords =
             direct.routes[0].geometry.coordinates
@@ -183,22 +192,35 @@ document.getElementById("routeBtn").onclick = async ()=>{
         return;
     }
 
+
     // ===============================
     // NEED CHARGING
     // ===============================
     let bestStation=null;
-    let bestDistance=99999;
+    let bestDistance=Infinity;
 
     for(const s of stations){
+
         const route=await getRoute(start,s);
-        const d=route.routes[0].distance/1000;
-        if(d <= batteryDistance && d < bestDistance){
-            bestDistance = d;
+        if(!route.routes.length) continue;
+
+        const stationDistance =
+            route.routes[0].distance/1000;
+
+        // ⭐ IMPORTANT RULE:
+        // battery distance must NOT be less
+        // than station distance
+        if(stationDistance <= batteryDistance &&
+           stationDistance < bestDistance){
+
+            bestDistance = stationDistance;
             bestStation = s;
         }
     }
 
+    // NO REACHABLE STATION
     if(!bestStation){
+
         document.getElementById("routeInfo").innerHTML =
         `<div class="route-card">
             🔴 DANGER<br>
@@ -208,6 +230,8 @@ document.getElementById("routeBtn").onclick = async ()=>{
         return;
     }
 
+
+    // ROUTE TO STATION
     const toStation=await getRoute(start,bestStation);
 
     const coords=
