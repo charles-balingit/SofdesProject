@@ -923,7 +923,7 @@ select {
     font-size:15px;
     outline:none;
     transition:0.25s;
-    justify-items: right;
+    margin-right: 0px;
 }
 
 .route-inputs input:focus{
