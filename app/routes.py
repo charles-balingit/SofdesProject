@@ -50,6 +50,9 @@ def signup():
             username=username,
             email=email,
             password=hashed_pw
+            firstname=firstname,
+            lastname=lastname,
+            vehicle_type=vehicle_type
         )
 
         db.session.add(user)
