@@ -13,4 +13,4 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     firstname = db.Column(db.String(200), nullable=False)
     lastname = db.Column(db.String(200), nullable=False)
-    vehicle_type = db.Column(db.String(200), nullable=False)
+    vehicle_type = db.Column(db.String(200), nullable=False) 
