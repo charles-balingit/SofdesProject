@@ -10,7 +10,6 @@ L.tileLayer(
 let userMarker;
 let destinationMarker;
 let routeLine;
-let stationMarkers = [];
 
 
 // ===============================
@@ -29,7 +28,7 @@ const stations = [
 
 
 // ===============================
-// GEOCODING (TEXT → COORDS)
+// GEOCODING
 // ===============================
 async function geocode(place){
 
@@ -52,7 +51,7 @@ async function geocode(place){
 
 
 // ===============================
-// ROUTE FETCH (OSRM)
+// ROUTE FETCH
 // ===============================
 async function getRoute(start,end){
 
@@ -73,11 +72,46 @@ function drawRoute(coords){
 
     if(routeLine) map.removeLayer(routeLine);
 
-    routeLine = L.polyline(coords,{
-        weight:6
-    }).addTo(map);
+    routeLine = L.polyline(coords,{ weight:6 }).addTo(map);
 
     map.fitBounds(routeLine.getBounds());
+}
+
+
+// ===============================
+// SUMMARY PANEL UPDATE
+// ===============================
+function updateRouteSummary(distanceKm, batteryPercent){
+
+    const MAX_RANGE = 300; // 100% = 300km
+    const batteryDistance = (batteryPercent/100)*MAX_RANGE;
+
+    document.getElementById("distanceValue").textContent =
+        distanceKm.toFixed(1);
+
+    document.getElementById("batteryRangeValue").textContent =
+        batteryDistance.toFixed(1);
+
+    const statusEl = document.getElementById("batteryStatus");
+
+    statusEl.classList.remove(
+        "status-safe",
+        "status-warning",
+        "status-danger"
+    );
+
+    if(distanceKm < batteryDistance){
+        statusEl.textContent="SAFE";
+        statusEl.classList.add("status-safe");
+    }
+    else if(Math.abs(distanceKm-batteryDistance)<0.5){
+        statusEl.textContent="WARNING";
+        statusEl.classList.add("status-warning");
+    }
+    else{
+        statusEl.textContent="DANGER";
+        statusEl.classList.add("status-danger");
+    }
 }
 
 
@@ -86,9 +120,14 @@ function drawRoute(coords){
 // ===============================
 document.getElementById("routeBtn").onclick = async ()=>{
 
-    const startText = document.getElementById("startInput").value;
-    const destText = document.getElementById("destinationInput").value;
-    const battery = Number(document.getElementById("batteryInput").value);
+    const startText =
+        document.getElementById("startInput").value;
+
+    const destText =
+        document.getElementById("destinationInput").value;
+
+    const battery =
+        Number(document.getElementById("batteryInput").value);
 
     if(!startText || !destText){
         alert("Enter locations");
@@ -104,31 +143,36 @@ document.getElementById("routeBtn").onclick = async ()=>{
     if(userMarker) map.removeLayer(userMarker);
     if(destinationMarker) map.removeLayer(destinationMarker);
 
-    userMarker = L.marker([start.lat,start.lng])
-        .addTo(map)
-        .bindPopup("Start Location");
+    userMarker=L.marker([start.lat,start.lng])
+        .addTo(map).bindPopup("Start Location");
 
-    destinationMarker = L.marker([destination.lat,destination.lng])
-        .addTo(map)
-        .bindPopup("Destination");
+    destinationMarker=L.marker([destination.lat,destination.lng])
+        .addTo(map).bindPopup("Destination");
 
-    // direct route
+
+    // DIRECT ROUTE
     const direct = await getRoute(start,destination);
 
-    const distanceKm = direct.routes[0].distance/1000;
-    const batteryNeeded = distanceKm * 0.18;
+    const distanceKm =
+        direct.routes[0].distance/1000;
+
+    // ⭐ UPDATE SUMMARY (ALWAYS SHOW)
+    updateRouteSummary(distanceKm,battery);
+
+    const batteryRange = (battery/100)*300;
 
     // ===============================
-    // DECISION SYSTEM
+    // BATTERY SUFFICIENT
     // ===============================
-    if(battery >= batteryNeeded){
+    if(distanceKm <= batteryRange){
 
-        const coords = direct.routes[0].geometry.coordinates
+        const coords =
+            direct.routes[0].geometry.coordinates
             .map(c=>[c[1],c[0]]);
 
         drawRoute(coords);
 
-        document.getElementById("routeInfo").innerHTML =
+        document.getElementById("routeInfo").innerHTML=
         `<div class="route-card">
             ✅ Battery sufficient.<br>
             Direct route selected.<br>
@@ -138,37 +182,38 @@ document.getElementById("routeBtn").onclick = async ()=>{
         return;
     }
 
-    // NEED CHARGING → FIND BEST STATION
+    // ===============================
+    // NEED CHARGING
+    // ===============================
     let bestStation=null;
     let bestDistance=99999;
 
     for(const s of stations){
 
-        const route = await getRoute(start,s);
-        const d = route.routes[0].distance/1000;
+        const route=await getRoute(start,s);
+        const d=route.routes[0].distance/1000;
 
-        if(d < bestDistance){
-            bestDistance = d;
-            bestStation = s;
+        if(d<bestDistance){
+            bestDistance=d;
+            bestStation=s;
         }
     }
 
-    // route start → station
-    const toStation = await getRoute(start,bestStation);
+    const toStation=await getRoute(start,bestStation);
 
-    const coords = toStation.routes[0].geometry.coordinates
+    const coords=
+        toStation.routes[0].geometry.coordinates
         .map(c=>[c[1],c[0]]);
 
     drawRoute(coords);
 
-    // station marker (green)
     L.circleMarker(
         [bestStation.lat,bestStation.lng],
         {radius:8,color:"green"}
     ).addTo(map)
     .bindPopup(bestStation.name);
 
-    document.getElementById("routeInfo").innerHTML =
+    document.getElementById("routeInfo").innerHTML=
     `<div class="route-card">
         ⚠ Battery insufficient.<br>
         Recommended Charging Station:<br>
