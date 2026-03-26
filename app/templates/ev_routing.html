@@ -20,25 +20,21 @@
         <h2 class="route-title">Route inputs</h2>
 
         <div class="route-inputs">
+            <div class="route-left">
+                <label>Location</label>
+                <input id="startInput" type="text" placeholder="Start location">
 
-            <div class="input-field">
-                <label>Start location</label>
-                <input type="text" id="startInput"
-                    placeholder="Quezon City, Metro Manila">
-            </div>
-
-            <div class="input-field">
                 <label>Destination</label>
-                <input type="text" id="destinationInput"
-                    placeholder="Makati, Metro Manila">
+                <input id="destinationInput" type="text" placeholder="Destination">
             </div>
 
-            <div class="input-field">
+            <!-- RIGHT COLUMN -->
+            <div class="route-right">
                 <label>Battery Percentage (%)</label>
-                <input type="number" id="batteryInput"
-                    min="5" max="100" value="20">
+                <input id="batteryInput" type="number" placeholder="Battery %" min="1" max="100">
+                <button id="routeBtn">Start Routing</button>
             </div>
-            <button id="routeBtn">Start Smart Routing</button>
+            
             <!-- ROUTE SUMMARY -->
             <div class="route-summary">
 

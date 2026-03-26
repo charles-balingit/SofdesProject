@@ -908,21 +908,37 @@ select {
 }
 
 .route-inputs{
+    width:100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:30px;
+    margin-top:15px;
+}
+
+.route-left{
     display:flex;
     flex-direction:column;
-    gap:18px;
+    gap:10px;
+}
+
+.route-right{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.route-right{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
 .route-inputs input{
-    width:80%;
-    padding:14px;
-    border-radius:10px;
-    border:1px solid #1f2937;
-    background:#111827;
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #374151;
+    background:#020617;
     color:white;
-    font-size:15px;
-    outline:none;
-    transition:0.25s;
 }
 
 .route-inputs input:focus{
@@ -932,20 +948,17 @@ select {
 
 #routeBtn{
     margin-top:10px;
-    background:#2563eb;
+    padding:10px;
     border:none;
-    padding:14px;
-    border-radius:10px;
+    border-radius:6px;
+    background:#22c55e;
     color:white;
-    font-size:15px;
-    font-weight:600;
+    font-weight:bold;
     cursor:pointer;
-    transition:0.25s;
 }
 
 #routeBtn:hover{
-    background:#1d4ed8;
-    transform:translateY(-1px);
+    background:#16a34a;
 }
 
 /* SUMMARY PANEL */
