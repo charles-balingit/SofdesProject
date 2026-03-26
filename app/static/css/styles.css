@@ -838,17 +838,22 @@ select {
 
 
 /* STATUS PANEL */
+/* ROUTE INPUT CARD */
 .ev-status{
-    background:#111827;
+    background:#020617;
     width:80%;
-    margin:20px auto;      /* ✅ center horizontally */
-    padding:10px 20px;
-    border-radius:12px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    margin:25px auto;
+    padding:28px;
+    border-radius:14px;
+    border:1px solid #1f2937;
 }
 
+/* TITLE */
+.route-title{
+    margin-bottom:18px;
+    font-size:22px;
+    font-weight:600;
+}
 
 /* MAP */
 #map{
@@ -903,31 +908,42 @@ select {
 }
 
 .route-inputs{
-    width:100%;
     display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
+    flex-direction:column;
+    gap:18px;
 }
 
 .route-inputs input{
-    padding:8px 10px;
-    border-radius:6px;
-    border:1px solid #374151;
-    background:#020617;
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid #1f2937;
+    background:#111827;
     color:white;
+    font-size:15px;
+    outline:none;
+    transition:0.25s;
+}
+
+.route-inputs input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 1px #2563eb;
 }
 
 #routeBtn{
+    margin-top:10px;
     background:#2563eb;
     border:none;
-    padding:10px 18px;
-    border-radius:8px;
+    padding:14px;
+    border-radius:10px;
     color:white;
+    font-size:15px;
+    font-weight:600;
     cursor:pointer;
+    transition:0.25s;
 }
 
 #routeBtn:hover{
     background:#1d4ed8;
+    transform:translateY(-1px);
 }
