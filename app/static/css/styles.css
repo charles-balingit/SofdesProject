@@ -943,9 +943,9 @@ select {
 #routeBtn{
     margin-top:10px;
     padding:10px;
-    border:none;
+    border: 1px solid #374151;
     border-radius:6px;
-    background:#374151;
+    background:#020617;
     color:white;
     font-weight:bold;
     cursor:pointer;

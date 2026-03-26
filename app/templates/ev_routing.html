@@ -9,6 +9,7 @@
         <a href="{{ url_for('main.sales_forecasting') }}">Sales Forecasting</a>
         <a href="{{ url_for('main.parts_procurement') }}">Parts Procurement</a>
         <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.logout') }}" class="logout-btn">Log Out</a>
     </nav>
 
     <main class="dashboard-page">
@@ -34,7 +35,7 @@
                 <input id="batteryInput" type="number" placeholder="Battery %" min="1" max="100">
                 <button id="routeBtn">Start Routing</button>
             </div>
-            
+
             <!-- ROUTE SUMMARY -->
             <div class="route-summary">
 
