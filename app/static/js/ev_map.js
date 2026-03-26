@@ -187,7 +187,7 @@ document.getElementById("routeBtn").onclick = async ()=>{
     // NEED CHARGING
     // ===============================
     let bestStation=null;
-    let bestDistance=Infinity;
+    let bestDistance=99999;
 
     for(const s of stations){
         const route=await getRoute(start,s);
