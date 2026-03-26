@@ -199,14 +199,14 @@ document.getElementById("routeBtn").onclick = async ()=>{
     }
 
     if(!bestStation){
-    document.getElementById("routeInfo").innerHTML =
-    `<div class="route-card">
-        🔴 DANGER<br>
-        No reachable charging station with current battery.
-    </div>`;
+        document.getElementById("routeInfo").innerHTML =
+        `<div class="route-card">
+            🔴 DANGER<br>
+            No reachable charging station with current battery.
+        </div>`;
 
-    return;
-}
+        return;
+    }
 
     const toStation=await getRoute(start,bestStation);
 
