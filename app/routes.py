@@ -30,6 +30,9 @@ def signup():
         password = data["password"]
         email = request.form.get("email")
         confirm_password = request.form.get("confirm_password")
+        firstname = request.form.get("firstname")
+        lastname = request.form.get("lastname")
+        vehicle_type = request.form.get("vehicle") 
 
         # Password mismatch
         if password != confirm_password:
@@ -49,7 +52,10 @@ def signup():
         user = User(
             username=username,
             email=email,
-            password=hashed_pw
+            password=hashed_pw,
+            firstname=firstname,
+            lastname=lastname,
+            vehicle_type=vehicle_type
         )
 
         db.session.add(user)
