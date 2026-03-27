@@ -4,3 +4,6 @@ Flask-Login
 Werkzeug
 gunicorn
 psycopg2-binary
+joblib
+pandas
+jsonify
