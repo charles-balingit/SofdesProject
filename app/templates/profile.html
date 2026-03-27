@@ -21,14 +21,14 @@
             <!-- LEFT COLUMN -->
             <div class="profile-column">
                 <p><strong>Username:</strong> {{ user.username }}</p>
-                <p><strong>First Name:</strong> {{ user.firstname }}</p>
-                <p><strong>Last Name:</strong> {{ user.lastname }}</p>
+                <p><strong>First Name:</strong> {{ user.firstname or "Not Set"}}</p>
+                <p><strong>Last Name:</strong> {{ user.lastname or "Not Set"}}</p>
             </div>
 
             <!-- RIGHT COLUMN -->
             <div class="profile-column">
                 <p><strong>Email:</strong> {{ user.email }}</p>
-                <p><strong>Vehicle Type:</strong> {{ user.vehicle_type }}</p>
+                <p><strong>Vehicle Type:</strong> {{ user.vehicle_type or "Not Set"}}</p>
             </div>
 
         </div>

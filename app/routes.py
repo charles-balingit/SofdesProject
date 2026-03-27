@@ -28,11 +28,14 @@ def signup():
 
         username = data["username"]
         password = data["password"]
+
         email = request.form.get("email")
         confirm_password = request.form.get("confirm_password")
+
+        # ✅ NEW FIELDS
         firstname = request.form.get("firstname")
         lastname = request.form.get("lastname")
-        vehicle_type = request.form.get("vehicle") 
+        vehicle_type = request.form.get("vehicle")
 
         # Password mismatch
         if password != confirm_password:
@@ -48,7 +51,7 @@ def signup():
         # ✅ Hash password
         hashed_pw = generate_password_hash(password)
 
-        # ✅ CREATE USER (FIXED)
+        # ✅ CREATE USER (NOW SAVES ALL DATA)
         user = User(
             username=username,
             email=email,
