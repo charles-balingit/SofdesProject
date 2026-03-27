@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 
 # load once (IMPORTANT for performance)
-MODEL_PATH = "C:\Users\charles\OneDrive\Documents\SofdesProject\app\model\random_forest_bundle.pkl"
+MODEL_PATH = "/app/model/random_forest_bundle.pkl"
 model = joblib.load(MODEL_PATH)
 
 
