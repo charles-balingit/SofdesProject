@@ -120,7 +120,7 @@ def ev_routing():
 # ================= SALES FORECASTING =================
 @main.route("/sales-forecasting")
 @login_required
-def ev_routing():
+def sales_forecasting():
     return render_template("sales_forecasting.html")
 
 # ================= PARTS PROCUREMENT =================
