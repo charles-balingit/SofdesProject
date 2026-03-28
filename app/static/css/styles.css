@@ -841,7 +841,7 @@ select {
 .ev-status{
     background:#020617;
     width:80%;
-    margin:20px auto;
+    margin:10px auto;
     padding:28px;
     border-radius:14px;
     border:1px solid #1f2937;
@@ -1008,9 +1008,8 @@ select {
 
 .forecast-controls {
     display: flex;
-    margin:20px auto; 
+    margin:10px auto; 
     justify-content: space-between;
-    gap: 20px;
     background: #020617;
     padding: 20px;
     border-radius: 10px;
