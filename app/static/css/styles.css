@@ -932,7 +932,7 @@ select {
 .route-right label {
     font-size: 13px;
     margin-bottom: 6px;
-    color: #9ca3af;
+    color: white;
     font-weight: 500;
     margin-top: 10px;
 }
@@ -1034,7 +1034,7 @@ select {
 .forecast-controls label {
     font-size: 13px;
     margin-bottom: 6px;
-    color: #9ca3af;
+    color: white;
 }
 
 /* dropdowns */
@@ -1055,7 +1055,6 @@ select {
 }
 
 .forecast-btn {
-    display: block;
     width: 80%;
     margin: 10px auto;   /* ✅ center like forecast-controls */
     padding: 12px;
