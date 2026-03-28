@@ -903,6 +903,7 @@ select {
     border:1px solid #1f2937;
 }
 .route-info{
+    text-align: left;
     font-size: 13px;
     margin-bottom: 6px;
     color: #9ca3af;
@@ -925,7 +926,7 @@ select {
 .route-right{
     display:flex;
     flex-direction:column;
-    width: 70%
+    width: 30%
 }
 
 .route-inputs input{
@@ -1005,6 +1006,7 @@ select {
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #1f2937;
+    width: 80%;
 }
 
 .left-row {
