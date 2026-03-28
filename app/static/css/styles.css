@@ -918,13 +918,13 @@ select {
 .route-left{
     display:flex;
     flex-direction:column;
-    gap:10px;
+    width: 70%
 }
 
 .route-right{
     display:flex;
     flex-direction:column;
-    gap:10px;
+    width: 70%
 }
 
 .route-inputs input{
@@ -1009,13 +1009,13 @@ select {
 .left-row {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 70%;
 }
 
 .right-row {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 30%;
 }
 
 /* labels */
