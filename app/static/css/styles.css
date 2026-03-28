@@ -836,7 +836,6 @@ select {
     margin:20px auto;  
 }
 
-
 /* STATUS PANEL */
 /* ROUTE INPUT CARD */
 .ev-status{
@@ -857,9 +856,9 @@ select {
 
 /* MAP */
 #map{
-    height:550px;
+    height:600px;
     width:80%;
-    margin:20px auto;      /* ✅ center map */
+    margin:18px auto;      /* ✅ center map */
     border-radius:12px;
     box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
@@ -927,6 +926,14 @@ select {
     display:flex;
     flex-direction:column;
     width: 100%
+}
+
+.route-left label,
+.route-right label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #9ca3af;
+    font-weight: 500;
 }
 
 .route-inputs input{
@@ -1047,10 +1054,9 @@ select {
 }
 
 .forecast-btn {
-    display: flex;
-    margin:20px auto; 
+    display: block;
     width: 80%;
-    margin-top: 18px;
+    margin: 18px auto;   /* ✅ center like forecast-controls */
     padding: 12px;
     border-radius: 10px;
     border: 1px solid #374151;
@@ -1059,6 +1065,7 @@ select {
     font-size: 15px;
     cursor: pointer;
     transition: all 0.25s ease;
+    text-align: center;
 }
 
 .forecast-btn:hover {
