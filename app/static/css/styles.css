@@ -903,8 +903,9 @@ select {
     border:1px solid #1f2937;
 }
 .route-info{
-    text-align: left;
-    font-size:15px;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #9ca3af;
 }
 
 .route-inputs{
