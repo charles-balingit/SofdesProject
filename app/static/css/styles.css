@@ -1047,6 +1047,8 @@ select {
 }
 
 .forecast-btn {
+    display: flex;
+    margin:20px auto; 
     width: 80%;
     margin-top: 18px;
     padding: 12px;
