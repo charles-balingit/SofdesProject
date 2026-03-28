@@ -1057,15 +1057,16 @@ select {
 .forecast-btn {
     width: 80%;
     margin: 10px auto;   /* ✅ center like forecast-controls */
-    padding: 12px;
+    padding: 10px;
     border-radius: 10px;
     border: 1px solid #1f2937;
     background: #020617;
     color: #e5e7eb;
-    font-size: 15px;
     cursor: pointer;
     transition: all 0.25s ease;
     text-align: center;
+    margin-top:10px;
+    font-weight:bold;
 }
 
 .forecast-btn:hover {
