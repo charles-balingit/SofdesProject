@@ -12,9 +12,10 @@
     </nav>
     
     <main class="dashboard-page">
-        <h1>Sales Forecasting</h1>
+    <   h1>Sales Forecasting</h1>
+
         <div class="forecast-controls">
-            <div>
+            <div class="left-row">
                 <label>Select Vehicle Model</label>
                 <select id="vehicleSelect">
                     <option>Avanza</option>
@@ -28,7 +29,7 @@
                 </select>
             </div>
 
-            <div>
+            <div class="right-row">
                 <label>Forecast Horizon (months)</label>
                 <select id="monthSelect">
                     <option value="1">1</option>
@@ -37,11 +38,32 @@
                     <option value="12" selected>12</option>
                 </select>
             </div>
-
         </div>
 
         <button onclick="generateForecast()" class="forecast-btn">
             Generate Forecast
         </button>
+
+
+        <!-- ================= RESULTS ================= -->
+        <div id="forecastResults" style="display:none; margin-top:30px;">
+            <h2 id="forecastTitle"></h2>
+            <canvas id="forecastChart"></canvas>
+            <h3 style="margin-top:25px;">Forecast Table</h3>
+            <table class="forecast-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Forecast</th>
+                    </tr>
+                </thead>
+                <tbody id="forecastTable"></tbody>
+            </table>
+        </div>
+    </main>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="sales_forecast.js"></script>
 
 {% endblock %}

@@ -995,3 +995,145 @@ select {
 .status-danger{
     color:#ef4444;
 }
+
+.forecast-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background: #111827;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1f2937;
+}
+
+.left-row {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.right-row {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+/* labels */
+.forecast-controls label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #9ca3af;
+}
+
+/* dropdowns */
+.forecast-controls select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background-color: #020617;
+    color: #e5e7eb;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.forecast-controls select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.forecast-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #374151;
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: #e5e7eb;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.forecast-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.forecast-btn:active {
+    transform: scale(0.98);
+}
+
+#forecastResults {
+    background: #111827;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
+}
+
+#forecastTitle {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#forecastChart {
+    width: 100%;
+    max-height: 420px;
+    margin-top: 15px;
+}
+
+.forecast-table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    background: #020617;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.forecast-table thead {
+    background: #020617;
+}
+
+.forecast-table th {
+    text-align: left;
+    padding: 12px;
+    font-size: 13px;
+    color: #9ca3af;
+    border-bottom: 1px solid #1f2937;
+}
+
+.forecast-table td {
+    padding: 12px;
+    border-bottom: 1px solid #111827;
+    font-size: 14px;
+}
+
+.forecast-table tbody tr:hover {
+    background-color: #0f172a;
+}
+
+.forecast-table tbody {
+    display: block;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.forecast-table thead,
+.forecast-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+@media (max-width: 768px) {
+
+    .forecast-controls {
+        flex-direction: column;
+    }
+
+    .dashboard-page {
+        padding: 20px;
+    }
+}
