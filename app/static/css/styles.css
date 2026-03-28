@@ -842,7 +842,7 @@ select {
 .ev-status{
     background:#020617;
     width:80%;
-    margin:25px auto;
+    margin:20px auto;
     padding:28px;
     border-radius:14px;
     border:1px solid #1f2937;
@@ -920,13 +920,13 @@ select {
 .route-left{
     display:flex;
     flex-direction:column;
-    width: 70%
+    width: 100%
 }
 
 .route-right{
     display:flex;
     flex-direction:column;
-    width: 30%
+    width: 100%
 }
 
 .route-inputs input{
@@ -1000,6 +1000,7 @@ select {
 
 .forecast-controls {
     display: flex;
+    margin:20px auto; 
     justify-content: space-between;
     gap: 20px;
     background: #111827;
@@ -1007,7 +1008,7 @@ select {
     border-radius: 10px;
     border: 1px solid #1f2937;
     width: 80%;
-}
+} 
 
 .left-row {
     display: flex;
@@ -1046,7 +1047,7 @@ select {
 }
 
 .forecast-btn {
-    width: 100%;
+    width: 80%;
     margin-top: 18px;
     padding: 12px;
     border-radius: 10px;
