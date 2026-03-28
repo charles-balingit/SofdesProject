@@ -934,6 +934,7 @@ select {
     margin-bottom: 6px;
     color: #9ca3af;
     font-weight: 500;
+    margin-top: 10px;
 }
 
 .route-inputs input{
@@ -1010,7 +1011,7 @@ select {
     margin:20px auto; 
     justify-content: space-between;
     gap: 20px;
-    background: #111827;
+    background: #020617;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #1f2937;
@@ -1040,7 +1041,7 @@ select {
 .forecast-controls select {
     padding: 10px 12px;
     border-radius: 8px;
-    border: 1px solid #374151;
+    border: 1px solid #1f2937;
     background-color: #020617;
     color: #e5e7eb;
     font-size: 14px;
@@ -1056,11 +1057,11 @@ select {
 .forecast-btn {
     display: block;
     width: 80%;
-    margin: 18px auto;   /* ✅ center like forecast-controls */
+    margin: 10px auto;   /* ✅ center like forecast-controls */
     padding: 12px;
     border-radius: 10px;
-    border: 1px solid #374151;
-    background: linear-gradient(135deg, #1f2937, #111827);
+    border: 1px solid #1f2937;
+    background: #020617;
     color: #e5e7eb;
     font-size: 15px;
     cursor: pointer;
