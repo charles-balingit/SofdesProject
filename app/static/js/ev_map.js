@@ -278,45 +278,45 @@ document.getElementById("routeBtn").onclick = async ()=>{
         return;
     }
 
-// ===============================
-// FIND BEST STATION ALONG ROUTE
-// ===============================
-const routeCoordsRaw =
-    direct.routes[0].geometry.coordinates;
+    // ===============================
+    // FIND BEST STATION ALONG ROUTE
+    // ===============================
+    const routeCoordsRaw =
+        direct.routes[0].geometry.coordinates;
 
-// distance user can travel
-let bestStation = null;
-let bestScore = Infinity;
+    // distance user can travel
+    let bestStation = null;
+    let bestScore = Infinity;
 
-for(const s of stations){
+    for(const s of stations){
     // route from start → station
-    const routeToStation = await getRoute(start, s);
-    if(!routeToStation.routes.length) continue;
+        const routeToStation = await getRoute(start, s);
+        if(!routeToStation.routes.length) continue;
 
-    const stationDistance =
-        routeToStation.routes[0].distance / 1000;
+        const stationDistance =
+            routeToStation.routes[0].distance / 1000;
 
-    // must be reachable
-    if(stationDistance > batteryDistance)
-        continue;
+        // must be reachable
+        if(stationDistance > batteryDistance)
+            continue;
 
-    // ⭐ distance from main route
-    const deviation =
-        distanceToRoute(s, routeCoordsRaw);
+        // ⭐ distance from main route
+        const deviation =
+            distanceToRoute(s, routeCoordsRaw);
 
-    /*
+        /*
         SCORE SYSTEM:
         smaller deviation = better
-    */
-    const score = deviation;
-    if(score < bestScore){
-        bestScore = score;
-        bestStation = s;
-        bestDistance = stationDistance;
+        */
+        const score = deviation;
+        if(score < bestScore){
+            bestScore = score;
+            bestStation = s;
+            bestDistance = stationDistance;
+        }
     }
-}
 
-    // NO REACHABLE STATION
+        // NO REACHABLE STATION
     if(!bestStation){
 
         document.getElementById("routeInfo").innerHTML =
@@ -324,10 +324,8 @@ for(const s of stations){
             🔴 DANGER<br>
             No reachable charging station with current battery.
         </div>`;
-
         return;
     }
-
 
     // ROUTE TO STATION
     const toStation=await getRoute(start,bestStation);
