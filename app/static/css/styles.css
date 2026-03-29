@@ -1008,13 +1008,14 @@ select {
 
 .forecast-controls {
     display: flex;
-    margin:10px auto; 
-    justify-content: space-between;
-    background: #020617;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #111827;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #1f2937;
     width: 80%;
+    margin: 20px auto;
 } 
 
 .left-row {
@@ -1060,17 +1061,14 @@ select {
 
 .forecast-btn {
     width: 100%;
-    margin: 10px auto;   /* ✅ center like forecast-controls */
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
     border: 1px solid #1f2937;
     background: #020617;
     color: #e5e7eb;
     cursor: pointer;
     transition: all 0.25s ease;
-    text-align: center;
-    margin-top:10px;
-    font-weight:bold;
+    font-size: 15px;
 }
 
 .forecast-btn:hover {
