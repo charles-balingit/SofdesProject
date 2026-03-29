@@ -1015,19 +1015,19 @@ select {
     border: 1px solid #1f2937;
     width: 80%;
     margin: 10px auto;
-    gap: 10px;
 } 
 
 .left-row {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 60%;
+    gap: 10px;
 }
 
 .right-row {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 20%;
 }
 
 /* labels */
