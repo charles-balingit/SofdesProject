@@ -925,6 +925,7 @@ select {
 .route-right{
     display:flex;
     flex-direction:column;
+    margin-bottom: 20px;
     width: 100%
 }
 
@@ -1015,6 +1016,7 @@ select {
     border: 1px solid #1f2937;
     width: 80%;
     margin: 20px auto;
+    gap: 10px;
 } 
 
 .left-row {
