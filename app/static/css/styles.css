@@ -925,7 +925,6 @@ select {
 .route-right{
     display:flex;
     flex-direction:column;
-    gap: 20px;
     width: 100%
 }
 
@@ -952,7 +951,7 @@ select {
 }
 
 #routeBtn{
-    margin-top:10px;
+    margin-top:20px;
     padding:10px;
     border: 1px solid #374151;
     border-radius:6px;
