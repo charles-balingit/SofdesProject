@@ -1053,8 +1053,13 @@ select {
     box-shadow: 0 0 0 1px #3b82f6;
 }
 
+.forecast-btn-row {
+    width: 100%;
+    margin-top: 10px;
+}
+
 .forecast-btn {
-    width: 80%;
+    width: 100%;
     margin: 10px auto;   /* ✅ center like forecast-controls */
     padding: 10px;
     border-radius: 10px;
@@ -1141,11 +1146,9 @@ select {
 }
 
 @media (max-width: 768px) {
-
     .forecast-controls {
         flex-direction: column;
     }
-
     .dashboard-page {
         padding: 20px;
     }
