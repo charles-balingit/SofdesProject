@@ -1009,7 +1009,6 @@ select {
 .forecast-controls {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     background: #111827;
     padding: 20px;
     border-radius: 10px;
