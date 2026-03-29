@@ -1013,8 +1013,8 @@ select {
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #1f2937;
-    width: 100%;
-    margin: 20px auto;
+    width: 80%;
+    margin: 10px auto;
     gap: 10px;
 } 
 
