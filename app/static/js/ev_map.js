@@ -11,6 +11,15 @@ let userMarker;
 let destinationMarker;
 let routeLine;
 
+// ===============================
+// CHARGING STATION ICON
+// ===============================
+const chargingIcon = L.divIcon({
+    className: "charging-icon",
+    html: "⚡",
+    iconSize: [28, 28],
+    iconAnchor: [14, 14]
+});
 
 // ===============================
 // NCR CHARGING STATIONS
@@ -26,6 +35,31 @@ const stations = [
  {name:"Robinsons Manila EV",lat:14.5764,lng:120.9880}
 ];
 
+// ===============================
+// SHOW ALL CHARGING STATIONS
+// ===============================
+const stationMarkers = [];
+
+function loadChargingStations() {
+
+    stations.forEach(station => {
+
+        const marker = L.marker(
+            [station.lat, station.lng],
+            { icon: chargingIcon }
+        )
+        .addTo(map)
+        .bindPopup(`
+            <b>${station.name}</b><br>
+            EV Charging Station ⚡
+        `);
+
+        stationMarkers.push(marker);
+    });
+}
+
+// load immediately
+loadChargingStations();
 
 // ===============================
 // GEOCODING
@@ -240,11 +274,13 @@ document.getElementById("routeBtn").onclick = async ()=>{
 
     drawRoute(coords);
 
-    L.circleMarker(
-        [bestStation.lat,bestStation.lng],
-        {radius:8,color:"green"}
-    ).addTo(map)
-    .bindPopup(bestStation.name);
+    L.marker(
+    [bestStation.lat, bestStation.lng],
+    { icon: chargingIcon }
+)
+    .addTo(map)
+    .bindPopup(`✅ Recommended Station<br><b>${bestStation.name}</b>`)
+    .openPopup();
 
     document.getElementById("routeInfo").innerHTML=
     `<div class="route-card">
