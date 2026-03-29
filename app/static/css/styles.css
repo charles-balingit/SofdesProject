@@ -1021,13 +1021,13 @@ select {
 .left-row {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 65%;
 }
 
 .right-row {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 25%;
 }
 
 /* labels */
