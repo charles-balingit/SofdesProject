@@ -1,11 +1,10 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash, jsonify
+from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user, LoginManager
 
 from .models import User
 from . import db
 from .forms import signup_form, login_form
-from app.ml.predictor import generate_forecast
 
 main = Blueprint("main", __name__)
 
@@ -119,21 +118,10 @@ def ev_routing():
 
 
 # ================= SALES FORECASTING =================
-@main.route("/sales-forecast", methods=["POST"])
+@main.route("/sales-forecasting")
 @login_required
-def forecast_api():
-
-    data = request.get_json()
-
-    vehicle = data.get("vehicle")
-    months = int(data.get("months"))
-
-    forecast = generate_forecast(vehicle, months)
-
-    return jsonify({
-        "vehicle": vehicle,
-        "forecast": forecast
-    })
+def sales_forecasting():
+    return render_template("sales_forecasting.html")
 
 # ================= PARTS PROCUREMENT =================
 @main.route("/parts-procurement")
