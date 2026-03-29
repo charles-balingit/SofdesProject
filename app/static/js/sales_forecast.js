@@ -1,9 +1,9 @@
 let forecastChart = null;
 
 /* ====================================
-   BUTTON CLICK
+   BUTTON CLICK (NOW CALLS MODEL API)
 ==================================== */
-function generateForecast() {
+async function generateForecast() {
 
     const vehicle =
         document.getElementById("vehicleSelect").value;
@@ -11,36 +11,27 @@ function generateForecast() {
     const months =
         parseInt(document.getElementById("monthSelect").value);
 
-    const forecastData = createMockForecast(months);
+    try {
 
-    showForecast(vehicle, forecastData);
-}
-
-
-/* ====================================
-   MOCK DATA GENERATOR
-==================================== */
-function createMockForecast(months) {
-
-    const data = [];
-    const startDate = new Date(2026, 0, 1);
-
-    let baseValue = 470;
-
-    for (let i = 0; i < months; i++) {
-
-        baseValue += (Math.random() - 0.5) * 20;
-
-        const d = new Date(startDate);
-        d.setMonth(d.getMonth() + i);
-
-        data.push({
-            date: d.toISOString().slice(0,10),
-            forecast: Number(baseValue.toFixed(2))
+        const response = await fetch("/api/forecast", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                vehicle: vehicle,
+                horizon: months
+            })
         });
-    }
 
-    return data;
+        const result = await response.json();
+
+        showForecast(vehicle, result.forecast);
+
+    } catch (err) {
+        console.error(err);
+        alert("Forecast service unavailable.");
+    }
 }
 
 
@@ -102,7 +93,9 @@ function renderChart(labels, values) {
 ==================================== */
 function renderTable(rows) {
 
-    const tbody = document.getElementById("forecastTable");
+    const tbody =
+        document.querySelector("#forecastTable tbody");
+
     tbody.innerHTML = "";
 
     rows.forEach(r => {

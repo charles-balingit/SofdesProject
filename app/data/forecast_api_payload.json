@@ -1,0 +1,5324 @@
+{
+  "models": {
+    "random_forest": {
+      "model_name": "Random Forest",
+      "bundle_path": "/content/sales_forecast_exports/random_forest_bundle.pkl",
+      "mae": 62.2028,
+      "rmse": 72.4623,
+      "r2": 0.8763
+    },
+    "extra_trees": {
+      "model_name": "Extra Trees",
+      "bundle_path": "/content/sales_forecast_exports/extra_trees_bundle.pkl",
+      "mae": 62.8967,
+      "rmse": 74.8742,
+      "r2": 0.8679
+    },
+    "gradient_boosting": {
+      "model_name": "Gradient Boosting",
+      "bundle_path": "/content/sales_forecast_exports/gradient_boosting_bundle.pkl",
+      "mae": 65.986,
+      "rmse": 77.8555,
+      "r2": 0.8572
+    }
+  },
+  "default_model_key": "random_forest",
+  "default_model_name": "Random Forest",
+  "available_horizons": [
+    1,
+    3
+  ],
+  "last_dataset_month": "2025-12-01",
+  "vehicles": [
+    "Avanza",
+    "Corolla Cross Hybrid",
+    "Fortuner",
+    "Hilux",
+    "Innova",
+    "Raize",
+    "Vios",
+    "Wigo"
+  ],
+  "graph_data": [
+    {
+      "month": "2021-07-01",
+      "vehicle_model": "Avanza",
+      "value": 403.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-08-01",
+      "vehicle_model": "Avanza",
+      "value": 475.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-09-01",
+      "vehicle_model": "Avanza",
+      "value": 630.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-10-01",
+      "vehicle_model": "Avanza",
+      "value": 517.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-11-01",
+      "vehicle_model": "Avanza",
+      "value": 485.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-12-01",
+      "vehicle_model": "Avanza",
+      "value": 609.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-01-01",
+      "vehicle_model": "Avanza",
+      "value": 470.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-02-01",
+      "vehicle_model": "Avanza",
+      "value": 448.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-03-01",
+      "vehicle_model": "Avanza",
+      "value": 626.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-04-01",
+      "vehicle_model": "Avanza",
+      "value": 440.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-05-01",
+      "vehicle_model": "Avanza",
+      "value": 563.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-06-01",
+      "vehicle_model": "Avanza",
+      "value": 507.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-07-01",
+      "vehicle_model": "Avanza",
+      "value": 574.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-08-01",
+      "vehicle_model": "Avanza",
+      "value": 524.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-09-01",
+      "vehicle_model": "Avanza",
+      "value": 438.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-10-01",
+      "vehicle_model": "Avanza",
+      "value": 540.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-11-01",
+      "vehicle_model": "Avanza",
+      "value": 573.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-12-01",
+      "vehicle_model": "Avanza",
+      "value": 625.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-01-01",
+      "vehicle_model": "Avanza",
+      "value": 619.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-02-01",
+      "vehicle_model": "Avanza",
+      "value": 487.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-03-01",
+      "vehicle_model": "Avanza",
+      "value": 623.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-04-01",
+      "vehicle_model": "Avanza",
+      "value": 494.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-05-01",
+      "vehicle_model": "Avanza",
+      "value": 411.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-06-01",
+      "vehicle_model": "Avanza",
+      "value": 437.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-07-01",
+      "vehicle_model": "Avanza",
+      "value": 552.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-08-01",
+      "vehicle_model": "Avanza",
+      "value": 460.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-09-01",
+      "vehicle_model": "Avanza",
+      "value": 512.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-10-01",
+      "vehicle_model": "Avanza",
+      "value": 493.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-11-01",
+      "vehicle_model": "Avanza",
+      "value": 402.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-12-01",
+      "vehicle_model": "Avanza",
+      "value": 578.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-01-01",
+      "vehicle_model": "Avanza",
+      "value": 420.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-02-01",
+      "vehicle_model": "Avanza",
+      "value": 462.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-03-01",
+      "vehicle_model": "Avanza",
+      "value": 627.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-04-01",
+      "vehicle_model": "Avanza",
+      "value": 588.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-05-01",
+      "vehicle_model": "Avanza",
+      "value": 421.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-06-01",
+      "vehicle_model": "Avanza",
+      "value": 592.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-07-01",
+      "vehicle_model": "Avanza",
+      "value": 600.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-08-01",
+      "vehicle_model": "Avanza",
+      "value": 447.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-09-01",
+      "vehicle_model": "Avanza",
+      "value": 621.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-10-01",
+      "vehicle_model": "Avanza",
+      "value": 632.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-11-01",
+      "vehicle_model": "Avanza",
+      "value": 439.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-12-01",
+      "vehicle_model": "Avanza",
+      "value": 417.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-01-01",
+      "vehicle_model": "Avanza",
+      "value": 557.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-02-01",
+      "vehicle_model": "Avanza",
+      "value": 452.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-03-01",
+      "vehicle_model": "Avanza",
+      "value": 642.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-04-01",
+      "vehicle_model": "Avanza",
+      "value": 460.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-05-01",
+      "vehicle_model": "Avanza",
+      "value": 610.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-06-01",
+      "vehicle_model": "Avanza",
+      "value": 475.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-07-01",
+      "vehicle_model": "Avanza",
+      "value": 529.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-08-01",
+      "vehicle_model": "Avanza",
+      "value": 455.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-09-01",
+      "vehicle_model": "Avanza",
+      "value": 483.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-10-01",
+      "vehicle_model": "Avanza",
+      "value": 420.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-11-01",
+      "vehicle_model": "Avanza",
+      "value": 509.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-12-01",
+      "vehicle_model": "Avanza",
+      "value": 475.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Avanza",
+      "value": 471.92,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Avanza",
+      "value": 471.92,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Avanza",
+      "value": 491.82,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Avanza",
+      "value": 564.69,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Avanza",
+      "value": 462.48,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Avanza",
+      "value": 462.48,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Avanza",
+      "value": 509.68,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Avanza",
+      "value": 446.55,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Avanza",
+      "value": 471.18,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Avanza",
+      "value": 471.18,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Avanza",
+      "value": 492.05,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Avanza",
+      "value": 473.57,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2021-07-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 164.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-08-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 210.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-09-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 259.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-10-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 238.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-11-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 256.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-12-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 226.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 193.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-02-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 198.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-03-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 181.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-04-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 272.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-05-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 252.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-06-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 242.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-07-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 105.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-08-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 108.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-09-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 243.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-10-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 238.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-11-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 181.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-12-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 263.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 265.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-02-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 224.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-03-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 162.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-04-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 247.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-05-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 147.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-06-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 259.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-07-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 274.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-08-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 243.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-09-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 135.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-10-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 127.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-11-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 118.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-12-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 223.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 233.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-02-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 287.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-03-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 247.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-04-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 131.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-05-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 191.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-06-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 273.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-07-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 170.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-08-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 108.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-09-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 146.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-10-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 148.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-11-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 223.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-12-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 166.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 109.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-02-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 208.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-03-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 279.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-04-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 119.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-05-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 107.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-06-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 128.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-07-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 113.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-08-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 156.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-09-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 171.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-10-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 169.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-11-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 222.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-12-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 271.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 234.97,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 234.97,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 209.35,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 212.79,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 205.06,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 205.06,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 155.57,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 158.33,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 214.31,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 214.31,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 191.44,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Corolla Cross Hybrid",
+      "value": 192.8,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2021-07-01",
+      "vehicle_model": "Fortuner",
+      "value": 424.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-08-01",
+      "vehicle_model": "Fortuner",
+      "value": 381.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-09-01",
+      "vehicle_model": "Fortuner",
+      "value": 352.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-10-01",
+      "vehicle_model": "Fortuner",
+      "value": 395.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-11-01",
+      "vehicle_model": "Fortuner",
+      "value": 496.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-12-01",
+      "vehicle_model": "Fortuner",
+      "value": 340.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 461.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-02-01",
+      "vehicle_model": "Fortuner",
+      "value": 483.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-03-01",
+      "vehicle_model": "Fortuner",
+      "value": 459.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-04-01",
+      "vehicle_model": "Fortuner",
+      "value": 313.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-05-01",
+      "vehicle_model": "Fortuner",
+      "value": 495.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-06-01",
+      "vehicle_model": "Fortuner",
+      "value": 350.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-07-01",
+      "vehicle_model": "Fortuner",
+      "value": 419.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-08-01",
+      "vehicle_model": "Fortuner",
+      "value": 472.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-09-01",
+      "vehicle_model": "Fortuner",
+      "value": 366.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-10-01",
+      "vehicle_model": "Fortuner",
+      "value": 479.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-11-01",
+      "vehicle_model": "Fortuner",
+      "value": 461.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-12-01",
+      "vehicle_model": "Fortuner",
+      "value": 377.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 301.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-02-01",
+      "vehicle_model": "Fortuner",
+      "value": 490.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-03-01",
+      "vehicle_model": "Fortuner",
+      "value": 328.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-04-01",
+      "vehicle_model": "Fortuner",
+      "value": 489.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-05-01",
+      "vehicle_model": "Fortuner",
+      "value": 352.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-06-01",
+      "vehicle_model": "Fortuner",
+      "value": 463.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-07-01",
+      "vehicle_model": "Fortuner",
+      "value": 370.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-08-01",
+      "vehicle_model": "Fortuner",
+      "value": 302.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-09-01",
+      "vehicle_model": "Fortuner",
+      "value": 354.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-10-01",
+      "vehicle_model": "Fortuner",
+      "value": 313.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-11-01",
+      "vehicle_model": "Fortuner",
+      "value": 315.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-12-01",
+      "vehicle_model": "Fortuner",
+      "value": 356.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 342.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-02-01",
+      "vehicle_model": "Fortuner",
+      "value": 414.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-03-01",
+      "vehicle_model": "Fortuner",
+      "value": 318.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-04-01",
+      "vehicle_model": "Fortuner",
+      "value": 478.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-05-01",
+      "vehicle_model": "Fortuner",
+      "value": 411.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-06-01",
+      "vehicle_model": "Fortuner",
+      "value": 469.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-07-01",
+      "vehicle_model": "Fortuner",
+      "value": 440.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-08-01",
+      "vehicle_model": "Fortuner",
+      "value": 479.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-09-01",
+      "vehicle_model": "Fortuner",
+      "value": 421.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-10-01",
+      "vehicle_model": "Fortuner",
+      "value": 437.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-11-01",
+      "vehicle_model": "Fortuner",
+      "value": 384.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-12-01",
+      "vehicle_model": "Fortuner",
+      "value": 308.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 367.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-02-01",
+      "vehicle_model": "Fortuner",
+      "value": 307.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-03-01",
+      "vehicle_model": "Fortuner",
+      "value": 487.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-04-01",
+      "vehicle_model": "Fortuner",
+      "value": 451.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-05-01",
+      "vehicle_model": "Fortuner",
+      "value": 383.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-06-01",
+      "vehicle_model": "Fortuner",
+      "value": 321.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-07-01",
+      "vehicle_model": "Fortuner",
+      "value": 347.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-08-01",
+      "vehicle_model": "Fortuner",
+      "value": 372.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-09-01",
+      "vehicle_model": "Fortuner",
+      "value": 409.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-10-01",
+      "vehicle_model": "Fortuner",
+      "value": 445.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-11-01",
+      "vehicle_model": "Fortuner",
+      "value": 319.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-12-01",
+      "vehicle_model": "Fortuner",
+      "value": 421.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 401.67,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 401.67,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Fortuner",
+      "value": 421.17,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Fortuner",
+      "value": 375.35,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 357.75,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 357.75,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Fortuner",
+      "value": 375.88,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Fortuner",
+      "value": 356.46,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 404.69,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Fortuner",
+      "value": 404.69,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Fortuner",
+      "value": 433.45,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Fortuner",
+      "value": 415.94,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2021-07-01",
+      "vehicle_model": "Hilux",
+      "value": 865.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-08-01",
+      "vehicle_model": "Hilux",
+      "value": 658.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-09-01",
+      "vehicle_model": "Hilux",
+      "value": 815.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-10-01",
+      "vehicle_model": "Hilux",
+      "value": 644.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-11-01",
+      "vehicle_model": "Hilux",
+      "value": 602.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-12-01",
+      "vehicle_model": "Hilux",
+      "value": 834.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-01-01",
+      "vehicle_model": "Hilux",
+      "value": 861.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-02-01",
+      "vehicle_model": "Hilux",
+      "value": 792.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-03-01",
+      "vehicle_model": "Hilux",
+      "value": 635.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-04-01",
+      "vehicle_model": "Hilux",
+      "value": 653.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-05-01",
+      "vehicle_model": "Hilux",
+      "value": 682.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-06-01",
+      "vehicle_model": "Hilux",
+      "value": 613.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-07-01",
+      "vehicle_model": "Hilux",
+      "value": 701.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-08-01",
+      "vehicle_model": "Hilux",
+      "value": 744.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-09-01",
+      "vehicle_model": "Hilux",
+      "value": 860.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-10-01",
+      "vehicle_model": "Hilux",
+      "value": 655.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-11-01",
+      "vehicle_model": "Hilux",
+      "value": 845.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-12-01",
+      "vehicle_model": "Hilux",
+      "value": 680.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-01-01",
+      "vehicle_model": "Hilux",
+      "value": 805.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-02-01",
+      "vehicle_model": "Hilux",
+      "value": 817.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-03-01",
+      "vehicle_model": "Hilux",
+      "value": 731.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-04-01",
+      "vehicle_model": "Hilux",
+      "value": 872.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-05-01",
+      "vehicle_model": "Hilux",
+      "value": 815.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-06-01",
+      "vehicle_model": "Hilux",
+      "value": 780.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-07-01",
+      "vehicle_model": "Hilux",
+      "value": 845.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-08-01",
+      "vehicle_model": "Hilux",
+      "value": 618.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-09-01",
+      "vehicle_model": "Hilux",
+      "value": 897.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-10-01",
+      "vehicle_model": "Hilux",
+      "value": 798.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-11-01",
+      "vehicle_model": "Hilux",
+      "value": 747.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-12-01",
+      "vehicle_model": "Hilux",
+      "value": 749.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-01-01",
+      "vehicle_model": "Hilux",
+      "value": 879.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-02-01",
+      "vehicle_model": "Hilux",
+      "value": 776.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-03-01",
+      "vehicle_model": "Hilux",
+      "value": 721.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-04-01",
+      "vehicle_model": "Hilux",
+      "value": 626.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-05-01",
+      "vehicle_model": "Hilux",
+      "value": 879.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-06-01",
+      "vehicle_model": "Hilux",
+      "value": 611.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-07-01",
+      "vehicle_model": "Hilux",
+      "value": 788.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-08-01",
+      "vehicle_model": "Hilux",
+      "value": 639.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-09-01",
+      "vehicle_model": "Hilux",
+      "value": 667.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-10-01",
+      "vehicle_model": "Hilux",
+      "value": 617.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-11-01",
+      "vehicle_model": "Hilux",
+      "value": 696.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-12-01",
+      "vehicle_model": "Hilux",
+      "value": 855.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-01-01",
+      "vehicle_model": "Hilux",
+      "value": 888.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-02-01",
+      "vehicle_model": "Hilux",
+      "value": 826.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-03-01",
+      "vehicle_model": "Hilux",
+      "value": 889.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-04-01",
+      "vehicle_model": "Hilux",
+      "value": 655.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-05-01",
+      "vehicle_model": "Hilux",
+      "value": 767.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-06-01",
+      "vehicle_model": "Hilux",
+      "value": 650.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-07-01",
+      "vehicle_model": "Hilux",
+      "value": 842.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-08-01",
+      "vehicle_model": "Hilux",
+      "value": 852.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-09-01",
+      "vehicle_model": "Hilux",
+      "value": 688.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-10-01",
+      "vehicle_model": "Hilux",
+      "value": 741.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-11-01",
+      "vehicle_model": "Hilux",
+      "value": 785.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-12-01",
+      "vehicle_model": "Hilux",
+      "value": 762.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Hilux",
+      "value": 802.43,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Hilux",
+      "value": 802.43,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Hilux",
+      "value": 771.45,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Hilux",
+      "value": 729.01,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Hilux",
+      "value": 764.85,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Hilux",
+      "value": 764.85,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Hilux",
+      "value": 773.12,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Hilux",
+      "value": 738.95,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Hilux",
+      "value": 781.63,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Hilux",
+      "value": 781.63,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Hilux",
+      "value": 766.38,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Hilux",
+      "value": 771.02,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2021-07-01",
+      "vehicle_model": "Innova",
+      "value": 613.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-08-01",
+      "vehicle_model": "Innova",
+      "value": 624.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-09-01",
+      "vehicle_model": "Innova",
+      "value": 466.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-10-01",
+      "vehicle_model": "Innova",
+      "value": 518.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-11-01",
+      "vehicle_model": "Innova",
+      "value": 537.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-12-01",
+      "vehicle_model": "Innova",
+      "value": 490.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-01-01",
+      "vehicle_model": "Innova",
+      "value": 637.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-02-01",
+      "vehicle_model": "Innova",
+      "value": 521.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-03-01",
+      "vehicle_model": "Innova",
+      "value": 585.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-04-01",
+      "vehicle_model": "Innova",
+      "value": 539.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-05-01",
+      "vehicle_model": "Innova",
+      "value": 494.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-06-01",
+      "vehicle_model": "Innova",
+      "value": 519.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-07-01",
+      "vehicle_model": "Innova",
+      "value": 500.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-08-01",
+      "vehicle_model": "Innova",
+      "value": 477.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-09-01",
+      "vehicle_model": "Innova",
+      "value": 641.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-10-01",
+      "vehicle_model": "Innova",
+      "value": 650.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-11-01",
+      "vehicle_model": "Innova",
+      "value": 570.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-12-01",
+      "vehicle_model": "Innova",
+      "value": 577.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-01-01",
+      "vehicle_model": "Innova",
+      "value": 632.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-02-01",
+      "vehicle_model": "Innova",
+      "value": 579.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-03-01",
+      "vehicle_model": "Innova",
+      "value": 564.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-04-01",
+      "vehicle_model": "Innova",
+      "value": 523.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-05-01",
+      "vehicle_model": "Innova",
+      "value": 552.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-06-01",
+      "vehicle_model": "Innova",
+      "value": 588.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-07-01",
+      "vehicle_model": "Innova",
+      "value": 529.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-08-01",
+      "vehicle_model": "Innova",
+      "value": 521.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-09-01",
+      "vehicle_model": "Innova",
+      "value": 621.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-10-01",
+      "vehicle_model": "Innova",
+      "value": 493.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-11-01",
+      "vehicle_model": "Innova",
+      "value": 629.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-12-01",
+      "vehicle_model": "Innova",
+      "value": 645.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-01-01",
+      "vehicle_model": "Innova",
+      "value": 465.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-02-01",
+      "vehicle_model": "Innova",
+      "value": 630.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-03-01",
+      "vehicle_model": "Innova",
+      "value": 632.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-04-01",
+      "vehicle_model": "Innova",
+      "value": 648.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-05-01",
+      "vehicle_model": "Innova",
+      "value": 635.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-06-01",
+      "vehicle_model": "Innova",
+      "value": 477.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-07-01",
+      "vehicle_model": "Innova",
+      "value": 456.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-08-01",
+      "vehicle_model": "Innova",
+      "value": 607.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-09-01",
+      "vehicle_model": "Innova",
+      "value": 563.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-10-01",
+      "vehicle_model": "Innova",
+      "value": 542.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-11-01",
+      "vehicle_model": "Innova",
+      "value": 559.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-12-01",
+      "vehicle_model": "Innova",
+      "value": 634.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-01-01",
+      "vehicle_model": "Innova",
+      "value": 588.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-02-01",
+      "vehicle_model": "Innova",
+      "value": 478.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-03-01",
+      "vehicle_model": "Innova",
+      "value": 576.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-04-01",
+      "vehicle_model": "Innova",
+      "value": 626.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-05-01",
+      "vehicle_model": "Innova",
+      "value": 617.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-06-01",
+      "vehicle_model": "Innova",
+      "value": 474.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-07-01",
+      "vehicle_model": "Innova",
+      "value": 612.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-08-01",
+      "vehicle_model": "Innova",
+      "value": 467.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-09-01",
+      "vehicle_model": "Innova",
+      "value": 641.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-10-01",
+      "vehicle_model": "Innova",
+      "value": 475.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-11-01",
+      "vehicle_model": "Innova",
+      "value": 586.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-12-01",
+      "vehicle_model": "Innova",
+      "value": 483.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Innova",
+      "value": 562.98,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Innova",
+      "value": 562.98,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Innova",
+      "value": 587.52,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Innova",
+      "value": 560.39,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Innova",
+      "value": 485.53,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Innova",
+      "value": 485.53,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Innova",
+      "value": 542.23,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Innova",
+      "value": 468.84,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Innova",
+      "value": 516.43,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Innova",
+      "value": 516.43,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Innova",
+      "value": 577.45,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Innova",
+      "value": 524.56,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2021-07-01",
+      "vehicle_model": "Raize",
+      "value": 621.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-08-01",
+      "vehicle_model": "Raize",
+      "value": 695.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-09-01",
+      "vehicle_model": "Raize",
+      "value": 711.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-10-01",
+      "vehicle_model": "Raize",
+      "value": 539.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-11-01",
+      "vehicle_model": "Raize",
+      "value": 597.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-12-01",
+      "vehicle_model": "Raize",
+      "value": 514.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-01-01",
+      "vehicle_model": "Raize",
+      "value": 799.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-02-01",
+      "vehicle_model": "Raize",
+      "value": 633.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-03-01",
+      "vehicle_model": "Raize",
+      "value": 669.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-04-01",
+      "vehicle_model": "Raize",
+      "value": 795.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-05-01",
+      "vehicle_model": "Raize",
+      "value": 683.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-06-01",
+      "vehicle_model": "Raize",
+      "value": 759.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-07-01",
+      "vehicle_model": "Raize",
+      "value": 728.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-08-01",
+      "vehicle_model": "Raize",
+      "value": 680.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-09-01",
+      "vehicle_model": "Raize",
+      "value": 531.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-10-01",
+      "vehicle_model": "Raize",
+      "value": 580.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-11-01",
+      "vehicle_model": "Raize",
+      "value": 601.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-12-01",
+      "vehicle_model": "Raize",
+      "value": 683.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-01-01",
+      "vehicle_model": "Raize",
+      "value": 500.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-02-01",
+      "vehicle_model": "Raize",
+      "value": 673.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-03-01",
+      "vehicle_model": "Raize",
+      "value": 632.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-04-01",
+      "vehicle_model": "Raize",
+      "value": 733.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-05-01",
+      "vehicle_model": "Raize",
+      "value": 759.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-06-01",
+      "vehicle_model": "Raize",
+      "value": 600.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-07-01",
+      "vehicle_model": "Raize",
+      "value": 534.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-08-01",
+      "vehicle_model": "Raize",
+      "value": 700.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-09-01",
+      "vehicle_model": "Raize",
+      "value": 674.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-10-01",
+      "vehicle_model": "Raize",
+      "value": 690.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-11-01",
+      "vehicle_model": "Raize",
+      "value": 727.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-12-01",
+      "vehicle_model": "Raize",
+      "value": 697.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-01-01",
+      "vehicle_model": "Raize",
+      "value": 792.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-02-01",
+      "vehicle_model": "Raize",
+      "value": 560.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-03-01",
+      "vehicle_model": "Raize",
+      "value": 739.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-04-01",
+      "vehicle_model": "Raize",
+      "value": 555.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-05-01",
+      "vehicle_model": "Raize",
+      "value": 672.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-06-01",
+      "vehicle_model": "Raize",
+      "value": 741.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-07-01",
+      "vehicle_model": "Raize",
+      "value": 692.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-08-01",
+      "vehicle_model": "Raize",
+      "value": 573.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-09-01",
+      "vehicle_model": "Raize",
+      "value": 710.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-10-01",
+      "vehicle_model": "Raize",
+      "value": 755.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-11-01",
+      "vehicle_model": "Raize",
+      "value": 756.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-12-01",
+      "vehicle_model": "Raize",
+      "value": 542.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-01-01",
+      "vehicle_model": "Raize",
+      "value": 733.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-02-01",
+      "vehicle_model": "Raize",
+      "value": 588.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-03-01",
+      "vehicle_model": "Raize",
+      "value": 679.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-04-01",
+      "vehicle_model": "Raize",
+      "value": 648.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-05-01",
+      "vehicle_model": "Raize",
+      "value": 765.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-06-01",
+      "vehicle_model": "Raize",
+      "value": 719.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-07-01",
+      "vehicle_model": "Raize",
+      "value": 598.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-08-01",
+      "vehicle_model": "Raize",
+      "value": 643.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-09-01",
+      "vehicle_model": "Raize",
+      "value": 674.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-10-01",
+      "vehicle_model": "Raize",
+      "value": 738.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-11-01",
+      "vehicle_model": "Raize",
+      "value": 719.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-12-01",
+      "vehicle_model": "Raize",
+      "value": 601.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Raize",
+      "value": 697.56,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Raize",
+      "value": 697.56,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Raize",
+      "value": 696.87,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Raize",
+      "value": 692.37,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Raize",
+      "value": 778.73,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Raize",
+      "value": 778.73,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Raize",
+      "value": 639.25,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Raize",
+      "value": 664.55,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Raize",
+      "value": 705.54,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Raize",
+      "value": 705.54,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Raize",
+      "value": 693.49,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Raize",
+      "value": 691.07,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2021-07-01",
+      "vehicle_model": "Vios",
+      "value": 839.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-08-01",
+      "vehicle_model": "Vios",
+      "value": 889.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-09-01",
+      "vehicle_model": "Vios",
+      "value": 801.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-10-01",
+      "vehicle_model": "Vios",
+      "value": 772.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-11-01",
+      "vehicle_model": "Vios",
+      "value": 772.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-12-01",
+      "vehicle_model": "Vios",
+      "value": 720.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-01-01",
+      "vehicle_model": "Vios",
+      "value": 762.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-02-01",
+      "vehicle_model": "Vios",
+      "value": 869.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-03-01",
+      "vehicle_model": "Vios",
+      "value": 856.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-04-01",
+      "vehicle_model": "Vios",
+      "value": 721.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-05-01",
+      "vehicle_model": "Vios",
+      "value": 700.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-06-01",
+      "vehicle_model": "Vios",
+      "value": 847.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-07-01",
+      "vehicle_model": "Vios",
+      "value": 822.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-08-01",
+      "vehicle_model": "Vios",
+      "value": 831.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-09-01",
+      "vehicle_model": "Vios",
+      "value": 850.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-10-01",
+      "vehicle_model": "Vios",
+      "value": 808.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-11-01",
+      "vehicle_model": "Vios",
+      "value": 769.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-12-01",
+      "vehicle_model": "Vios",
+      "value": 858.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-01-01",
+      "vehicle_model": "Vios",
+      "value": 892.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-02-01",
+      "vehicle_model": "Vios",
+      "value": 767.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-03-01",
+      "vehicle_model": "Vios",
+      "value": 843.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-04-01",
+      "vehicle_model": "Vios",
+      "value": 875.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-05-01",
+      "vehicle_model": "Vios",
+      "value": 870.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-06-01",
+      "vehicle_model": "Vios",
+      "value": 870.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-07-01",
+      "vehicle_model": "Vios",
+      "value": 770.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-08-01",
+      "vehicle_model": "Vios",
+      "value": 870.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-09-01",
+      "vehicle_model": "Vios",
+      "value": 743.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-10-01",
+      "vehicle_model": "Vios",
+      "value": 866.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-11-01",
+      "vehicle_model": "Vios",
+      "value": 850.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-12-01",
+      "vehicle_model": "Vios",
+      "value": 837.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-01-01",
+      "vehicle_model": "Vios",
+      "value": 804.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-02-01",
+      "vehicle_model": "Vios",
+      "value": 832.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-03-01",
+      "vehicle_model": "Vios",
+      "value": 779.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-04-01",
+      "vehicle_model": "Vios",
+      "value": 726.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-05-01",
+      "vehicle_model": "Vios",
+      "value": 731.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-06-01",
+      "vehicle_model": "Vios",
+      "value": 743.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-07-01",
+      "vehicle_model": "Vios",
+      "value": 745.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-08-01",
+      "vehicle_model": "Vios",
+      "value": 846.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-09-01",
+      "vehicle_model": "Vios",
+      "value": 700.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-10-01",
+      "vehicle_model": "Vios",
+      "value": 897.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-11-01",
+      "vehicle_model": "Vios",
+      "value": 755.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-12-01",
+      "vehicle_model": "Vios",
+      "value": 898.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-01-01",
+      "vehicle_model": "Vios",
+      "value": 747.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-02-01",
+      "vehicle_model": "Vios",
+      "value": 781.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-03-01",
+      "vehicle_model": "Vios",
+      "value": 822.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-04-01",
+      "vehicle_model": "Vios",
+      "value": 887.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-05-01",
+      "vehicle_model": "Vios",
+      "value": 771.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-06-01",
+      "vehicle_model": "Vios",
+      "value": 799.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-07-01",
+      "vehicle_model": "Vios",
+      "value": 799.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-08-01",
+      "vehicle_model": "Vios",
+      "value": 859.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-09-01",
+      "vehicle_model": "Vios",
+      "value": 802.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-10-01",
+      "vehicle_model": "Vios",
+      "value": 841.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-11-01",
+      "vehicle_model": "Vios",
+      "value": 868.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-12-01",
+      "vehicle_model": "Vios",
+      "value": 703.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Vios",
+      "value": 791.92,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Vios",
+      "value": 791.92,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Vios",
+      "value": 777.81,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Vios",
+      "value": 769.73,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Vios",
+      "value": 831.31,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Vios",
+      "value": 831.31,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Vios",
+      "value": 817.6,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Vios",
+      "value": 800.83,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Vios",
+      "value": 793.92,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Vios",
+      "value": 793.92,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Vios",
+      "value": 783.43,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Vios",
+      "value": 779.64,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2021-07-01",
+      "vehicle_model": "Wigo",
+      "value": 478.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-08-01",
+      "vehicle_model": "Wigo",
+      "value": 460.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-09-01",
+      "vehicle_model": "Wigo",
+      "value": 416.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-10-01",
+      "vehicle_model": "Wigo",
+      "value": 508.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-11-01",
+      "vehicle_model": "Wigo",
+      "value": 456.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2021-12-01",
+      "vehicle_model": "Wigo",
+      "value": 512.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-01-01",
+      "vehicle_model": "Wigo",
+      "value": 553.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-02-01",
+      "vehicle_model": "Wigo",
+      "value": 409.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-03-01",
+      "vehicle_model": "Wigo",
+      "value": 579.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-04-01",
+      "vehicle_model": "Wigo",
+      "value": 535.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-05-01",
+      "vehicle_model": "Wigo",
+      "value": 483.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-06-01",
+      "vehicle_model": "Wigo",
+      "value": 484.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-07-01",
+      "vehicle_model": "Wigo",
+      "value": 488.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-08-01",
+      "vehicle_model": "Wigo",
+      "value": 486.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-09-01",
+      "vehicle_model": "Wigo",
+      "value": 452.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-10-01",
+      "vehicle_model": "Wigo",
+      "value": 564.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-11-01",
+      "vehicle_model": "Wigo",
+      "value": 470.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2022-12-01",
+      "vehicle_model": "Wigo",
+      "value": 409.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-01-01",
+      "vehicle_model": "Wigo",
+      "value": 434.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-02-01",
+      "vehicle_model": "Wigo",
+      "value": 451.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-03-01",
+      "vehicle_model": "Wigo",
+      "value": 437.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-04-01",
+      "vehicle_model": "Wigo",
+      "value": 425.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-05-01",
+      "vehicle_model": "Wigo",
+      "value": 535.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-06-01",
+      "vehicle_model": "Wigo",
+      "value": 544.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-07-01",
+      "vehicle_model": "Wigo",
+      "value": 555.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-08-01",
+      "vehicle_model": "Wigo",
+      "value": 573.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-09-01",
+      "vehicle_model": "Wigo",
+      "value": 451.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-10-01",
+      "vehicle_model": "Wigo",
+      "value": 499.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-11-01",
+      "vehicle_model": "Wigo",
+      "value": 523.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2023-12-01",
+      "vehicle_model": "Wigo",
+      "value": 506.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-01-01",
+      "vehicle_model": "Wigo",
+      "value": 571.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-02-01",
+      "vehicle_model": "Wigo",
+      "value": 550.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-03-01",
+      "vehicle_model": "Wigo",
+      "value": 508.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-04-01",
+      "vehicle_model": "Wigo",
+      "value": 430.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-05-01",
+      "vehicle_model": "Wigo",
+      "value": 529.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-06-01",
+      "vehicle_model": "Wigo",
+      "value": 474.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-07-01",
+      "vehicle_model": "Wigo",
+      "value": 518.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-08-01",
+      "vehicle_model": "Wigo",
+      "value": 502.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-09-01",
+      "vehicle_model": "Wigo",
+      "value": 416.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-10-01",
+      "vehicle_model": "Wigo",
+      "value": 414.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-11-01",
+      "vehicle_model": "Wigo",
+      "value": 437.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2024-12-01",
+      "vehicle_model": "Wigo",
+      "value": 464.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-01-01",
+      "vehicle_model": "Wigo",
+      "value": 431.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-02-01",
+      "vehicle_model": "Wigo",
+      "value": 540.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-03-01",
+      "vehicle_model": "Wigo",
+      "value": 503.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-04-01",
+      "vehicle_model": "Wigo",
+      "value": 542.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-05-01",
+      "vehicle_model": "Wigo",
+      "value": 582.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-06-01",
+      "vehicle_model": "Wigo",
+      "value": 567.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-07-01",
+      "vehicle_model": "Wigo",
+      "value": 436.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-08-01",
+      "vehicle_model": "Wigo",
+      "value": 585.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-09-01",
+      "vehicle_model": "Wigo",
+      "value": 447.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-10-01",
+      "vehicle_model": "Wigo",
+      "value": 526.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-11-01",
+      "vehicle_model": "Wigo",
+      "value": 422.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2025-12-01",
+      "vehicle_model": "Wigo",
+      "value": 460.0,
+      "series_type": "actual",
+      "model_key": "actual",
+      "model_name": "Actual Sales",
+      "forecast_horizon": 0,
+      "forecast_step": 0
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Wigo",
+      "value": 476.85,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Wigo",
+      "value": 476.85,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Wigo",
+      "value": 468.94,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Wigo",
+      "value": 471.16,
+      "series_type": "forecast",
+      "model_key": "extra_trees",
+      "model_name": "Extra Trees",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Wigo",
+      "value": 506.27,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Wigo",
+      "value": 506.27,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Wigo",
+      "value": 458.9,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Wigo",
+      "value": 433.39,
+      "series_type": "forecast",
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Wigo",
+      "value": 483.62,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 1,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-01-01",
+      "vehicle_model": "Wigo",
+      "value": 483.62,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 1
+    },
+    {
+      "month": "2026-02-01",
+      "vehicle_model": "Wigo",
+      "value": 472.61,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 2
+    },
+    {
+      "month": "2026-03-01",
+      "vehicle_model": "Wigo",
+      "value": 465.04,
+      "series_type": "forecast",
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "forecast_horizon": 3,
+      "forecast_step": 3
+    }
+  ]
+}
