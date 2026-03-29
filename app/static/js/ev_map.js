@@ -161,6 +161,50 @@ function updateRouteSummary(distanceKm, batteryPercent){
     return batteryDistance; // ⭐ return for reuse
 }
 
+// ===============================
+// DISTANCE BETWEEN TWO POINTS (KM)
+// ===============================
+function distanceBetween(a, b){
+
+    const R = 6371; // Earth radius km
+
+    const dLat = (b.lat - a.lat) * Math.PI/180;
+    const dLng = (b.lng - a.lng) * Math.PI/180;
+
+    const lat1 = a.lat * Math.PI/180;
+    const lat2 = b.lat * Math.PI/180;
+
+    const x =
+        Math.sin(dLat/2)**2 +
+        Math.sin(dLng/2)**2 *
+        Math.cos(lat1) *
+        Math.cos(lat2);
+
+    return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1-x));
+}
+
+// ===============================
+// CHECK DISTANCE FROM ROUTE PATH
+// ===============================
+function distanceToRoute(station, routeCoords){
+
+    let minDistance = Infinity;
+
+    for(const coord of routeCoords){
+
+        const routePoint = {
+            lat: coord[1],
+            lng: coord[0]
+        };
+
+        const d = distanceBetween(station, routePoint);
+
+        if(d < minDistance)
+            minDistance = d;
+    }
+
+    return minDistance; // km from route
+}
 
 // ===============================
 // SMART ROUTING SYSTEM
@@ -234,31 +278,43 @@ document.getElementById("routeBtn").onclick = async ()=>{
         return;
     }
 
+// ===============================
+// FIND BEST STATION ALONG ROUTE
+// ===============================
+const routeCoordsRaw =
+    direct.routes[0].geometry.coordinates;
 
-    // ===============================
-    // NEED CHARGING
-    // ===============================
-    let bestStation=null;
-    let bestDistance=Infinity;
+// distance user can travel
+let bestStation = null;
+let bestScore = Infinity;
 
-    for(const s of stations){
+for(const s of stations){
+    // route from start → station
+    const routeToStation = await getRoute(start, s);
+    if(!routeToStation.routes.length) continue;
 
-        const route=await getRoute(start,s);
-        if(!route.routes.length) continue;
+    const stationDistance =
+        routeToStation.routes[0].distance / 1000;
 
-        const stationDistance =
-            route.routes[0].distance/1000;
+    // must be reachable
+    if(stationDistance > batteryDistance)
+        continue;
 
-        // ⭐ IMPORTANT RULE:
-        // battery distance must NOT be less
-        // than station distance
-        if(stationDistance <= batteryDistance &&
-           stationDistance < bestDistance){
+    // ⭐ distance from main route
+    const deviation =
+        distanceToRoute(s, routeCoordsRaw);
 
-            bestDistance = stationDistance;
-            bestStation = s;
-        }
+    /*
+        SCORE SYSTEM:
+        smaller deviation = better
+    */
+    const score = deviation;
+    if(score < bestScore){
+        bestScore = score;
+        bestStation = s;
+        bestDistance = stationDistance;
     }
+}
 
     // NO REACHABLE STATION
     if(!bestStation){
