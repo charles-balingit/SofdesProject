@@ -25,14 +25,22 @@ const chargingIcon = L.divIcon({
 // NCR CHARGING STATIONS
 // ===============================
 const stations = [
- {name:"SM North EDSA EV",lat:14.6567,lng:121.0281},
- {name:"Trinoma EV Station",lat:14.6535,lng:121.0336},
- {name:"BGC Stopover Charging",lat:14.5520,lng:121.0487},
- {name:"Makati Circuit EV",lat:14.5636,lng:121.0190},
- {name:"Ortigas EV Station",lat:14.5869,lng:121.0614},
- {name:"SM Megamall EV",lat:14.5849,lng:121.0567},
- {name:"MOA EV Charging",lat:14.5350,lng:120.9822},
- {name:"Robinsons Manila EV",lat:14.5764,lng:120.9880}
+    { name:"SM North EDSA EV Charging", lat:14.6569, lng:121.0296 },
+    { name:"SM Aura Premier EV Charging", lat:14.5453, lng:121.0537 },
+    { name:"SM Mall of Asia EV Charging", lat:14.5350, lng:120.9822 },
+    { name:"SM Megamall EV Charging", lat:14.5849, lng:121.0567 },
+    { name:"SM City Manila EV Charging", lat:14.5896, lng:120.9817 },
+    { name:"SM City Fairview EV Charging", lat:14.7346, lng:121.0583 },
+    { name:"SM City Bicutan EV Charging", lat:14.4876, lng:121.0447 },
+    { name:"SM City Marikina EV Charging", lat:14.6255, lng:121.1012 },
+    { name:"SM Southmall EV Charging", lat:14.4326, lng:120.9793 },
+    { name:"Quezon City Hall EV Charging", lat:14.6511, lng:121.0495 },
+    { name:"UP Diliman EV Charging Station", lat:14.6548, lng:121.0687 },
+    { name:"Pasig City Hall EV Charging", lat:14.5764, lng:121.0851 },
+    { name:"Nissan Mantrade Makati Charging", lat:14.5312, lng:121.0113 },
+    { name:"Nissan Otis Manila Charging", lat:14.5790, lng:120.9972 },
+    { name:"The Podium EV Charging Station", lat:14.5865, lng:121.0574 },
+    { name:"Go Station Katipunan EV Charging", lat:14.6380, lng:121.0755 }
 ];
 
 // ===============================
