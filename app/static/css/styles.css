@@ -1020,14 +1020,13 @@ select {
 .left-row {
     display: flex;
     flex-direction: column;
-    width: 55%;
-    gap: 10px;
+    width: 60%;
 }
 
 .right-row {
     display: flex;
     flex-direction: column;
-    width: 15%;
+    width: 30%;
 }
 
 /* labels */
