@@ -1009,7 +1009,7 @@ select {
 .forecast-controls {
     display: flex;
     flex-wrap: wrap;
-    background: #111827;
+    background: #020617;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #1f2937;
@@ -1020,13 +1020,13 @@ select {
 .left-row {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
 }
 
 .right-row {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 30%;
 }
 
 /* labels */
@@ -1068,6 +1068,7 @@ select {
     cursor: pointer;
     transition: all 0.25s ease;
     font-size: 15px;
+    font-weight: bold;
 }
 
 .forecast-btn:hover {
