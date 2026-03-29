@@ -951,7 +951,7 @@ select {
 }
 
 #routeBtn{
-    margin-top:30px;
+    margin-top:35px;
     padding:10px;
     border: 1px solid #374151;
     border-radius:6px;
@@ -1015,7 +1015,6 @@ select {
     border: 1px solid #1f2937;
     width: 80%;
     margin: 20px auto;
-    gap: 10px;
 } 
 
 .left-row {
