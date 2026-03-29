@@ -287,28 +287,29 @@ document.getElementById("routeBtn").onclick = async ()=>{
     // distance user can travel
     let bestStation = null;
     let bestScore = Infinity;
+    let bestDistance = Infinity;
 
     for(const s of stations){
-    // route from start → station
         const routeToStation = await getRoute(start, s);
         if(!routeToStation.routes.length) continue;
 
         const stationDistance =
             routeToStation.routes[0].distance / 1000;
 
-        // must be reachable
         if(stationDistance > batteryDistance)
             continue;
 
-        // ⭐ distance from main route
         const deviation =
             distanceToRoute(s, routeCoordsRaw);
 
-        /*
-        SCORE SYSTEM:
-        smaller deviation = better
-        */
-        const score = deviation;
+        if(deviation > 5) continue; // avoid big detours
+
+        const distToDestination =
+            distanceBetween(s, destination);
+
+        const score =
+            deviation + (distToDestination * 0.15);
+
         if(score < bestScore){
             bestScore = score;
             bestStation = s;
@@ -318,7 +319,6 @@ document.getElementById("routeBtn").onclick = async ()=>{
 
         // NO REACHABLE STATION
     if(!bestStation){
-
         document.getElementById("routeInfo").innerHTML =
         `<div class="route-card">
             🔴 DANGER<br>
