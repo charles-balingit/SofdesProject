@@ -9,6 +9,7 @@
         Sign in or register your electric vehicle.
     </p>
 
+    <!-- Tabs -->
     <div class="auth-tabs">
         <a href="/">Home</a>
         <a href="/login">Sign In</a>
@@ -18,68 +19,55 @@
     <form method="POST" class="auth-form">
 
         <label>First Name</label>
-        <input
-            type="text"
-            name="firstname"
-            value="{{ form_data.firstname if form_data else '' }}"
-            required
-        >
+        <input type="text" name="firstname"
+        value="{{ form_data.firstname if form_data else '' }}">
 
         <label>Last Name</label>
-        <input
-            type="text"
-            name="lastname"
-            value="{{ form_data.lastname if form_data else '' }}"
-            required
-        >
+        <input type="text" name="lastname"
+        value="{{ form_data.lastname if form_data else '' }}">
 
         <label>Username</label>
-        <input
-            type="text"
-            name="username"
-            value="{{ form_data.username if form_data else '' }}"
-            required
-        >
+        <input type="text" name="username"
+        value="{{ form_data.username if form_data else '' }}">
 
         <label>Email</label>
-        <input
-            type="email"
-            name="email"
-            placeholder="email"
-            value="{{ form_data.email if form_data else '' }}"
-            required
-        >
+        <input type="email" name="email" placeholder="email" required>
 
+        <!-- Password -->
         <label>Password</label>
         <div class="password-field">
             <input type="password" name="password" required>
             <span class="eye" onclick="togglePassword(this)">👁</span>
         </div>
 
+        <!-- Confirm Password -->
         <label>Confirm Password</label>
         <div class="password-field">
             <input type="password" name="confirm_password" required>
             <span class="eye" onclick="togglePassword(this)">👁</span>
         </div>
 
+        <!-- Vehicle -->
         <label>Select Which type of Vehicle</label>
-        <select name="vehicle_type" required>
+        <select name="vehicle" required>
             <option value="">Select Vehicle</option>
-            <option value="Toyota bZ4X" {% if form_data and form_data.vehicle_type == "Toyota bZ4X" %}selected{% endif %}>Toyota bZ4X</option>
-            <option value="Prius" {% if form_data and form_data.vehicle_type == "Prius" %}selected{% endif %}>Prius</option>
-            <option value="Nissan Leaf" {% if form_data and form_data.vehicle_type == "Nissan Leaf" %}selected{% endif %}>Nissan Leaf</option>
-            <option value="Tesla Model 3" {% if form_data and form_data.vehicle_type == "Tesla Model 3" %}selected{% endif %}>Tesla Model 3</option>
-            <option value="Tesla Model Y" {% if form_data and form_data.vehicle_type == "Tesla Model Y" %}selected{% endif %}>Tesla Model Y</option>
-            <option value="Hyundai Ioniq 5" {% if form_data and form_data.vehicle_type == "Hyundai Ioniq 5" %}selected{% endif %}>Hyundai Ioniq 5</option>
-            <option value="Kia EV6" {% if form_data and form_data.vehicle_type == "Kia EV6" %}selected{% endif %}>Kia EV6</option>
-            <option value="BYD Atto 3" {% if form_data and form_data.vehicle_type == "BYD Atto 3" %}selected{% endif %}>BYD Atto 3</option>
-            <option value="MG ZS EV" {% if form_data and form_data.vehicle_type == "MG ZS EV" %}selected{% endif %}>MG ZS EV</option>
+            <option>Toyota bZ4X</option>
+            <option>Prius</option>
+            <option>Nissan Leaf</option>
+            <option>Tesla Model 3</option>
+            <option>Tesla Model Y</option>
+            <option>Hyundai Ioniq 5</option>
+            <option>Kia EV6</option>
+            <option>BYD Atto 3</option>
+            <option>MG ZS EV</option>
         </select>
 
+        <!-- Privacy Disclosure Button -->
         <button type="button" class="outline-btn" onclick="openDisclosure()">
             View Privacy Disclosure
         </button>
 
+        <!-- Disclosure Modal -->
         <div id="privacyModal" class="modal">
             <div class="modal-content">
                 <h2>Privacy Disclosure</h2>
@@ -96,6 +84,7 @@
             </div>
         </div>
 
+        <!-- Checkbox -->
         <div class="checkbox">
             <input type="checkbox" id="privacyCheck" name="privacy" disabled>
             <span>I have read and understood the privacy disclosure.</span>
@@ -105,6 +94,7 @@
             Sign Up
         </button>
 
+    <!-- FLASH MESSAGE -->
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
             <div class="form-messages">
