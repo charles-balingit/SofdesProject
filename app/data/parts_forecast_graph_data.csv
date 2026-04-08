@@ -1,0 +1,73 @@
+model_key,part_id,part_name,category,forecast_step,forecast_horizon_label,forecast_date,forecast_demand
+extra_trees,BAT001,Battery Module,Battery,1,1_month,2025-01-01,28.88
+extra_trees,BAT001,Battery Module,Battery,2,2_months,2025-02-01,29.36
+extra_trees,BAT001,Battery Module,Battery,3,3_months,2025-03-01,29.32
+extra_trees,BRK001,Brake Pad Set,Chassis,1,1_month,2025-01-01,78.42
+extra_trees,BRK001,Brake Pad Set,Chassis,2,2_months,2025-02-01,80.32
+extra_trees,BRK001,Brake Pad Set,Chassis,3,3_months,2025-03-01,80.27
+extra_trees,CHR001,Onboard Charger,Charging,1,1_month,2025-01-01,23.61
+extra_trees,CHR001,Onboard Charger,Charging,2,2_months,2025-02-01,24.53
+extra_trees,CHR001,Onboard Charger,Charging,3,3_months,2025-03-01,21.21
+extra_trees,CLT001,Coolant Pump,Cooling,1,1_month,2025-01-01,48.59
+extra_trees,CLT001,Coolant Pump,Cooling,2,2_months,2025-02-01,49.12
+extra_trees,CLT001,Coolant Pump,Cooling,3,3_months,2025-03-01,47.58
+extra_trees,INV001,Inverter Unit,Electronics,1,1_month,2025-01-01,38.17
+extra_trees,INV001,Inverter Unit,Electronics,2,2_months,2025-02-01,42.11
+extra_trees,INV001,Inverter Unit,Electronics,3,3_months,2025-03-01,38.97
+extra_trees,MTR001,Traction Motor,Powertrain,1,1_month,2025-01-01,20.13
+extra_trees,MTR001,Traction Motor,Powertrain,2,2_months,2025-02-01,19.74
+extra_trees,MTR001,Traction Motor,Powertrain,3,3_months,2025-03-01,19.48
+extra_trees,SNS001,Sensor Kit,Electronics,1,1_month,2025-01-01,36.42
+extra_trees,SNS001,Sensor Kit,Electronics,2,2_months,2025-02-01,40.5
+extra_trees,SNS001,Sensor Kit,Electronics,3,3_months,2025-03-01,37.93
+extra_trees,TIR001,Tire Set,Wheels,1,1_month,2025-01-01,31.22
+extra_trees,TIR001,Tire Set,Wheels,2,2_months,2025-02-01,34.43
+extra_trees,TIR001,Tire Set,Wheels,3,3_months,2025-03-01,35.01
+gradient_boosting,BAT001,Battery Module,Battery,1,1_month,2025-01-01,31.78
+gradient_boosting,BAT001,Battery Module,Battery,2,2_months,2025-02-01,36.33
+gradient_boosting,BAT001,Battery Module,Battery,3,3_months,2025-03-01,34.65
+gradient_boosting,BRK001,Brake Pad Set,Chassis,1,1_month,2025-01-01,79.25
+gradient_boosting,BRK001,Brake Pad Set,Chassis,2,2_months,2025-02-01,81.36
+gradient_boosting,BRK001,Brake Pad Set,Chassis,3,3_months,2025-03-01,81.03
+gradient_boosting,CHR001,Onboard Charger,Charging,1,1_month,2025-01-01,21.47
+gradient_boosting,CHR001,Onboard Charger,Charging,2,2_months,2025-02-01,26.0
+gradient_boosting,CHR001,Onboard Charger,Charging,3,3_months,2025-03-01,26.08
+gradient_boosting,CLT001,Coolant Pump,Cooling,1,1_month,2025-01-01,48.07
+gradient_boosting,CLT001,Coolant Pump,Cooling,2,2_months,2025-02-01,51.38
+gradient_boosting,CLT001,Coolant Pump,Cooling,3,3_months,2025-03-01,45.27
+gradient_boosting,INV001,Inverter Unit,Electronics,1,1_month,2025-01-01,37.91
+gradient_boosting,INV001,Inverter Unit,Electronics,2,2_months,2025-02-01,41.95
+gradient_boosting,INV001,Inverter Unit,Electronics,3,3_months,2025-03-01,38.25
+gradient_boosting,MTR001,Traction Motor,Powertrain,1,1_month,2025-01-01,18.94
+gradient_boosting,MTR001,Traction Motor,Powertrain,2,2_months,2025-02-01,23.08
+gradient_boosting,MTR001,Traction Motor,Powertrain,3,3_months,2025-03-01,18.6
+gradient_boosting,SNS001,Sensor Kit,Electronics,1,1_month,2025-01-01,36.65
+gradient_boosting,SNS001,Sensor Kit,Electronics,2,2_months,2025-02-01,41.03
+gradient_boosting,SNS001,Sensor Kit,Electronics,3,3_months,2025-03-01,37.15
+gradient_boosting,TIR001,Tire Set,Wheels,1,1_month,2025-01-01,33.83
+gradient_boosting,TIR001,Tire Set,Wheels,2,2_months,2025-02-01,39.04
+gradient_boosting,TIR001,Tire Set,Wheels,3,3_months,2025-03-01,37.84
+random_forest,BAT001,Battery Module,Battery,1,1_month,2025-01-01,29.8
+random_forest,BAT001,Battery Module,Battery,2,2_months,2025-02-01,31.87
+random_forest,BAT001,Battery Module,Battery,3,3_months,2025-03-01,32.26
+random_forest,BRK001,Brake Pad Set,Chassis,1,1_month,2025-01-01,77.29
+random_forest,BRK001,Brake Pad Set,Chassis,2,2_months,2025-02-01,76.59
+random_forest,BRK001,Brake Pad Set,Chassis,3,3_months,2025-03-01,77.2
+random_forest,CHR001,Onboard Charger,Charging,1,1_month,2025-01-01,21.99
+random_forest,CHR001,Onboard Charger,Charging,2,2_months,2025-02-01,23.63
+random_forest,CHR001,Onboard Charger,Charging,3,3_months,2025-03-01,22.78
+random_forest,CLT001,Coolant Pump,Cooling,1,1_month,2025-01-01,47.74
+random_forest,CLT001,Coolant Pump,Cooling,2,2_months,2025-02-01,48.18
+random_forest,CLT001,Coolant Pump,Cooling,3,3_months,2025-03-01,45.53
+random_forest,INV001,Inverter Unit,Electronics,1,1_month,2025-01-01,38.0
+random_forest,INV001,Inverter Unit,Electronics,2,2_months,2025-02-01,40.56
+random_forest,INV001,Inverter Unit,Electronics,3,3_months,2025-03-01,38.53
+random_forest,MTR001,Traction Motor,Powertrain,1,1_month,2025-01-01,20.16
+random_forest,MTR001,Traction Motor,Powertrain,2,2_months,2025-02-01,19.57
+random_forest,MTR001,Traction Motor,Powertrain,3,3_months,2025-03-01,20.03
+random_forest,SNS001,Sensor Kit,Electronics,1,1_month,2025-01-01,35.35
+random_forest,SNS001,Sensor Kit,Electronics,2,2_months,2025-02-01,36.35
+random_forest,SNS001,Sensor Kit,Electronics,3,3_months,2025-03-01,37.4
+random_forest,TIR001,Tire Set,Wheels,1,1_month,2025-01-01,32.64
+random_forest,TIR001,Tire Set,Wheels,2,2_months,2025-02-01,38.42
+random_forest,TIR001,Tire Set,Wheels,3,3_months,2025-03-01,38.3

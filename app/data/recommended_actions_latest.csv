@@ -1,0 +1,25 @@
+model_key,part_id,part_name,category,supplier_name,forecast_step,forecast_date,forecast_month_num,forecast_year,forecast_demand,current_stock,on_order_qty,lead_time_days,lead_time_months,safety_factor,safety_stock,reorder_point,recommended_order_qty,alert_level,recommendation,forecast_horizon_label
+extra_trees,BAT001,Battery Module,Battery,PowerCell Inc.,3,2025-03-01,3,2025,29.32,0.0,26.0,46,2,0.5,15,74,48,High,Reorder Now,3_months
+extra_trees,BRK001,Brake Pad Set,Chassis,SafeStop Parts,3,2025-03-01,3,2025,80.27,0.0,78.0,10,1,0.5,41,122,44,High,Reorder Now,3_months
+extra_trees,CHR001,Onboard Charger,Charging,ChargeCore,3,2025-03-01,3,2025,21.21,0.0,13.0,28,1,0.5,11,33,20,High,Reorder Now,3_months
+extra_trees,CLT001,Coolant Pump,Cooling,ThermaFlow,3,2025-03-01,3,2025,47.58,5.0,32.0,20,1,0.5,24,72,35,High,Reorder Now,3_months
+extra_trees,INV001,Inverter Unit,Electronics,VoltDrive Systems,3,2025-03-01,3,2025,38.97,0.0,0.0,20,1,0.5,20,59,59,Critical,Urgent Reorder,3_months
+extra_trees,MTR001,Traction Motor,Powertrain,MotorWorks Ltd.,3,2025-03-01,3,2025,19.48,0.0,0.0,42,2,0.5,10,49,49,Critical,Urgent Reorder,3_months
+extra_trees,SNS001,Sensor Kit,Electronics,VoltDrive Systems,3,2025-03-01,3,2025,37.93,0.0,44.0,28,1,0.5,19,57,13,High,Reorder Now,3_months
+extra_trees,TIR001,Tire Set,Wheels,GripLine Tires,3,2025-03-01,3,2025,35.01,0.0,18.0,16,1,0.5,18,54,36,High,Reorder Now,3_months
+gradient_boosting,BAT001,Battery Module,Battery,PowerCell Inc.,3,2025-03-01,3,2025,34.65,0.0,26.0,46,2,0.5,18,88,62,High,Reorder Now,3_months
+gradient_boosting,BRK001,Brake Pad Set,Chassis,SafeStop Parts,3,2025-03-01,3,2025,81.03,0.0,78.0,10,1,0.5,41,123,45,High,Reorder Now,3_months
+gradient_boosting,CHR001,Onboard Charger,Charging,ChargeCore,3,2025-03-01,3,2025,26.08,0.0,13.0,28,1,0.5,14,41,28,Critical,Urgent Reorder,3_months
+gradient_boosting,CLT001,Coolant Pump,Cooling,ThermaFlow,3,2025-03-01,3,2025,45.27,5.0,32.0,20,1,0.5,23,69,32,High,Reorder Now,3_months
+gradient_boosting,INV001,Inverter Unit,Electronics,VoltDrive Systems,3,2025-03-01,3,2025,38.25,0.0,0.0,20,1,0.5,20,59,59,Critical,Urgent Reorder,3_months
+gradient_boosting,MTR001,Traction Motor,Powertrain,MotorWorks Ltd.,3,2025-03-01,3,2025,18.6,0.0,0.0,42,2,0.5,10,48,48,Critical,Urgent Reorder,3_months
+gradient_boosting,SNS001,Sensor Kit,Electronics,VoltDrive Systems,3,2025-03-01,3,2025,37.15,0.0,44.0,28,1,0.5,19,57,13,High,Reorder Now,3_months
+gradient_boosting,TIR001,Tire Set,Wheels,GripLine Tires,3,2025-03-01,3,2025,37.84,0.0,18.0,16,1,0.5,19,57,39,Critical,Urgent Reorder,3_months
+random_forest,BAT001,Battery Module,Battery,PowerCell Inc.,3,2025-03-01,3,2025,32.26,0.0,26.0,46,2,0.5,17,82,56,High,Reorder Now,3_months
+random_forest,BRK001,Brake Pad Set,Chassis,SafeStop Parts,3,2025-03-01,3,2025,77.2,0.0,78.0,10,1,0.5,39,117,39,High,Reorder Now,3_months
+random_forest,CHR001,Onboard Charger,Charging,ChargeCore,3,2025-03-01,3,2025,22.78,0.0,13.0,28,1,0.5,12,35,22,High,Reorder Now,3_months
+random_forest,CLT001,Coolant Pump,Cooling,ThermaFlow,3,2025-03-01,3,2025,45.53,5.0,32.0,20,1,0.5,23,69,32,High,Reorder Now,3_months
+random_forest,INV001,Inverter Unit,Electronics,VoltDrive Systems,3,2025-03-01,3,2025,38.53,0.0,0.0,20,1,0.5,20,59,59,Critical,Urgent Reorder,3_months
+random_forest,MTR001,Traction Motor,Powertrain,MotorWorks Ltd.,3,2025-03-01,3,2025,20.03,0.0,0.0,42,2,0.5,11,52,52,Critical,Urgent Reorder,3_months
+random_forest,SNS001,Sensor Kit,Electronics,VoltDrive Systems,3,2025-03-01,3,2025,37.4,0.0,44.0,28,1,0.5,19,57,13,High,Reorder Now,3_months
+random_forest,TIR001,Tire Set,Wheels,GripLine Tires,3,2025-03-01,3,2025,38.3,0.0,18.0,16,1,0.5,20,59,41,Critical,Urgent Reorder,3_months

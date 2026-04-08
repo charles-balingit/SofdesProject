@@ -1,0 +1,529 @@
+month,vehicle_model,value,series_type,model_key,model_name,forecast_horizon,forecast_step
+2021-07-01,Avanza,403.0,actual,actual,Actual Sales,0,0
+2021-08-01,Avanza,475.0,actual,actual,Actual Sales,0,0
+2021-09-01,Avanza,630.0,actual,actual,Actual Sales,0,0
+2021-10-01,Avanza,517.0,actual,actual,Actual Sales,0,0
+2021-11-01,Avanza,485.0,actual,actual,Actual Sales,0,0
+2021-12-01,Avanza,609.0,actual,actual,Actual Sales,0,0
+2022-01-01,Avanza,470.0,actual,actual,Actual Sales,0,0
+2022-02-01,Avanza,448.0,actual,actual,Actual Sales,0,0
+2022-03-01,Avanza,626.0,actual,actual,Actual Sales,0,0
+2022-04-01,Avanza,440.0,actual,actual,Actual Sales,0,0
+2022-05-01,Avanza,563.0,actual,actual,Actual Sales,0,0
+2022-06-01,Avanza,507.0,actual,actual,Actual Sales,0,0
+2022-07-01,Avanza,574.0,actual,actual,Actual Sales,0,0
+2022-08-01,Avanza,524.0,actual,actual,Actual Sales,0,0
+2022-09-01,Avanza,438.0,actual,actual,Actual Sales,0,0
+2022-10-01,Avanza,540.0,actual,actual,Actual Sales,0,0
+2022-11-01,Avanza,573.0,actual,actual,Actual Sales,0,0
+2022-12-01,Avanza,625.0,actual,actual,Actual Sales,0,0
+2023-01-01,Avanza,619.0,actual,actual,Actual Sales,0,0
+2023-02-01,Avanza,487.0,actual,actual,Actual Sales,0,0
+2023-03-01,Avanza,623.0,actual,actual,Actual Sales,0,0
+2023-04-01,Avanza,494.0,actual,actual,Actual Sales,0,0
+2023-05-01,Avanza,411.0,actual,actual,Actual Sales,0,0
+2023-06-01,Avanza,437.0,actual,actual,Actual Sales,0,0
+2023-07-01,Avanza,552.0,actual,actual,Actual Sales,0,0
+2023-08-01,Avanza,460.0,actual,actual,Actual Sales,0,0
+2023-09-01,Avanza,512.0,actual,actual,Actual Sales,0,0
+2023-10-01,Avanza,493.0,actual,actual,Actual Sales,0,0
+2023-11-01,Avanza,402.0,actual,actual,Actual Sales,0,0
+2023-12-01,Avanza,578.0,actual,actual,Actual Sales,0,0
+2024-01-01,Avanza,420.0,actual,actual,Actual Sales,0,0
+2024-02-01,Avanza,462.0,actual,actual,Actual Sales,0,0
+2024-03-01,Avanza,627.0,actual,actual,Actual Sales,0,0
+2024-04-01,Avanza,588.0,actual,actual,Actual Sales,0,0
+2024-05-01,Avanza,421.0,actual,actual,Actual Sales,0,0
+2024-06-01,Avanza,592.0,actual,actual,Actual Sales,0,0
+2024-07-01,Avanza,600.0,actual,actual,Actual Sales,0,0
+2024-08-01,Avanza,447.0,actual,actual,Actual Sales,0,0
+2024-09-01,Avanza,621.0,actual,actual,Actual Sales,0,0
+2024-10-01,Avanza,632.0,actual,actual,Actual Sales,0,0
+2024-11-01,Avanza,439.0,actual,actual,Actual Sales,0,0
+2024-12-01,Avanza,417.0,actual,actual,Actual Sales,0,0
+2025-01-01,Avanza,557.0,actual,actual,Actual Sales,0,0
+2025-02-01,Avanza,452.0,actual,actual,Actual Sales,0,0
+2025-03-01,Avanza,642.0,actual,actual,Actual Sales,0,0
+2025-04-01,Avanza,460.0,actual,actual,Actual Sales,0,0
+2025-05-01,Avanza,610.0,actual,actual,Actual Sales,0,0
+2025-06-01,Avanza,475.0,actual,actual,Actual Sales,0,0
+2025-07-01,Avanza,529.0,actual,actual,Actual Sales,0,0
+2025-08-01,Avanza,455.0,actual,actual,Actual Sales,0,0
+2025-09-01,Avanza,483.0,actual,actual,Actual Sales,0,0
+2025-10-01,Avanza,420.0,actual,actual,Actual Sales,0,0
+2025-11-01,Avanza,509.0,actual,actual,Actual Sales,0,0
+2025-12-01,Avanza,475.0,actual,actual,Actual Sales,0,0
+2026-01-01,Avanza,471.92,forecast,extra_trees,Extra Trees,1,1
+2026-01-01,Avanza,471.92,forecast,extra_trees,Extra Trees,3,1
+2026-02-01,Avanza,491.82,forecast,extra_trees,Extra Trees,3,2
+2026-03-01,Avanza,564.69,forecast,extra_trees,Extra Trees,3,3
+2026-01-01,Avanza,462.48,forecast,gradient_boosting,Gradient Boosting,1,1
+2026-01-01,Avanza,462.48,forecast,gradient_boosting,Gradient Boosting,3,1
+2026-02-01,Avanza,509.68,forecast,gradient_boosting,Gradient Boosting,3,2
+2026-03-01,Avanza,446.55,forecast,gradient_boosting,Gradient Boosting,3,3
+2026-01-01,Avanza,471.18,forecast,random_forest,Random Forest,1,1
+2026-01-01,Avanza,471.18,forecast,random_forest,Random Forest,3,1
+2026-02-01,Avanza,492.05,forecast,random_forest,Random Forest,3,2
+2026-03-01,Avanza,473.57,forecast,random_forest,Random Forest,3,3
+2021-07-01,Corolla Cross Hybrid,164.0,actual,actual,Actual Sales,0,0
+2021-08-01,Corolla Cross Hybrid,210.0,actual,actual,Actual Sales,0,0
+2021-09-01,Corolla Cross Hybrid,259.0,actual,actual,Actual Sales,0,0
+2021-10-01,Corolla Cross Hybrid,238.0,actual,actual,Actual Sales,0,0
+2021-11-01,Corolla Cross Hybrid,256.0,actual,actual,Actual Sales,0,0
+2021-12-01,Corolla Cross Hybrid,226.0,actual,actual,Actual Sales,0,0
+2022-01-01,Corolla Cross Hybrid,193.0,actual,actual,Actual Sales,0,0
+2022-02-01,Corolla Cross Hybrid,198.0,actual,actual,Actual Sales,0,0
+2022-03-01,Corolla Cross Hybrid,181.0,actual,actual,Actual Sales,0,0
+2022-04-01,Corolla Cross Hybrid,272.0,actual,actual,Actual Sales,0,0
+2022-05-01,Corolla Cross Hybrid,252.0,actual,actual,Actual Sales,0,0
+2022-06-01,Corolla Cross Hybrid,242.0,actual,actual,Actual Sales,0,0
+2022-07-01,Corolla Cross Hybrid,105.0,actual,actual,Actual Sales,0,0
+2022-08-01,Corolla Cross Hybrid,108.0,actual,actual,Actual Sales,0,0
+2022-09-01,Corolla Cross Hybrid,243.0,actual,actual,Actual Sales,0,0
+2022-10-01,Corolla Cross Hybrid,238.0,actual,actual,Actual Sales,0,0
+2022-11-01,Corolla Cross Hybrid,181.0,actual,actual,Actual Sales,0,0
+2022-12-01,Corolla Cross Hybrid,263.0,actual,actual,Actual Sales,0,0
+2023-01-01,Corolla Cross Hybrid,265.0,actual,actual,Actual Sales,0,0
+2023-02-01,Corolla Cross Hybrid,224.0,actual,actual,Actual Sales,0,0
+2023-03-01,Corolla Cross Hybrid,162.0,actual,actual,Actual Sales,0,0
+2023-04-01,Corolla Cross Hybrid,247.0,actual,actual,Actual Sales,0,0
+2023-05-01,Corolla Cross Hybrid,147.0,actual,actual,Actual Sales,0,0
+2023-06-01,Corolla Cross Hybrid,259.0,actual,actual,Actual Sales,0,0
+2023-07-01,Corolla Cross Hybrid,274.0,actual,actual,Actual Sales,0,0
+2023-08-01,Corolla Cross Hybrid,243.0,actual,actual,Actual Sales,0,0
+2023-09-01,Corolla Cross Hybrid,135.0,actual,actual,Actual Sales,0,0
+2023-10-01,Corolla Cross Hybrid,127.0,actual,actual,Actual Sales,0,0
+2023-11-01,Corolla Cross Hybrid,118.0,actual,actual,Actual Sales,0,0
+2023-12-01,Corolla Cross Hybrid,223.0,actual,actual,Actual Sales,0,0
+2024-01-01,Corolla Cross Hybrid,233.0,actual,actual,Actual Sales,0,0
+2024-02-01,Corolla Cross Hybrid,287.0,actual,actual,Actual Sales,0,0
+2024-03-01,Corolla Cross Hybrid,247.0,actual,actual,Actual Sales,0,0
+2024-04-01,Corolla Cross Hybrid,131.0,actual,actual,Actual Sales,0,0
+2024-05-01,Corolla Cross Hybrid,191.0,actual,actual,Actual Sales,0,0
+2024-06-01,Corolla Cross Hybrid,273.0,actual,actual,Actual Sales,0,0
+2024-07-01,Corolla Cross Hybrid,170.0,actual,actual,Actual Sales,0,0
+2024-08-01,Corolla Cross Hybrid,108.0,actual,actual,Actual Sales,0,0
+2024-09-01,Corolla Cross Hybrid,146.0,actual,actual,Actual Sales,0,0
+2024-10-01,Corolla Cross Hybrid,148.0,actual,actual,Actual Sales,0,0
+2024-11-01,Corolla Cross Hybrid,223.0,actual,actual,Actual Sales,0,0
+2024-12-01,Corolla Cross Hybrid,166.0,actual,actual,Actual Sales,0,0
+2025-01-01,Corolla Cross Hybrid,109.0,actual,actual,Actual Sales,0,0
+2025-02-01,Corolla Cross Hybrid,208.0,actual,actual,Actual Sales,0,0
+2025-03-01,Corolla Cross Hybrid,279.0,actual,actual,Actual Sales,0,0
+2025-04-01,Corolla Cross Hybrid,119.0,actual,actual,Actual Sales,0,0
+2025-05-01,Corolla Cross Hybrid,107.0,actual,actual,Actual Sales,0,0
+2025-06-01,Corolla Cross Hybrid,128.0,actual,actual,Actual Sales,0,0
+2025-07-01,Corolla Cross Hybrid,113.0,actual,actual,Actual Sales,0,0
+2025-08-01,Corolla Cross Hybrid,156.0,actual,actual,Actual Sales,0,0
+2025-09-01,Corolla Cross Hybrid,171.0,actual,actual,Actual Sales,0,0
+2025-10-01,Corolla Cross Hybrid,169.0,actual,actual,Actual Sales,0,0
+2025-11-01,Corolla Cross Hybrid,222.0,actual,actual,Actual Sales,0,0
+2025-12-01,Corolla Cross Hybrid,271.0,actual,actual,Actual Sales,0,0
+2026-01-01,Corolla Cross Hybrid,234.97,forecast,extra_trees,Extra Trees,1,1
+2026-01-01,Corolla Cross Hybrid,234.97,forecast,extra_trees,Extra Trees,3,1
+2026-02-01,Corolla Cross Hybrid,209.35,forecast,extra_trees,Extra Trees,3,2
+2026-03-01,Corolla Cross Hybrid,212.79,forecast,extra_trees,Extra Trees,3,3
+2026-01-01,Corolla Cross Hybrid,205.06,forecast,gradient_boosting,Gradient Boosting,1,1
+2026-01-01,Corolla Cross Hybrid,205.06,forecast,gradient_boosting,Gradient Boosting,3,1
+2026-02-01,Corolla Cross Hybrid,155.57,forecast,gradient_boosting,Gradient Boosting,3,2
+2026-03-01,Corolla Cross Hybrid,158.33,forecast,gradient_boosting,Gradient Boosting,3,3
+2026-01-01,Corolla Cross Hybrid,214.31,forecast,random_forest,Random Forest,1,1
+2026-01-01,Corolla Cross Hybrid,214.31,forecast,random_forest,Random Forest,3,1
+2026-02-01,Corolla Cross Hybrid,191.44,forecast,random_forest,Random Forest,3,2
+2026-03-01,Corolla Cross Hybrid,192.8,forecast,random_forest,Random Forest,3,3
+2021-07-01,Fortuner,424.0,actual,actual,Actual Sales,0,0
+2021-08-01,Fortuner,381.0,actual,actual,Actual Sales,0,0
+2021-09-01,Fortuner,352.0,actual,actual,Actual Sales,0,0
+2021-10-01,Fortuner,395.0,actual,actual,Actual Sales,0,0
+2021-11-01,Fortuner,496.0,actual,actual,Actual Sales,0,0
+2021-12-01,Fortuner,340.0,actual,actual,Actual Sales,0,0
+2022-01-01,Fortuner,461.0,actual,actual,Actual Sales,0,0
+2022-02-01,Fortuner,483.0,actual,actual,Actual Sales,0,0
+2022-03-01,Fortuner,459.0,actual,actual,Actual Sales,0,0
+2022-04-01,Fortuner,313.0,actual,actual,Actual Sales,0,0
+2022-05-01,Fortuner,495.0,actual,actual,Actual Sales,0,0
+2022-06-01,Fortuner,350.0,actual,actual,Actual Sales,0,0
+2022-07-01,Fortuner,419.0,actual,actual,Actual Sales,0,0
+2022-08-01,Fortuner,472.0,actual,actual,Actual Sales,0,0
+2022-09-01,Fortuner,366.0,actual,actual,Actual Sales,0,0
+2022-10-01,Fortuner,479.0,actual,actual,Actual Sales,0,0
+2022-11-01,Fortuner,461.0,actual,actual,Actual Sales,0,0
+2022-12-01,Fortuner,377.0,actual,actual,Actual Sales,0,0
+2023-01-01,Fortuner,301.0,actual,actual,Actual Sales,0,0
+2023-02-01,Fortuner,490.0,actual,actual,Actual Sales,0,0
+2023-03-01,Fortuner,328.0,actual,actual,Actual Sales,0,0
+2023-04-01,Fortuner,489.0,actual,actual,Actual Sales,0,0
+2023-05-01,Fortuner,352.0,actual,actual,Actual Sales,0,0
+2023-06-01,Fortuner,463.0,actual,actual,Actual Sales,0,0
+2023-07-01,Fortuner,370.0,actual,actual,Actual Sales,0,0
+2023-08-01,Fortuner,302.0,actual,actual,Actual Sales,0,0
+2023-09-01,Fortuner,354.0,actual,actual,Actual Sales,0,0
+2023-10-01,Fortuner,313.0,actual,actual,Actual Sales,0,0
+2023-11-01,Fortuner,315.0,actual,actual,Actual Sales,0,0
+2023-12-01,Fortuner,356.0,actual,actual,Actual Sales,0,0
+2024-01-01,Fortuner,342.0,actual,actual,Actual Sales,0,0
+2024-02-01,Fortuner,414.0,actual,actual,Actual Sales,0,0
+2024-03-01,Fortuner,318.0,actual,actual,Actual Sales,0,0
+2024-04-01,Fortuner,478.0,actual,actual,Actual Sales,0,0
+2024-05-01,Fortuner,411.0,actual,actual,Actual Sales,0,0
+2024-06-01,Fortuner,469.0,actual,actual,Actual Sales,0,0
+2024-07-01,Fortuner,440.0,actual,actual,Actual Sales,0,0
+2024-08-01,Fortuner,479.0,actual,actual,Actual Sales,0,0
+2024-09-01,Fortuner,421.0,actual,actual,Actual Sales,0,0
+2024-10-01,Fortuner,437.0,actual,actual,Actual Sales,0,0
+2024-11-01,Fortuner,384.0,actual,actual,Actual Sales,0,0
+2024-12-01,Fortuner,308.0,actual,actual,Actual Sales,0,0
+2025-01-01,Fortuner,367.0,actual,actual,Actual Sales,0,0
+2025-02-01,Fortuner,307.0,actual,actual,Actual Sales,0,0
+2025-03-01,Fortuner,487.0,actual,actual,Actual Sales,0,0
+2025-04-01,Fortuner,451.0,actual,actual,Actual Sales,0,0
+2025-05-01,Fortuner,383.0,actual,actual,Actual Sales,0,0
+2025-06-01,Fortuner,321.0,actual,actual,Actual Sales,0,0
+2025-07-01,Fortuner,347.0,actual,actual,Actual Sales,0,0
+2025-08-01,Fortuner,372.0,actual,actual,Actual Sales,0,0
+2025-09-01,Fortuner,409.0,actual,actual,Actual Sales,0,0
+2025-10-01,Fortuner,445.0,actual,actual,Actual Sales,0,0
+2025-11-01,Fortuner,319.0,actual,actual,Actual Sales,0,0
+2025-12-01,Fortuner,421.0,actual,actual,Actual Sales,0,0
+2026-01-01,Fortuner,401.67,forecast,extra_trees,Extra Trees,1,1
+2026-01-01,Fortuner,401.67,forecast,extra_trees,Extra Trees,3,1
+2026-02-01,Fortuner,421.17,forecast,extra_trees,Extra Trees,3,2
+2026-03-01,Fortuner,375.35,forecast,extra_trees,Extra Trees,3,3
+2026-01-01,Fortuner,357.75,forecast,gradient_boosting,Gradient Boosting,1,1
+2026-01-01,Fortuner,357.75,forecast,gradient_boosting,Gradient Boosting,3,1
+2026-02-01,Fortuner,375.88,forecast,gradient_boosting,Gradient Boosting,3,2
+2026-03-01,Fortuner,356.46,forecast,gradient_boosting,Gradient Boosting,3,3
+2026-01-01,Fortuner,404.69,forecast,random_forest,Random Forest,1,1
+2026-01-01,Fortuner,404.69,forecast,random_forest,Random Forest,3,1
+2026-02-01,Fortuner,433.45,forecast,random_forest,Random Forest,3,2
+2026-03-01,Fortuner,415.94,forecast,random_forest,Random Forest,3,3
+2021-07-01,Hilux,865.0,actual,actual,Actual Sales,0,0
+2021-08-01,Hilux,658.0,actual,actual,Actual Sales,0,0
+2021-09-01,Hilux,815.0,actual,actual,Actual Sales,0,0
+2021-10-01,Hilux,644.0,actual,actual,Actual Sales,0,0
+2021-11-01,Hilux,602.0,actual,actual,Actual Sales,0,0
+2021-12-01,Hilux,834.0,actual,actual,Actual Sales,0,0
+2022-01-01,Hilux,861.0,actual,actual,Actual Sales,0,0
+2022-02-01,Hilux,792.0,actual,actual,Actual Sales,0,0
+2022-03-01,Hilux,635.0,actual,actual,Actual Sales,0,0
+2022-04-01,Hilux,653.0,actual,actual,Actual Sales,0,0
+2022-05-01,Hilux,682.0,actual,actual,Actual Sales,0,0
+2022-06-01,Hilux,613.0,actual,actual,Actual Sales,0,0
+2022-07-01,Hilux,701.0,actual,actual,Actual Sales,0,0
+2022-08-01,Hilux,744.0,actual,actual,Actual Sales,0,0
+2022-09-01,Hilux,860.0,actual,actual,Actual Sales,0,0
+2022-10-01,Hilux,655.0,actual,actual,Actual Sales,0,0
+2022-11-01,Hilux,845.0,actual,actual,Actual Sales,0,0
+2022-12-01,Hilux,680.0,actual,actual,Actual Sales,0,0
+2023-01-01,Hilux,805.0,actual,actual,Actual Sales,0,0
+2023-02-01,Hilux,817.0,actual,actual,Actual Sales,0,0
+2023-03-01,Hilux,731.0,actual,actual,Actual Sales,0,0
+2023-04-01,Hilux,872.0,actual,actual,Actual Sales,0,0
+2023-05-01,Hilux,815.0,actual,actual,Actual Sales,0,0
+2023-06-01,Hilux,780.0,actual,actual,Actual Sales,0,0
+2023-07-01,Hilux,845.0,actual,actual,Actual Sales,0,0
+2023-08-01,Hilux,618.0,actual,actual,Actual Sales,0,0
+2023-09-01,Hilux,897.0,actual,actual,Actual Sales,0,0
+2023-10-01,Hilux,798.0,actual,actual,Actual Sales,0,0
+2023-11-01,Hilux,747.0,actual,actual,Actual Sales,0,0
+2023-12-01,Hilux,749.0,actual,actual,Actual Sales,0,0
+2024-01-01,Hilux,879.0,actual,actual,Actual Sales,0,0
+2024-02-01,Hilux,776.0,actual,actual,Actual Sales,0,0
+2024-03-01,Hilux,721.0,actual,actual,Actual Sales,0,0
+2024-04-01,Hilux,626.0,actual,actual,Actual Sales,0,0
+2024-05-01,Hilux,879.0,actual,actual,Actual Sales,0,0
+2024-06-01,Hilux,611.0,actual,actual,Actual Sales,0,0
+2024-07-01,Hilux,788.0,actual,actual,Actual Sales,0,0
+2024-08-01,Hilux,639.0,actual,actual,Actual Sales,0,0
+2024-09-01,Hilux,667.0,actual,actual,Actual Sales,0,0
+2024-10-01,Hilux,617.0,actual,actual,Actual Sales,0,0
+2024-11-01,Hilux,696.0,actual,actual,Actual Sales,0,0
+2024-12-01,Hilux,855.0,actual,actual,Actual Sales,0,0
+2025-01-01,Hilux,888.0,actual,actual,Actual Sales,0,0
+2025-02-01,Hilux,826.0,actual,actual,Actual Sales,0,0
+2025-03-01,Hilux,889.0,actual,actual,Actual Sales,0,0
+2025-04-01,Hilux,655.0,actual,actual,Actual Sales,0,0
+2025-05-01,Hilux,767.0,actual,actual,Actual Sales,0,0
+2025-06-01,Hilux,650.0,actual,actual,Actual Sales,0,0
+2025-07-01,Hilux,842.0,actual,actual,Actual Sales,0,0
+2025-08-01,Hilux,852.0,actual,actual,Actual Sales,0,0
+2025-09-01,Hilux,688.0,actual,actual,Actual Sales,0,0
+2025-10-01,Hilux,741.0,actual,actual,Actual Sales,0,0
+2025-11-01,Hilux,785.0,actual,actual,Actual Sales,0,0
+2025-12-01,Hilux,762.0,actual,actual,Actual Sales,0,0
+2026-01-01,Hilux,802.43,forecast,extra_trees,Extra Trees,1,1
+2026-01-01,Hilux,802.43,forecast,extra_trees,Extra Trees,3,1
+2026-02-01,Hilux,771.45,forecast,extra_trees,Extra Trees,3,2
+2026-03-01,Hilux,729.01,forecast,extra_trees,Extra Trees,3,3
+2026-01-01,Hilux,764.85,forecast,gradient_boosting,Gradient Boosting,1,1
+2026-01-01,Hilux,764.85,forecast,gradient_boosting,Gradient Boosting,3,1
+2026-02-01,Hilux,773.12,forecast,gradient_boosting,Gradient Boosting,3,2
+2026-03-01,Hilux,738.95,forecast,gradient_boosting,Gradient Boosting,3,3
+2026-01-01,Hilux,781.63,forecast,random_forest,Random Forest,1,1
+2026-01-01,Hilux,781.63,forecast,random_forest,Random Forest,3,1
+2026-02-01,Hilux,766.38,forecast,random_forest,Random Forest,3,2
+2026-03-01,Hilux,771.02,forecast,random_forest,Random Forest,3,3
+2021-07-01,Innova,613.0,actual,actual,Actual Sales,0,0
+2021-08-01,Innova,624.0,actual,actual,Actual Sales,0,0
+2021-09-01,Innova,466.0,actual,actual,Actual Sales,0,0
+2021-10-01,Innova,518.0,actual,actual,Actual Sales,0,0
+2021-11-01,Innova,537.0,actual,actual,Actual Sales,0,0
+2021-12-01,Innova,490.0,actual,actual,Actual Sales,0,0
+2022-01-01,Innova,637.0,actual,actual,Actual Sales,0,0
+2022-02-01,Innova,521.0,actual,actual,Actual Sales,0,0
+2022-03-01,Innova,585.0,actual,actual,Actual Sales,0,0
+2022-04-01,Innova,539.0,actual,actual,Actual Sales,0,0
+2022-05-01,Innova,494.0,actual,actual,Actual Sales,0,0
+2022-06-01,Innova,519.0,actual,actual,Actual Sales,0,0
+2022-07-01,Innova,500.0,actual,actual,Actual Sales,0,0
+2022-08-01,Innova,477.0,actual,actual,Actual Sales,0,0
+2022-09-01,Innova,641.0,actual,actual,Actual Sales,0,0
+2022-10-01,Innova,650.0,actual,actual,Actual Sales,0,0
+2022-11-01,Innova,570.0,actual,actual,Actual Sales,0,0
+2022-12-01,Innova,577.0,actual,actual,Actual Sales,0,0
+2023-01-01,Innova,632.0,actual,actual,Actual Sales,0,0
+2023-02-01,Innova,579.0,actual,actual,Actual Sales,0,0
+2023-03-01,Innova,564.0,actual,actual,Actual Sales,0,0
+2023-04-01,Innova,523.0,actual,actual,Actual Sales,0,0
+2023-05-01,Innova,552.0,actual,actual,Actual Sales,0,0
+2023-06-01,Innova,588.0,actual,actual,Actual Sales,0,0
+2023-07-01,Innova,529.0,actual,actual,Actual Sales,0,0
+2023-08-01,Innova,521.0,actual,actual,Actual Sales,0,0
+2023-09-01,Innova,621.0,actual,actual,Actual Sales,0,0
+2023-10-01,Innova,493.0,actual,actual,Actual Sales,0,0
+2023-11-01,Innova,629.0,actual,actual,Actual Sales,0,0
+2023-12-01,Innova,645.0,actual,actual,Actual Sales,0,0
+2024-01-01,Innova,465.0,actual,actual,Actual Sales,0,0
+2024-02-01,Innova,630.0,actual,actual,Actual Sales,0,0
+2024-03-01,Innova,632.0,actual,actual,Actual Sales,0,0
+2024-04-01,Innova,648.0,actual,actual,Actual Sales,0,0
+2024-05-01,Innova,635.0,actual,actual,Actual Sales,0,0
+2024-06-01,Innova,477.0,actual,actual,Actual Sales,0,0
+2024-07-01,Innova,456.0,actual,actual,Actual Sales,0,0
+2024-08-01,Innova,607.0,actual,actual,Actual Sales,0,0
+2024-09-01,Innova,563.0,actual,actual,Actual Sales,0,0
+2024-10-01,Innova,542.0,actual,actual,Actual Sales,0,0
+2024-11-01,Innova,559.0,actual,actual,Actual Sales,0,0
+2024-12-01,Innova,634.0,actual,actual,Actual Sales,0,0
+2025-01-01,Innova,588.0,actual,actual,Actual Sales,0,0
+2025-02-01,Innova,478.0,actual,actual,Actual Sales,0,0
+2025-03-01,Innova,576.0,actual,actual,Actual Sales,0,0
+2025-04-01,Innova,626.0,actual,actual,Actual Sales,0,0
+2025-05-01,Innova,617.0,actual,actual,Actual Sales,0,0
+2025-06-01,Innova,474.0,actual,actual,Actual Sales,0,0
+2025-07-01,Innova,612.0,actual,actual,Actual Sales,0,0
+2025-08-01,Innova,467.0,actual,actual,Actual Sales,0,0
+2025-09-01,Innova,641.0,actual,actual,Actual Sales,0,0
+2025-10-01,Innova,475.0,actual,actual,Actual Sales,0,0
+2025-11-01,Innova,586.0,actual,actual,Actual Sales,0,0
+2025-12-01,Innova,483.0,actual,actual,Actual Sales,0,0
+2026-01-01,Innova,562.98,forecast,extra_trees,Extra Trees,1,1
+2026-01-01,Innova,562.98,forecast,extra_trees,Extra Trees,3,1
+2026-02-01,Innova,587.52,forecast,extra_trees,Extra Trees,3,2
+2026-03-01,Innova,560.39,forecast,extra_trees,Extra Trees,3,3
+2026-01-01,Innova,485.53,forecast,gradient_boosting,Gradient Boosting,1,1
+2026-01-01,Innova,485.53,forecast,gradient_boosting,Gradient Boosting,3,1
+2026-02-01,Innova,542.23,forecast,gradient_boosting,Gradient Boosting,3,2
+2026-03-01,Innova,468.84,forecast,gradient_boosting,Gradient Boosting,3,3
+2026-01-01,Innova,516.43,forecast,random_forest,Random Forest,1,1
+2026-01-01,Innova,516.43,forecast,random_forest,Random Forest,3,1
+2026-02-01,Innova,577.45,forecast,random_forest,Random Forest,3,2
+2026-03-01,Innova,524.56,forecast,random_forest,Random Forest,3,3
+2021-07-01,Raize,621.0,actual,actual,Actual Sales,0,0
+2021-08-01,Raize,695.0,actual,actual,Actual Sales,0,0
+2021-09-01,Raize,711.0,actual,actual,Actual Sales,0,0
+2021-10-01,Raize,539.0,actual,actual,Actual Sales,0,0
+2021-11-01,Raize,597.0,actual,actual,Actual Sales,0,0
+2021-12-01,Raize,514.0,actual,actual,Actual Sales,0,0
+2022-01-01,Raize,799.0,actual,actual,Actual Sales,0,0
+2022-02-01,Raize,633.0,actual,actual,Actual Sales,0,0
+2022-03-01,Raize,669.0,actual,actual,Actual Sales,0,0
+2022-04-01,Raize,795.0,actual,actual,Actual Sales,0,0
+2022-05-01,Raize,683.0,actual,actual,Actual Sales,0,0
+2022-06-01,Raize,759.0,actual,actual,Actual Sales,0,0
+2022-07-01,Raize,728.0,actual,actual,Actual Sales,0,0
+2022-08-01,Raize,680.0,actual,actual,Actual Sales,0,0
+2022-09-01,Raize,531.0,actual,actual,Actual Sales,0,0
+2022-10-01,Raize,580.0,actual,actual,Actual Sales,0,0
+2022-11-01,Raize,601.0,actual,actual,Actual Sales,0,0
+2022-12-01,Raize,683.0,actual,actual,Actual Sales,0,0
+2023-01-01,Raize,500.0,actual,actual,Actual Sales,0,0
+2023-02-01,Raize,673.0,actual,actual,Actual Sales,0,0
+2023-03-01,Raize,632.0,actual,actual,Actual Sales,0,0
+2023-04-01,Raize,733.0,actual,actual,Actual Sales,0,0
+2023-05-01,Raize,759.0,actual,actual,Actual Sales,0,0
+2023-06-01,Raize,600.0,actual,actual,Actual Sales,0,0
+2023-07-01,Raize,534.0,actual,actual,Actual Sales,0,0
+2023-08-01,Raize,700.0,actual,actual,Actual Sales,0,0
+2023-09-01,Raize,674.0,actual,actual,Actual Sales,0,0
+2023-10-01,Raize,690.0,actual,actual,Actual Sales,0,0
+2023-11-01,Raize,727.0,actual,actual,Actual Sales,0,0
+2023-12-01,Raize,697.0,actual,actual,Actual Sales,0,0
+2024-01-01,Raize,792.0,actual,actual,Actual Sales,0,0
+2024-02-01,Raize,560.0,actual,actual,Actual Sales,0,0
+2024-03-01,Raize,739.0,actual,actual,Actual Sales,0,0
+2024-04-01,Raize,555.0,actual,actual,Actual Sales,0,0
+2024-05-01,Raize,672.0,actual,actual,Actual Sales,0,0
+2024-06-01,Raize,741.0,actual,actual,Actual Sales,0,0
+2024-07-01,Raize,692.0,actual,actual,Actual Sales,0,0
+2024-08-01,Raize,573.0,actual,actual,Actual Sales,0,0
+2024-09-01,Raize,710.0,actual,actual,Actual Sales,0,0
+2024-10-01,Raize,755.0,actual,actual,Actual Sales,0,0
+2024-11-01,Raize,756.0,actual,actual,Actual Sales,0,0
+2024-12-01,Raize,542.0,actual,actual,Actual Sales,0,0
+2025-01-01,Raize,733.0,actual,actual,Actual Sales,0,0
+2025-02-01,Raize,588.0,actual,actual,Actual Sales,0,0
+2025-03-01,Raize,679.0,actual,actual,Actual Sales,0,0
+2025-04-01,Raize,648.0,actual,actual,Actual Sales,0,0
+2025-05-01,Raize,765.0,actual,actual,Actual Sales,0,0
+2025-06-01,Raize,719.0,actual,actual,Actual Sales,0,0
+2025-07-01,Raize,598.0,actual,actual,Actual Sales,0,0
+2025-08-01,Raize,643.0,actual,actual,Actual Sales,0,0
+2025-09-01,Raize,674.0,actual,actual,Actual Sales,0,0
+2025-10-01,Raize,738.0,actual,actual,Actual Sales,0,0
+2025-11-01,Raize,719.0,actual,actual,Actual Sales,0,0
+2025-12-01,Raize,601.0,actual,actual,Actual Sales,0,0
+2026-01-01,Raize,697.56,forecast,extra_trees,Extra Trees,1,1
+2026-01-01,Raize,697.56,forecast,extra_trees,Extra Trees,3,1
+2026-02-01,Raize,696.87,forecast,extra_trees,Extra Trees,3,2
+2026-03-01,Raize,692.37,forecast,extra_trees,Extra Trees,3,3
+2026-01-01,Raize,778.73,forecast,gradient_boosting,Gradient Boosting,1,1
+2026-01-01,Raize,778.73,forecast,gradient_boosting,Gradient Boosting,3,1
+2026-02-01,Raize,639.25,forecast,gradient_boosting,Gradient Boosting,3,2
+2026-03-01,Raize,664.55,forecast,gradient_boosting,Gradient Boosting,3,3
+2026-01-01,Raize,705.54,forecast,random_forest,Random Forest,1,1
+2026-01-01,Raize,705.54,forecast,random_forest,Random Forest,3,1
+2026-02-01,Raize,693.49,forecast,random_forest,Random Forest,3,2
+2026-03-01,Raize,691.07,forecast,random_forest,Random Forest,3,3
+2021-07-01,Vios,839.0,actual,actual,Actual Sales,0,0
+2021-08-01,Vios,889.0,actual,actual,Actual Sales,0,0
+2021-09-01,Vios,801.0,actual,actual,Actual Sales,0,0
+2021-10-01,Vios,772.0,actual,actual,Actual Sales,0,0
+2021-11-01,Vios,772.0,actual,actual,Actual Sales,0,0
+2021-12-01,Vios,720.0,actual,actual,Actual Sales,0,0
+2022-01-01,Vios,762.0,actual,actual,Actual Sales,0,0
+2022-02-01,Vios,869.0,actual,actual,Actual Sales,0,0
+2022-03-01,Vios,856.0,actual,actual,Actual Sales,0,0
+2022-04-01,Vios,721.0,actual,actual,Actual Sales,0,0
+2022-05-01,Vios,700.0,actual,actual,Actual Sales,0,0
+2022-06-01,Vios,847.0,actual,actual,Actual Sales,0,0
+2022-07-01,Vios,822.0,actual,actual,Actual Sales,0,0
+2022-08-01,Vios,831.0,actual,actual,Actual Sales,0,0
+2022-09-01,Vios,850.0,actual,actual,Actual Sales,0,0
+2022-10-01,Vios,808.0,actual,actual,Actual Sales,0,0
+2022-11-01,Vios,769.0,actual,actual,Actual Sales,0,0
+2022-12-01,Vios,858.0,actual,actual,Actual Sales,0,0
+2023-01-01,Vios,892.0,actual,actual,Actual Sales,0,0
+2023-02-01,Vios,767.0,actual,actual,Actual Sales,0,0
+2023-03-01,Vios,843.0,actual,actual,Actual Sales,0,0
+2023-04-01,Vios,875.0,actual,actual,Actual Sales,0,0
+2023-05-01,Vios,870.0,actual,actual,Actual Sales,0,0
+2023-06-01,Vios,870.0,actual,actual,Actual Sales,0,0
+2023-07-01,Vios,770.0,actual,actual,Actual Sales,0,0
+2023-08-01,Vios,870.0,actual,actual,Actual Sales,0,0
+2023-09-01,Vios,743.0,actual,actual,Actual Sales,0,0
+2023-10-01,Vios,866.0,actual,actual,Actual Sales,0,0
+2023-11-01,Vios,850.0,actual,actual,Actual Sales,0,0
+2023-12-01,Vios,837.0,actual,actual,Actual Sales,0,0
+2024-01-01,Vios,804.0,actual,actual,Actual Sales,0,0
+2024-02-01,Vios,832.0,actual,actual,Actual Sales,0,0
+2024-03-01,Vios,779.0,actual,actual,Actual Sales,0,0
+2024-04-01,Vios,726.0,actual,actual,Actual Sales,0,0
+2024-05-01,Vios,731.0,actual,actual,Actual Sales,0,0
+2024-06-01,Vios,743.0,actual,actual,Actual Sales,0,0
+2024-07-01,Vios,745.0,actual,actual,Actual Sales,0,0
+2024-08-01,Vios,846.0,actual,actual,Actual Sales,0,0
+2024-09-01,Vios,700.0,actual,actual,Actual Sales,0,0
+2024-10-01,Vios,897.0,actual,actual,Actual Sales,0,0
+2024-11-01,Vios,755.0,actual,actual,Actual Sales,0,0
+2024-12-01,Vios,898.0,actual,actual,Actual Sales,0,0
+2025-01-01,Vios,747.0,actual,actual,Actual Sales,0,0
+2025-02-01,Vios,781.0,actual,actual,Actual Sales,0,0
+2025-03-01,Vios,822.0,actual,actual,Actual Sales,0,0
+2025-04-01,Vios,887.0,actual,actual,Actual Sales,0,0
+2025-05-01,Vios,771.0,actual,actual,Actual Sales,0,0
+2025-06-01,Vios,799.0,actual,actual,Actual Sales,0,0
+2025-07-01,Vios,799.0,actual,actual,Actual Sales,0,0
+2025-08-01,Vios,859.0,actual,actual,Actual Sales,0,0
+2025-09-01,Vios,802.0,actual,actual,Actual Sales,0,0
+2025-10-01,Vios,841.0,actual,actual,Actual Sales,0,0
+2025-11-01,Vios,868.0,actual,actual,Actual Sales,0,0
+2025-12-01,Vios,703.0,actual,actual,Actual Sales,0,0
+2026-01-01,Vios,791.92,forecast,extra_trees,Extra Trees,1,1
+2026-01-01,Vios,791.92,forecast,extra_trees,Extra Trees,3,1
+2026-02-01,Vios,777.81,forecast,extra_trees,Extra Trees,3,2
+2026-03-01,Vios,769.73,forecast,extra_trees,Extra Trees,3,3
+2026-01-01,Vios,831.31,forecast,gradient_boosting,Gradient Boosting,1,1
+2026-01-01,Vios,831.31,forecast,gradient_boosting,Gradient Boosting,3,1
+2026-02-01,Vios,817.6,forecast,gradient_boosting,Gradient Boosting,3,2
+2026-03-01,Vios,800.83,forecast,gradient_boosting,Gradient Boosting,3,3
+2026-01-01,Vios,793.92,forecast,random_forest,Random Forest,1,1
+2026-01-01,Vios,793.92,forecast,random_forest,Random Forest,3,1
+2026-02-01,Vios,783.43,forecast,random_forest,Random Forest,3,2
+2026-03-01,Vios,779.64,forecast,random_forest,Random Forest,3,3
+2021-07-01,Wigo,478.0,actual,actual,Actual Sales,0,0
+2021-08-01,Wigo,460.0,actual,actual,Actual Sales,0,0
+2021-09-01,Wigo,416.0,actual,actual,Actual Sales,0,0
+2021-10-01,Wigo,508.0,actual,actual,Actual Sales,0,0
+2021-11-01,Wigo,456.0,actual,actual,Actual Sales,0,0
+2021-12-01,Wigo,512.0,actual,actual,Actual Sales,0,0
+2022-01-01,Wigo,553.0,actual,actual,Actual Sales,0,0
+2022-02-01,Wigo,409.0,actual,actual,Actual Sales,0,0
+2022-03-01,Wigo,579.0,actual,actual,Actual Sales,0,0
+2022-04-01,Wigo,535.0,actual,actual,Actual Sales,0,0
+2022-05-01,Wigo,483.0,actual,actual,Actual Sales,0,0
+2022-06-01,Wigo,484.0,actual,actual,Actual Sales,0,0
+2022-07-01,Wigo,488.0,actual,actual,Actual Sales,0,0
+2022-08-01,Wigo,486.0,actual,actual,Actual Sales,0,0
+2022-09-01,Wigo,452.0,actual,actual,Actual Sales,0,0
+2022-10-01,Wigo,564.0,actual,actual,Actual Sales,0,0
+2022-11-01,Wigo,470.0,actual,actual,Actual Sales,0,0
+2022-12-01,Wigo,409.0,actual,actual,Actual Sales,0,0
+2023-01-01,Wigo,434.0,actual,actual,Actual Sales,0,0
+2023-02-01,Wigo,451.0,actual,actual,Actual Sales,0,0
+2023-03-01,Wigo,437.0,actual,actual,Actual Sales,0,0
+2023-04-01,Wigo,425.0,actual,actual,Actual Sales,0,0
+2023-05-01,Wigo,535.0,actual,actual,Actual Sales,0,0
+2023-06-01,Wigo,544.0,actual,actual,Actual Sales,0,0
+2023-07-01,Wigo,555.0,actual,actual,Actual Sales,0,0
+2023-08-01,Wigo,573.0,actual,actual,Actual Sales,0,0
+2023-09-01,Wigo,451.0,actual,actual,Actual Sales,0,0
+2023-10-01,Wigo,499.0,actual,actual,Actual Sales,0,0
+2023-11-01,Wigo,523.0,actual,actual,Actual Sales,0,0
+2023-12-01,Wigo,506.0,actual,actual,Actual Sales,0,0
+2024-01-01,Wigo,571.0,actual,actual,Actual Sales,0,0
+2024-02-01,Wigo,550.0,actual,actual,Actual Sales,0,0
+2024-03-01,Wigo,508.0,actual,actual,Actual Sales,0,0
+2024-04-01,Wigo,430.0,actual,actual,Actual Sales,0,0
+2024-05-01,Wigo,529.0,actual,actual,Actual Sales,0,0
+2024-06-01,Wigo,474.0,actual,actual,Actual Sales,0,0
+2024-07-01,Wigo,518.0,actual,actual,Actual Sales,0,0
+2024-08-01,Wigo,502.0,actual,actual,Actual Sales,0,0
+2024-09-01,Wigo,416.0,actual,actual,Actual Sales,0,0
+2024-10-01,Wigo,414.0,actual,actual,Actual Sales,0,0
+2024-11-01,Wigo,437.0,actual,actual,Actual Sales,0,0
+2024-12-01,Wigo,464.0,actual,actual,Actual Sales,0,0
+2025-01-01,Wigo,431.0,actual,actual,Actual Sales,0,0
+2025-02-01,Wigo,540.0,actual,actual,Actual Sales,0,0
+2025-03-01,Wigo,503.0,actual,actual,Actual Sales,0,0
+2025-04-01,Wigo,542.0,actual,actual,Actual Sales,0,0
+2025-05-01,Wigo,582.0,actual,actual,Actual Sales,0,0
+2025-06-01,Wigo,567.0,actual,actual,Actual Sales,0,0
+2025-07-01,Wigo,436.0,actual,actual,Actual Sales,0,0
+2025-08-01,Wigo,585.0,actual,actual,Actual Sales,0,0
+2025-09-01,Wigo,447.0,actual,actual,Actual Sales,0,0
+2025-10-01,Wigo,526.0,actual,actual,Actual Sales,0,0
+2025-11-01,Wigo,422.0,actual,actual,Actual Sales,0,0
+2025-12-01,Wigo,460.0,actual,actual,Actual Sales,0,0
+2026-01-01,Wigo,476.85,forecast,extra_trees,Extra Trees,1,1
+2026-01-01,Wigo,476.85,forecast,extra_trees,Extra Trees,3,1
+2026-02-01,Wigo,468.94,forecast,extra_trees,Extra Trees,3,2
+2026-03-01,Wigo,471.16,forecast,extra_trees,Extra Trees,3,3
+2026-01-01,Wigo,506.27,forecast,gradient_boosting,Gradient Boosting,1,1
+2026-01-01,Wigo,506.27,forecast,gradient_boosting,Gradient Boosting,3,1
+2026-02-01,Wigo,458.9,forecast,gradient_boosting,Gradient Boosting,3,2
+2026-03-01,Wigo,433.39,forecast,gradient_boosting,Gradient Boosting,3,3
+2026-01-01,Wigo,483.62,forecast,random_forest,Random Forest,1,1
+2026-01-01,Wigo,483.62,forecast,random_forest,Random Forest,3,1
+2026-02-01,Wigo,472.61,forecast,random_forest,Random Forest,3,2
+2026-03-01,Wigo,465.04,forecast,random_forest,Random Forest,3,3
