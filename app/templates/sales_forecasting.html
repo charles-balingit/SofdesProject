@@ -1,31 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="dashboard-shell">
+<div class="dashboard-page">
 
-    <!-- NAVIGATION -->
-    <nav class="dashboard-tabs">
-        <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
-        <a href="{{ url_for('main.ev_smart_routing') }}">EV Smart Routing</a>
-        <a class="active">Sales Forecasting</a>
-        <a href="{{ url_for('main.parts_procurement') }}">Parts Procurement</a>
-        <a href="{{ url_for('main.profile') }}">Profile</a>
-        <a href="{{ url_for('main.logout') }}" class="logout-btn">Log Out</a>
-    </nav>
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <h1>Sales Forecasting</h1>
+        <p>
+            Forecast future vehicle sales based on the selected Toyota EV model and forecast horizon.
+        </p>
+    </div>
 
-    <div class="main-content">
+    <!-- INPUT CARD -->
+    <div class="stat-card" style="margin-top:25px;">
 
-        <!-- HEADER -->
-        <div class="page-header">
-            <h1>Sales Forecasting</h1>
-            <p>Forecast future vehicle sales based on the selected Toyota EV model and forecast horizon.</p>
-        </div>
+        <h2 style="margin-top:0;">Forecast Inputs</h2>
 
-        <!-- FORM CARD -->
-        <div class="content-card">
+        <div class="forecast-form-grid">
 
-            <div class="form-group">
-                <label for="vehicleModel">Select Vehicle Model</label>
+            <div>
+                <label>Select Vehicle Model</label>
                 <select id="vehicleModel" class="form-control">
                     <option value="">Select Vehicle Model</option>
                     {% for model in vehicle_models %}
@@ -34,8 +28,8 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label for="forecastHorizon">Forecast Horizon (months)</label>
+            <div>
+                <label>Forecast Horizon (months)</label>
                 <input
                     type="number"
                     id="forecastHorizon"
@@ -46,156 +40,44 @@
                 >
             </div>
 
-            <div class="form-group">
-                <button id="generateForecastBtn" type="button" class="primary-btn">
+            <div class="forecast-btn-wrapper">
+                <button id="generateForecastBtn" class="primary-btn">
                     Generate Forecast
                 </button>
             </div>
 
-            <div id="salesError" class="alert danger" style="display:none;margin-top:16px;"></div>
         </div>
 
-        <!-- RESULTS -->
-        <div id="salesResults" class="content-card" style="display:none;margin-top:24px;">
-            <h2 id="forecastTitle">Forecast Result</h2>
+        <div id="salesError" class="error" style="display:none; margin-top:15px;"></div>
 
-            <div style="position:relative;width:100%;height:350px;margin-top:20px;">
-                <canvas id="salesChart"></canvas>
-            </div>
+    </div>
 
-            <div style="margin-top:24px;">
-                <h3>Monthly Forecast Values</h3>
-                <table class="forecast-table" id="salesTable">
-                    <thead>
-                        <tr>
-                            <th>Month</th>
-                            <th>Forecast Value</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
+
+    <!-- RESULTS CARD -->
+    <div id="salesResults" class="stat-card" style="display:none; margin-top:25px;">
+
+        <h2 id="forecastTitle">Forecast Result</h2>
+
+        <!-- CHART -->
+        <div class="chart-container">
+            <canvas id="salesChart"></canvas>
+        </div>
+
+        <!-- TABLE -->
+        <div style="margin-top:25px;">
+            <h3>Monthly Forecast Values</h3>
+
+            <table class="forecast-table" id="salesTable">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Forecast Value</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
 
     </div>
+
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-let salesChartInstance = null;
-
-const btn = document.getElementById("generateForecastBtn");
-const errorBox = document.getElementById("salesError");
-
-btn.addEventListener("click", async () => {
-
-    const vehicleModel = document.getElementById("vehicleModel").value;
-    const horizon = Number(document.getElementById("forecastHorizon").value);
-
-    // Reset error
-    errorBox.style.display = "none";
-    errorBox.textContent = "";
-
-    // Validation
-    if (!vehicleModel) {
-        showError("Please select a vehicle model.");
-        return;
-    }
-
-    if (!horizon || horizon < 1 || horizon > 12) {
-        showError("Forecast horizon must be between 1 and 12.");
-        return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = "Generating...";
-
-    try {
-        const response = await fetch("/api/sales-forecast", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                vehicle_model: vehicleModel,
-                horizon: horizon
-            })
-        });
-
-        const result = await response.json();
-
-        if (!response.ok) {
-            throw new Error(result.error || "Failed to load forecast data.");
-        }
-
-        renderForecast(vehicleModel, result);
-
-    } catch (err) {
-        showError(err.message);
-    } finally {
-        btn.disabled = false;
-        btn.textContent = "Generate Forecast";
-    }
-});
-
-function showError(message) {
-    errorBox.textContent = message;
-    errorBox.style.display = "block";
-}
-
-function renderForecast(vehicleModel, result) {
-
-    document.getElementById("salesResults").style.display = "block";
-    document.getElementById("forecastTitle").textContent =
-        `${vehicleModel} Forecast`;
-
-    // Populate table
-    const tbody = document.querySelector("#salesTable tbody");
-    tbody.innerHTML = "";
-
-    result.labels.forEach((label, i) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${label}</td>
-            <td>${Number(result.values[i]).toLocaleString()}</td>
-        `;
-        tbody.appendChild(row);
-    });
-
-    // Destroy previous chart safely
-    if (salesChartInstance) {
-        salesChartInstance.destroy();
-    }
-
-    const ctx = document.getElementById("salesChart");
-
-    salesChartInstance = new Chart(ctx, {
-        type: "line",
-        data: {
-            labels: result.labels,
-            datasets: [{
-                label: "Sales Forecast",
-                data: result.values,
-                borderWidth: 2,
-                tension: 0.35,
-                fill: false,
-                pointRadius: 4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: {
-                mode: "index",
-                intersect: false
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
-</script>
-
-{% endblock %}
