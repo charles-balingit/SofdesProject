@@ -20,90 +20,86 @@ def home():
     return render_template('home.html')
 
 
-@main.route('/signup', methods=['GET', 'POST'])
+# ---------------- SIGNUP ----------------
+@main.route("/signup", methods=["GET", "POST"])
 def signup():
-    if current_user.is_authenticated:
-        return redirect(url_for('main.dashboard'))
 
-    if request.method == 'POST':
-        firstname = request.form.get('firstname', '').strip()
-        lastname = request.form.get('lastname', '').strip()
-        username = request.form.get('username', '').strip()
-        email = request.form.get('email', '').strip()
-        password = request.form.get('password', '')
-        confirm_password = request.form.get('confirm_password', '')
-        vehicle_type = request.form.get('vehicle_type', '').strip()
-        privacy = request.form.get('privacy')
+    form_data = {}
 
-        form_data = {
-            'firstname': firstname,
-            'lastname': lastname,
-            'username': username,
-            'email': email,
-            'vehicle_type': vehicle_type
-        }
+    if request.method == "POST":
 
-        if not firstname or not lastname or not username or not email or not password or not confirm_password or not vehicle_type:
-            flash('Please fill in all fields.', 'danger')
-            return render_template('signup.html', form_data=form_data)
+        data = signup_form()
+        form_data = data
 
+        username = data["username"]
+        password = data["password"]
+
+        email = request.form.get("email")
+        confirm_password = request.form.get("confirm_password")
+
+        # ✅ NEW FIELDS
+        firstname = request.form.get("firstname")
+        lastname = request.form.get("lastname")
+        vehicle_type = request.form.get("vehicle")
+
+        # Password mismatch
         if password != confirm_password:
-            flash('Passwords do not match.', 'danger')
-            return render_template('signup.html', form_data=form_data)
+            flash("Passwords do not match.", "error")
+            return render_template("signup.html", form_data=form_data)
 
-        if not privacy:
-            flash('Please read and confirm the privacy disclosure.', 'danger')
-            return render_template('signup.html', form_data=form_data)
-
-        existing_user = User.query.filter(
-            (User.email == email) | (User.username == username)
-        ).first()
-
+        # Username exists
+        existing_user = User.query.filter_by(username=username).first()
         if existing_user:
-            flash('Username or email already exists.', 'warning')
-            return render_template('signup.html', form_data=form_data)
+            flash("Username already exists.", "error")
+            return render_template("signup.html", form_data=form_data)
 
-        hashed_password = generate_password_hash(password)
+        # ✅ Hash password
+        hashed_pw = generate_password_hash(password)
 
-        new_user = User(
+        # ✅ CREATE USER (NOW SAVES ALL DATA)
+        user = User(
             username=username,
             email=email,
-            password=hashed_password,
+            password=hashed_pw,
             firstname=firstname,
             lastname=lastname,
             vehicle_type=vehicle_type
         )
 
-        db.session.add(new_user)
+        db.session.add(user)
         db.session.commit()
 
-        flash('Account created successfully. Please log in.', 'success')
-        return redirect(url_for('main.login'))
+        flash("✅ Account successfully created! You can now login.", "success")
+        return redirect(url_for("main.signup"))
 
-    return render_template('signup.html', form_data=None)
+    return render_template("signup.html", form_data=form_data)
 
-
-@main.route('/login', methods=['GET', 'POST'])
+# ---------------- LOGIN ----------------
+@main.route("/login", methods=["GET", "POST"])
 def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('main.dashboard'))
 
-    if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
+    if request.method == "POST":
+        data = login_form()
 
-        user = User.query.filter_by(email=email).first()
+        username = data["username"]
+        password = data["password"]
 
-        if user and check_password_hash(user.password, password):
-            login_user(user)
-            flash('Logged in successfully.', 'success')
-            return redirect(url_for('main.dashboard'))
-        else:
-            flash('Invalid email or password.', 'danger')
-            return redirect(url_for('main.login'))
+        user = User.query.filter_by(username=username).first()
 
-    return render_template('login.html')
+        # ✅ Username not found
+        if not user:
+            flash("Username does not exist.", "error")
+            return redirect(url_for("main.login"))
 
+        # ✅ Wrong password
+        if not check_password_hash(user.password, password):
+            flash("Incorrect password.", "error")
+            return redirect(url_for("main.login"))
+
+        login_user(user)
+        return redirect(url_for("main.dashboard"))
+
+    return render_template("login.html")
 
 @main.route('/logout')
 @login_required
