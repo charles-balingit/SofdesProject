@@ -6,7 +6,7 @@ from dateutil.relativedelta import relativedelta
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 
-MODEL_PATH = BASE_DIR / "model" / "random_forest_bundle.pkl"
+MODEL_PATH = BASE_DIR / "model" / "sales_random_forest_bundle.pkl"
 
 # load once (FAST)
 bundle = joblib.load(MODEL_PATH)
