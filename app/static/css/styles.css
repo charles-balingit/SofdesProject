@@ -1020,30 +1020,6 @@ select {
     color:#ef4444;
 }
 
-.forecast-controls {
-    display: flex;
-    flex-wrap: wrap;
-    background: #020617;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #1f2937;
-    width: 80%;
-    margin: 10px auto;
-    gap: 5%;
-} 
-
-.left-row {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-}
-
-.right-row {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-}
-
 /* labels */
 .forecast-controls label {
     font-size: 13px;
@@ -1051,67 +1027,72 @@ select {
     color: white;
 }
 
-/* dropdowns */
-.forecast-controls select {
-    padding: 10px 12px;
-    border-radius: 8px;
-    border: 1px solid #1f2937;
-    background-color: #020617;
-    color: #e5e7eb;
-    font-size: 14px;
-    outline: none;
-    transition: 0.2s ease;
+/* =====================================
+   SALES FORECASTING PAGE
+===================================== */
+
+.forecast-form-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    align-items: end;
 }
 
-.forecast-controls select:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 1px #3b82f6;
-}
-
-.forecast-btn-row {
+.form-control {
     width: 100%;
-    margin-top: 10px;
-}
-
-.forecast-btn {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #1f2937;
-    background: #020617;
-    color: #e5e7eb;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.forecast-btn:hover {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    border-color: #2563eb;
-    transform: translateY(-1px);
-}
-
-.forecast-btn:active {
-    transform: scale(0.98);
-}
-
-#forecastResults {
     background: #111827;
-    padding: 25px;
-    border-radius: 12px;
     border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    font-size: 14px;
 }
 
-#forecastTitle {
-    margin-bottom: 15px;
+.form-control:focus {
+    outline: none;
+    border-color: #eb0a1e;
+}
+
+/* button */
+.primary-btn {
+    background: #111827;
+    border: 1px solid #2a3245;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
     font-weight: 600;
+    width: 100%;
 }
 
-#forecastChart {
+.primary-btn:hover {
+    border-color: #eb0a1e;
+}
+
+/* chart sizing */
+.chart-container {
+    position: relative;
     width: 100%;
-    max-height: 420px;
-    margin-top: 15px;
+    height: 350px;
+    margin-top: 20px;
+}
+
+/* table */
+.forecast-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.forecast-table th,
+.forecast-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+}
+
+.forecast-table th {
+    color: #9aa0a6;
 }
 
 .forecast-table {
@@ -1143,26 +1124,4 @@ select {
 
 .forecast-table tbody tr:hover {
     background-color: #0f172a;
-}
-
-.forecast-table tbody {
-    display: block;
-    max-height: 260px;
-    overflow-y: auto;
-}
-
-.forecast-table thead,
-.forecast-table tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-}
-
-@media (max-width: 768px) {
-    .forecast-controls {
-        flex-direction: column;
-    }
-    .dashboard-page {
-        padding: 20px;
-    }
 }
