@@ -1,10 +1,10 @@
-from flask import render_template, redirect, url_for, flash, request, jsonify
+from flask import Blueprint, render_template, redirect, url_for, flash, request, jsonify
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app import app, db
-from app.models import User
-from app.data_loader import (
+from . import db
+from .models import User
+from .data_loader import (
     load_sales_data,
     load_parts_forecast_data,
     load_parts_actions_data,
@@ -12,11 +12,13 @@ from app.data_loader import (
     get_parts_list,
 )
 
+main = Blueprint('main', __name__)
+
 
 # -----------------------------
 # Home / Landing
 # -----------------------------
-@app.route('/')
+@main.route('/')
 def home():
     return render_template('home.html')
 
@@ -24,10 +26,10 @@ def home():
 # -----------------------------
 # Authentication
 # -----------------------------
-@app.route('/signup', methods=['GET', 'POST'])
+@main.route('/signup', methods=['GET', 'POST'])
 def signup():
     if current_user.is_authenticated:
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('main.dashboard'))
 
     if request.method == 'POST':
         username = request.form.get('username')
@@ -36,7 +38,7 @@ def signup():
 
         if not username or not email or not password:
             flash('Please fill in all fields.', 'danger')
-            return redirect(url_for('signup'))
+            return redirect(url_for('main.signup'))
 
         existing_user = User.query.filter(
             (User.email == email) | (User.username == username)
@@ -44,7 +46,7 @@ def signup():
 
         if existing_user:
             flash('Username or email already exists.', 'warning')
-            return redirect(url_for('signup'))
+            return redirect(url_for('main.signup'))
 
         hashed_password = generate_password_hash(password)
 
@@ -58,15 +60,15 @@ def signup():
         db.session.commit()
 
         flash('Account created successfully. Please log in.', 'success')
-        return redirect(url_for('login'))
+        return redirect(url_for('main.login'))
 
     return render_template('signup.html')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@main.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('main.dashboard'))
 
     if request.method == 'POST':
         email = request.form.get('email')
@@ -77,38 +79,38 @@ def login():
         if user and check_password_hash(user.password, password):
             login_user(user)
             flash('Logged in successfully.', 'success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('main.dashboard'))
         else:
             flash('Invalid email or password.', 'danger')
-            return redirect(url_for('login'))
+            return redirect(url_for('main.login'))
 
     return render_template('login.html')
 
 
-@app.route('/logout')
+@main.route('/logout')
 @login_required
 def logout():
     logout_user()
     flash('You have been logged out.', 'info')
-    return redirect(url_for('home'))
+    return redirect(url_for('main.home'))
 
 
 # -----------------------------
 # Main App Pages
 # -----------------------------
-@app.route('/dashboard')
+@main.route('/dashboard')
 @login_required
 def dashboard():
     return render_template('dashboard.html')
 
 
-@app.route('/ev-routing')
+@main.route('/ev-routing')
 @login_required
 def ev_routing():
     return render_template('ev_routing.html')
 
 
-@app.route('/sales-forecasting')
+@main.route('/sales-forecasting')
 @login_required
 def sales_forecasting():
     vehicle_models = get_vehicle_models()
@@ -118,7 +120,7 @@ def sales_forecasting():
     )
 
 
-@app.route('/parts-procurement')
+@main.route('/parts-procurement')
 @login_required
 def parts_procurement():
     parts_list = get_parts_list()
@@ -128,7 +130,7 @@ def parts_procurement():
     )
 
 
-@app.route('/profile')
+@main.route('/profile')
 @login_required
 def profile():
     return render_template('profile.html')
@@ -137,7 +139,7 @@ def profile():
 # -----------------------------
 # Sales Forecast API
 # -----------------------------
-@app.route('/api/sales-forecast', methods=['POST'])
+@main.route('/api/sales-forecast', methods=['POST'])
 @login_required
 def api_sales_forecast():
     data = request.get_json()
@@ -161,13 +163,11 @@ def api_sales_forecast():
 
     df = load_sales_data()
 
-    # filter by vehicle model
     filtered = df[df["vehicle_model"] == vehicle_model].copy()
 
     if filtered.empty:
         return jsonify({"error": f"No sales data found for vehicle model '{vehicle_model}'"}), 404
 
-    # keep only forecast rows, not actual rows
     if "series_type" in filtered.columns:
         filtered = filtered[
             filtered["series_type"].astype(str).str.lower() != "actual"
@@ -176,7 +176,6 @@ def api_sales_forecast():
     if filtered.empty:
         return jsonify({"error": f"No forecast rows found for vehicle model '{vehicle_model}'"}), 404
 
-    # sort correctly
     if "forecast_step" in filtered.columns:
         filtered = filtered.sort_values("forecast_step")
     elif "month" in filtered.columns:
@@ -198,7 +197,7 @@ def api_sales_forecast():
 # -----------------------------
 # Parts Forecast API
 # -----------------------------
-@app.route('/api/parts-forecast', methods=['POST'])
+@main.route('/api/parts-forecast', methods=['POST'])
 @login_required
 def api_parts_forecast():
     data = request.get_json()
@@ -223,8 +222,9 @@ def api_parts_forecast():
     forecast_df = load_parts_forecast_data()
     actions_df = load_parts_actions_data()
 
-    # filter forecast rows
-    filtered_forecast = forecast_df[forecast_df["part_id"].astype(str) == str(part_id)].copy()
+    filtered_forecast = forecast_df[
+        forecast_df["part_id"].astype(str) == str(part_id)
+    ].copy()
 
     if filtered_forecast.empty:
         return jsonify({"error": f"No parts forecast data found for part_id '{part_id}'"}), 404
@@ -239,9 +239,8 @@ def api_parts_forecast():
     labels = filtered_forecast["forecast_date"].dt.strftime("%b %Y").tolist()
     values = filtered_forecast["forecast_demand"].tolist()
 
-    # match recommendation row for same part + selected horizon
     filtered_actions = actions_df[
-        (actions_df["part_id"].astype(str) == str(part_id))
+        actions_df["part_id"].astype(str) == str(part_id)
     ].copy()
 
     summary = {}
