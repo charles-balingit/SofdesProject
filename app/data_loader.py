@@ -49,6 +49,7 @@ def get_vehicle_models():
         .unique()
         .tolist()
     )
+
     return models
 
 
@@ -65,4 +66,5 @@ def get_parts_list():
         .sort_values("part_name")
         .to_dict(orient="records")
     )
+
     return parts
