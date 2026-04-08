@@ -1,64 +1,82 @@
 {% extends "layout.html" %}
-
 {% block content %}
 
-<div class="main-content">
-    <div class="page-header">
-        <h1>Sales Forecasting</h1>
-        <p>Forecast future vehicle sales based on the selected Toyota EV model and forecast horizon.</p>
-    </div>
+<div class="dashboard-shell">
 
-    <div class="content-card">
-        <div class="form-group">
-            <label for="vehicleModel">Select Vehicle Model</label>
-            <select id="vehicleModel" class="form-control">
-                <option value="">Select Vehicle Model</option>
-                {% for model in vehicle_models %}
-                    <option value="{{ model }}">{{ model }}</option>
-                {% endfor %}
-            </select>
+    <!-- NAVIGATION -->
+    <nav class="dashboard-tabs">
+        <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('main.ev_smart_routing') }}">EV Smart Routing</a>
+        <a class="active">Sales Forecasting</a>
+        <a href="{{ url_for('main.parts_procurement') }}">Parts Procurement</a>
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.logout') }}" class="logout-btn">Log Out</a>
+    </nav>
+
+    <div class="main-content">
+
+        <!-- HEADER -->
+        <div class="page-header">
+            <h1>Sales Forecasting</h1>
+            <p>Forecast future vehicle sales based on the selected Toyota EV model and forecast horizon.</p>
         </div>
 
-        <div class="form-group">
-            <label for="forecastHorizon">Forecast Horizon (months)</label>
-            <input
-                type="number"
-                id="forecastHorizon"
-                class="form-control"
-                min="1"
-                max="12"
-                value="12"
-            >
+        <!-- FORM CARD -->
+        <div class="content-card">
+
+            <div class="form-group">
+                <label for="vehicleModel">Select Vehicle Model</label>
+                <select id="vehicleModel" class="form-control">
+                    <option value="">Select Vehicle Model</option>
+                    {% for model in vehicle_models %}
+                        <option value="{{ model }}">{{ model }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="forecastHorizon">Forecast Horizon (months)</label>
+                <input
+                    type="number"
+                    id="forecastHorizon"
+                    class="form-control"
+                    min="1"
+                    max="12"
+                    value="12"
+                >
+            </div>
+
+            <div class="form-group">
+                <button id="generateForecastBtn" type="button" class="primary-btn">
+                    Generate Forecast
+                </button>
+            </div>
+
+            <div id="salesError" class="alert danger" style="display:none;margin-top:16px;"></div>
         </div>
 
-        <div class="form-group">
-            <button id="generateForecastBtn" type="button" class="primary-btn">
-                Generate Forecast
-            </button>
+        <!-- RESULTS -->
+        <div id="salesResults" class="content-card" style="display:none;margin-top:24px;">
+            <h2 id="forecastTitle">Forecast Result</h2>
+
+            <div style="position:relative;width:100%;height:350px;margin-top:20px;">
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <div style="margin-top:24px;">
+                <h3>Monthly Forecast Values</h3>
+                <table class="forecast-table" id="salesTable">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Forecast Value</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
 
-        <div id="salesError" class="alert danger" style="display: none; margin-top: 16px;"></div>
-    </div>
-
-    <div id="salesResults" class="content-card" style="display: none; margin-top: 24px;">
-        <h2 id="forecastTitle">Forecast Result</h2>
-
-        <div style="position: relative; width: 100%; height: 350px; margin-top: 20px;">
-            <canvas id="salesChart"></canvas>
-        </div>
-
-        <div style="margin-top: 24px;">
-            <h3>Monthly Forecast Values</h3>
-            <table class="forecast-table" id="salesTable">
-                <thead>
-                    <tr>
-                        <th>Month</th>
-                        <th>Forecast Value</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
     </div>
 </div>
 
@@ -67,32 +85,36 @@
 <script>
 let salesChartInstance = null;
 
-document.getElementById("generateForecastBtn").addEventListener("click", async function () {
-    const vehicleModel = document.getElementById("vehicleModel").value;
-    const horizon = document.getElementById("forecastHorizon").value;
-    const errorBox = document.getElementById("salesError");
+const btn = document.getElementById("generateForecastBtn");
+const errorBox = document.getElementById("salesError");
 
+btn.addEventListener("click", async () => {
+
+    const vehicleModel = document.getElementById("vehicleModel").value;
+    const horizon = Number(document.getElementById("forecastHorizon").value);
+
+    // Reset error
     errorBox.style.display = "none";
     errorBox.textContent = "";
 
+    // Validation
     if (!vehicleModel) {
-        errorBox.textContent = "Please select a vehicle model.";
-        errorBox.style.display = "block";
+        showError("Please select a vehicle model.");
         return;
     }
 
-    if (!horizon || Number(horizon) < 1 || Number(horizon) > 12) {
-        errorBox.textContent = "Forecast horizon must be between 1 and 12.";
-        errorBox.style.display = "block";
+    if (!horizon || horizon < 1 || horizon > 12) {
+        showError("Forecast horizon must be between 1 and 12.");
         return;
     }
+
+    btn.disabled = true;
+    btn.textContent = "Generating...";
 
     try {
         const response = await fetch("/api/sales-forecast", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 vehicle_model: vehicleModel,
                 horizon: horizon
@@ -102,55 +124,78 @@ document.getElementById("generateForecastBtn").addEventListener("click", async f
         const result = await response.json();
 
         if (!response.ok) {
-            errorBox.textContent = result.error || "Failed to load forecast data.";
-            errorBox.style.display = "block";
-            return;
+            throw new Error(result.error || "Failed to load forecast data.");
         }
 
-        document.getElementById("salesResults").style.display = "block";
-        document.getElementById("forecastTitle").textContent = vehicleModel + " Forecast";
+        renderForecast(vehicleModel, result);
 
-        const tbody = document.querySelector("#salesTable tbody");
-        tbody.innerHTML = "";
-
-        result.labels.forEach((label, index) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${label}</td>
-                <td>${result.values[index]}</td>
-            `;
-            tbody.appendChild(row);
-        });
-
-        const ctx = document.getElementById("salesChart").getContext("2d");
-
-        if (salesChartInstance) {
-            salesChartInstance.destroy();
-        }
-
-        salesChartInstance = new Chart(ctx, {
-            type: "line",
-            data: {
-                labels: result.labels,
-                datasets: [{
-                    label: "Sales Forecast",
-                    data: result.values,
-                    borderWidth: 2,
-                    tension: 0.3,
-                    fill: false
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false
-            }
-        });
-
-    } catch (error) {
-        errorBox.textContent = "Something went wrong while generating the forecast.";
-        errorBox.style.display = "block";
+    } catch (err) {
+        showError(err.message);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = "Generate Forecast";
     }
 });
+
+function showError(message) {
+    errorBox.textContent = message;
+    errorBox.style.display = "block";
+}
+
+function renderForecast(vehicleModel, result) {
+
+    document.getElementById("salesResults").style.display = "block";
+    document.getElementById("forecastTitle").textContent =
+        `${vehicleModel} Forecast`;
+
+    // Populate table
+    const tbody = document.querySelector("#salesTable tbody");
+    tbody.innerHTML = "";
+
+    result.labels.forEach((label, i) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${label}</td>
+            <td>${Number(result.values[i]).toLocaleString()}</td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    // Destroy previous chart safely
+    if (salesChartInstance) {
+        salesChartInstance.destroy();
+    }
+
+    const ctx = document.getElementById("salesChart");
+
+    salesChartInstance = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: result.labels,
+            datasets: [{
+                label: "Sales Forecast",
+                data: result.values,
+                borderWidth: 2,
+                tension: 0.35,
+                fill: false,
+                pointRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: "index",
+                intersect: false
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
 </script>
 
 {% endblock %}
