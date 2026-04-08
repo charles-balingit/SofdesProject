@@ -15,17 +15,11 @@ from .data_loader import (
 main = Blueprint('main', __name__)
 
 
-# -----------------------------
-# Home / Landing
-# -----------------------------
 @main.route('/')
 def home():
     return render_template('home.html')
 
 
-# -----------------------------
-# Authentication
-# -----------------------------
 @main.route('/signup', methods=['GET', 'POST'])
 def signup():
     if current_user.is_authenticated:
@@ -119,9 +113,6 @@ def logout():
     return redirect(url_for('main.home'))
 
 
-# -----------------------------
-# Main App Pages
-# -----------------------------
 @main.route('/dashboard')
 @login_required
 def dashboard():
@@ -160,9 +151,6 @@ def profile():
     return render_template('profile.html')
 
 
-# -----------------------------
-# Sales Forecast API
-# -----------------------------
 @main.route('/api/sales-forecast', methods=['POST'])
 @login_required
 def api_sales_forecast():
@@ -218,9 +206,6 @@ def api_sales_forecast():
     })
 
 
-# -----------------------------
-# Parts Forecast API
-# -----------------------------
 @main.route('/api/parts-forecast', methods=['POST'])
 @login_required
 def api_parts_forecast():
