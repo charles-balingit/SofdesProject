@@ -35,8 +35,11 @@ def signup():
         username = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
+        firstname = request.form.get('firstname')
+        lastname = request.form.get('lastname')
+        vehicle_type = request.form.get('vehicle_type')
 
-        if not username or not email or not password:
+        if not username or not email or not password or not firstname or not lastname or not vehicle_type:
             flash('Please fill in all fields.', 'danger')
             return redirect(url_for('main.signup'))
 
@@ -53,7 +56,10 @@ def signup():
         new_user = User(
             username=username,
             email=email,
-            password=hashed_password
+            password=hashed_password,
+            firstname=firstname,
+            lastname=lastname,
+            vehicle_type=vehicle_type
         )
 
         db.session.add(new_user)
