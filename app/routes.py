@@ -32,16 +32,34 @@ def signup():
         return redirect(url_for('main.dashboard'))
 
     if request.method == 'POST':
-        username = request.form.get('username')
-        email = request.form.get('email')
-        password = request.form.get('password')
-        firstname = request.form.get('firstname')
-        lastname = request.form.get('lastname')
-        vehicle_type = request.form.get('vehicle_type')
+        firstname = request.form.get('firstname', '').strip()
+        lastname = request.form.get('lastname', '').strip()
+        username = request.form.get('username', '').strip()
+        email = request.form.get('email', '').strip()
+        password = request.form.get('password', '')
+        confirm_password = request.form.get('confirm_password', '')
+        vehicle_type = request.form.get('vehicle_type', '').strip()
+        privacy = request.form.get('privacy')
 
-        if not username or not email or not password or not firstname or not lastname or not vehicle_type:
+        form_data = {
+            'firstname': firstname,
+            'lastname': lastname,
+            'username': username,
+            'email': email,
+            'vehicle_type': vehicle_type
+        }
+
+        if not firstname or not lastname or not username or not email or not password or not confirm_password or not vehicle_type:
             flash('Please fill in all fields.', 'danger')
-            return redirect(url_for('main.signup'))
+            return render_template('signup.html', form_data=form_data)
+
+        if password != confirm_password:
+            flash('Passwords do not match.', 'danger')
+            return render_template('signup.html', form_data=form_data)
+
+        if not privacy:
+            flash('Please read and confirm the privacy disclosure.', 'danger')
+            return render_template('signup.html', form_data=form_data)
 
         existing_user = User.query.filter(
             (User.email == email) | (User.username == username)
@@ -49,7 +67,7 @@ def signup():
 
         if existing_user:
             flash('Username or email already exists.', 'warning')
-            return redirect(url_for('main.signup'))
+            return render_template('signup.html', form_data=form_data)
 
         hashed_password = generate_password_hash(password)
 
@@ -68,7 +86,7 @@ def signup():
         flash('Account created successfully. Please log in.', 'success')
         return redirect(url_for('main.login'))
 
-    return render_template('signup.html')
+    return render_template('signup.html', form_data=None)
 
 
 @main.route('/login', methods=['GET', 'POST'])
