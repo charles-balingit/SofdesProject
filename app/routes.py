@@ -145,7 +145,7 @@ def parts_procurement():
 @main.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html')
+    return render_template('profile.html', user=current_user)
 
 
 @main.route('/api/sales-forecast', methods=['POST'])
