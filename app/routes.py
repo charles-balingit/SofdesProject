@@ -4,6 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from . import db
 from .models import User
+from .forms import signup_form, login_form
 from .data_loader import (
     load_sales_data,
     load_parts_forecast_data,
