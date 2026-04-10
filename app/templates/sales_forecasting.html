@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+
 <div class="dashboard-shell">
     <nav class="dashboard-tabs">
         <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
@@ -9,66 +10,77 @@
         <a href="{{ url_for('main.profile') }}">Profile</a>
         <a href="{{ url_for('main.logout') }}" class="logout-btn">Log Out</a>
     </nav>
-    
-    <div class="dashboard-page">
-        <div class="page-header">
-            <h1>Sales Forecasting</h1>
-            <p>Forecast future vehicle sales based on the selected Toyota EV model and forecast horizon.</p>
+
+```
+<div class="dashboard-page">
+    <div class="page-header">
+        <h1>Sales Forecasting</h1>
+        <p>Forecast future vehicle sales based on the selected EV model and forecast horizon.</p>
+    </div>
+
+    <div class="content-card">
+        <!-- VEHICLE MODEL -->
+        <div class="form-group">
+            <label for="vehicleModel">Select Vehicle Model</label>
+            <select id="vehicleModel" class="form-control">
+                <option value="">Select Vehicle Model</option>
+                {% for model in vehicle_models %}
+                    <option value="{{ model }}">{{ model }}</option>
+                {% endfor %}
+            </select>
         </div>
 
-        <div class="content-card">
-            <div class="form-group">
-                <label for="vehicleModel">Select Vehicle Model</label>
-                <select id="vehicleModel" class="form-control">
-                    <option value="">Select Vehicle Model</option>
-                    {% for model in vehicle_models %}
-                        <option value="{{ model }}">{{ model }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="forecastHorizon">Forecast Horizon (months)</label>
-                <input
-                    type="number"
-                    id="forecastHorizon"
-                    class="form-control"
-                    min="1"
-                    max="12"
-                    value="12"
-                >
-            </div>
-
-            <div class="form-group">
-                <button id="generateForecastBtn" type="button" class="primary-btn">
-                    Generate Forecast
-                </button>
-            </div>
-            <div id="salesError" class="alert danger" style="display: none; margin-top: 16px;"></div>
+        <!-- HORIZON -->
+        <div class="form-group">
+            <label for="forecastHorizon">Forecast Horizon (months)</label>
+            <input
+                type="number"
+                id="forecastHorizon"
+                class="form-control"
+                min="1"
+                max="12"
+                value="12"
+            >
         </div>
 
-        <div id="salesResults" class="content-card" style="display: none; margin-top: 24px;">
-            <h2 id="forecastTitle">Forecast Result</h2>
+        <!-- BUTTON -->
+        <div class="form-group">
+            <button id="generateForecastBtn" type="button" class="primary-btn">
+                Generate Forecast
+            </button>
+        </div>
 
-            <div style="position: relative; width: 100%; height: 350px; margin-top: 20px;">
-                <canvas id="salesChart"></canvas>
-            </div>
+        <!-- ERROR -->
+        <div id="salesError" class="alert danger" style="display: none; margin-top: 16px;"></div>
+    </div>
 
-            <div style="margin-top: 24px;">
-                <h3>Monthly Forecast Values</h3>
-                <table class="forecast-table" id="salesTable">
-                    <thead>
-                        <tr>
-                            <th>Month</th>
-                            <th>Forecast Value</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
+    <!-- RESULTS -->
+    <div id="salesResults" class="content-card" style="display: none; margin-top: 24px;">
+        <h2 id="forecastTitle">Forecast Result</h2>
+
+        <div style="position: relative; width: 100%; height: 350px; margin-top: 20px;">
+            <canvas id="salesChart"></canvas>
+        </div>
+
+        <div style="margin-top: 24px;">
+            <h3>Monthly Forecast Values</h3>
+            <table class="forecast-table" id="salesTable">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Forecast Value</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
 </div>
+```
+
+</div>
+
+<!-- Chart.js -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -80,9 +92,11 @@ document.getElementById("generateForecastBtn").addEventListener("click", async f
     const horizon = document.getElementById("forecastHorizon").value;
     const errorBox = document.getElementById("salesError");
 
+    // Reset UI
     errorBox.style.display = "none";
     errorBox.textContent = "";
 
+    // VALIDATION
     if (!vehicleModel) {
         errorBox.textContent = "Please select a vehicle model.";
         errorBox.style.display = "block";
@@ -103,7 +117,7 @@ document.getElementById("generateForecastBtn").addEventListener("click", async f
             },
             body: JSON.stringify({
                 vehicle_model: vehicleModel,
-                horizon: horizon
+                horizon: Number(horizon)
             })
         });
 
@@ -115,9 +129,11 @@ document.getElementById("generateForecastBtn").addEventListener("click", async f
             return;
         }
 
+        // SHOW RESULTS
         document.getElementById("salesResults").style.display = "block";
         document.getElementById("forecastTitle").textContent = vehicleModel + " Forecast";
 
+        // TABLE
         const tbody = document.querySelector("#salesTable tbody");
         tbody.innerHTML = "";
 
@@ -130,6 +146,7 @@ document.getElementById("generateForecastBtn").addEventListener("click", async f
             tbody.appendChild(row);
         });
 
+        // CHART
         const ctx = document.getElementById("salesChart").getContext("2d");
 
         if (salesChartInstance) {
@@ -157,6 +174,7 @@ document.getElementById("generateForecastBtn").addEventListener("click", async f
     } catch (error) {
         errorBox.textContent = "Something went wrong while generating the forecast.";
         errorBox.style.display = "block";
+        console.error(error);
     }
 });
 </script>
