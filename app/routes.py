@@ -15,6 +15,7 @@ from .data_loader import (
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
+from io import StringIO
 
 main = Blueprint('main', __name__)
 
@@ -135,15 +136,74 @@ def sales_forecasting():
     )
 
 
-@main.route('/parts-procurement')
+@main.route("/parts-procurement", methods=["GET", "POST"])
 @login_required
 def parts_procurement():
-    parts_list = get_parts_list()
-    return render_template(
-        'parts_procurement.html',
-        parts_list=parts_list
-    )
+    parts = get_parts_list()
+    selected_part = request.form.get("part_name") if request.method == "POST" else None
 
+    chart_labels = []
+    chart_datasets = []
+    table_rows = []
+
+    if selected_part:
+        df = load_parts_forecast_data()
+
+        if "part_name" in df.columns:
+            part_df = df[df["part_name"].astype(str) == str(selected_part)].copy()
+        else:
+            part_df = df.iloc[0:0].copy()
+
+        if not part_df.empty:
+            if "forecast_date" in part_df.columns:
+                part_df["forecast_date"] = part_df["forecast_date"].astype(str)
+
+            if "model_key" in part_df.columns:
+                model_keys = sorted(part_df["model_key"].dropna().astype(str).unique().tolist())
+            else:
+                model_keys = []
+
+            if "forecast_step" in part_df.columns:
+                part_df = part_df.sort_values(["forecast_step", "model_key"] if "model_key" in part_df.columns else ["forecast_step"])
+            elif "forecast_date" in part_df.columns:
+                part_df = part_df.sort_values(["forecast_date", "model_key"] if "model_key" in part_df.columns else ["forecast_date"])
+
+            if "forecast_horizon_label" in part_df.columns:
+                chart_labels = part_df["forecast_horizon_label"].dropna().astype(str).unique().tolist()
+            elif "forecast_date" in part_df.columns:
+                chart_labels = part_df["forecast_date"].dropna().astype(str).unique().tolist()
+
+            for model in model_keys:
+                model_df = part_df[part_df["model_key"].astype(str) == model].copy()
+
+                if "forecast_step" in model_df.columns:
+                    model_df = model_df.sort_values("forecast_step")
+                elif "forecast_date" in model_df.columns:
+                    model_df = model_df.sort_values("forecast_date")
+
+                values = []
+                for label in chart_labels:
+                    row = model_df[model_df["forecast_horizon_label"].astype(str) == str(label)] if "forecast_horizon_label" in model_df.columns else model_df[model_df["forecast_date"].astype(str) == str(label)]
+                    if not row.empty and "forecast_demand" in row.columns:
+                        values.append(float(row.iloc[0]["forecast_demand"]))
+                    else:
+                        values.append(None)
+
+                chart_datasets.append({
+                    "label": model.replace("_", " ").title(),
+                    "data": values
+                })
+
+            table_rows = part_df.to_dict(orient="records")
+
+    return render_template(
+        "parts_procurement.html",
+        parts=parts,
+        selected_part=selected_part,
+        chart_labels=chart_labels,
+        chart_datasets=chart_datasets,
+        table_rows=table_rows,
+    )
 
 @main.route('/profile')
 @login_required
@@ -369,3 +429,28 @@ def api_parts_chart():
     except Exception as e:
         print("ERROR:", str(e))
         return jsonify({"error": str(e)}), 500
+
+
+@main.route("/parts-procurement/download", methods=["POST"])
+@login_required
+def download_parts_procurement_csv():
+    selected_part = request.form.get("part_name")
+
+    df = load_parts_forecast_data()
+
+    if selected_part:
+        df = df[df["part_name"].astype(str) == str(selected_part)].copy()
+
+    output = StringIO()
+    df.to_csv(output, index=False)
+    output.seek(0)
+
+    safe_name = (selected_part or "all_parts").replace(" ", "_").lower()
+
+    return Response(
+        output.getvalue(),
+        mimetype="text/csv",
+        headers={
+            "Content-Disposition": f"attachment; filename=parts_procurement_{safe_name}.csv"
+        },
+    )
