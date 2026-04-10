@@ -1297,3 +1297,58 @@ select {
     border: 1px solid #ff4d4d;
     color: #ffffff;
 }
+
+.forecast-controls {
+    display: flex;
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.forecast-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 320px;
+}
+
+.forecast-form select,
+.forecast-form button,
+.forecast-controls form button {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: #111827;
+    color: #fff;
+}
+
+.preview-card {
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #111827;
+    border: 1px solid #1f2937;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.forecast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+.forecast-table th,
+.forecast-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #2b3548;
+    text-align: left;
+    color: #fff;
+}
+
+.forecast-table th {
+    background: #0f172a;
+}
