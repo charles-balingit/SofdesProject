@@ -68,3 +68,7 @@ def get_parts_list():
     )
 
     return parts
+
+def get_parts_list():
+    df = load_parts_forecast_data()
+    return df['part_name'].unique().tolist()
