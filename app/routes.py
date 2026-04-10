@@ -305,16 +305,6 @@ def api_parts_forecast():
         "summary": summary
     })
 
-@main.route('/parts_procurement', methods=['GET'])
-@login_required
-def parts_procurement():
-    parts_list = get_parts_list()
-
-    return render_template(
-        'parts_procurement.html',
-        parts=parts_list
-    )
-
 @main.route('/download_parts_csv/<part_name>')
 @login_required
 def download_parts_csv(part_name):
