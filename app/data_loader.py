@@ -54,4 +54,13 @@ def get_vehicle_models():
 
 def get_parts_list():
     df = load_parts_forecast_data()
-    return df['part_name'].unique().tolist()
+    if "part_name" not in df.columns:
+        return []
+    return (
+        df["part_name"]
+        .dropna()
+        .astype(str)
+        .sort_values()
+        .unique()
+        .tolist()
+    )
