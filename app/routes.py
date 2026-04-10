@@ -333,16 +333,24 @@ def download_parts_csv(part_name):
 @login_required
 def api_parts_chart():
     data = request.get_json()
+    if not data or "part_name" not in data:
+        return jsonify({"error": "Missing part_name"}), 400
     part_name = data.get("part_name")
 
     df = load_parts_forecast_data()
     part_df = df[df['part_name'] == part_name]
 
-    part_df = part_df.groupby('date').sum().reset_index()
+    if part_df.empty:
+        return jsonify({"error": "No data found"}), 404
 
-    labels = part_df['date'].astype(str).tolist()
-    demand = part_df['demand'].tolist()
-    supply = part_df['supply'].tolist()
+    # ✅ FIX COLUMN NAME HERE
+    part_df = part_df.groupby('forecast_date').sum().reset_index()
+
+    labels = part_df['forecast_date'].astype(str).tolist()
+    demand = part_df['forecast_demand'].tolist()
+
+    # ⚠️ Only include supply if it exists
+    supply = part_df['supply'].tolist() if 'supply' in part_df.columns else []
 
     return jsonify({
         "labels": labels,
