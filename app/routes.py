@@ -15,9 +15,6 @@ from .data_loader import (
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import io
-import base64
 
 main = Blueprint('main', __name__)
 
@@ -308,41 +305,14 @@ def api_parts_forecast():
         "summary": summary
     })
 
-@main.route('/parts_procurement', methods=['GET', 'POST'])
+@main.route('/parts_procurement', methods=['GET'])
 @login_required
 def parts_procurement():
     parts_list = get_parts_list()
 
-    selected_part = None
-    graph_url = None
-
-    if request.method == 'POST':
-        selected_part = request.form.get('part')
-
-        df = load_parts_forecast_data()
-
-        part_df = df[df['part_name'] == selected_part]
-
-        # Simple aggregation (adjust column names if needed)
-        part_df = part_df.groupby('date').sum().reset_index()
-
-        # Plot
-        plt.figure()
-        plt.plot(part_df['date'], part_df['demand'], label='Demand')
-        plt.plot(part_df['date'], part_df['supply'], label='Supply')
-        plt.legend()
-
-        img = io.BytesIO()
-        plt.savefig(img, format='png')
-        img.seek(0)
-
-        graph_url = base64.b64encode(img.getvalue()).decode()
-
     return render_template(
         'parts_procurement.html',
-        parts=parts_list,
-        selected_part=selected_part,
-        graph_url=graph_url
+        parts=parts_list
     )
 
 @main.route('/download_parts_csv/<part_name>')
@@ -359,3 +329,23 @@ def download_parts_csv(part_name):
         headers={"Content-Disposition": f"attachment;filename={part_name}_forecast.csv"}
     )
 
+@main.route('/api/parts-chart', methods=['POST'])
+@login_required
+def api_parts_chart():
+    data = request.get_json()
+    part_name = data.get("part_name")
+
+    df = load_parts_forecast_data()
+    part_df = df[df['part_name'] == part_name]
+
+    part_df = part_df.groupby('date').sum().reset_index()
+
+    labels = part_df['date'].astype(str).tolist()
+    demand = part_df['demand'].tolist()
+    supply = part_df['supply'].tolist()
+
+    return jsonify({
+        "labels": labels,
+        "demand": demand,
+        "supply": supply
+    })
