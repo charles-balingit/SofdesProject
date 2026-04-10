@@ -12,6 +12,10 @@ from .data_loader import (
     get_vehicle_models,
     get_parts_list,
 )
+import pandas as pd
+import matplotlib.pyplot as plt
+import io
+import base64
 
 main = Blueprint('main', __name__)
 
@@ -301,3 +305,55 @@ def api_parts_forecast():
         "values": values,
         "summary": summary
     })
+
+@main.route('/parts_procurement', methods=['GET', 'POST'])
+@login_required
+def parts_procurement():
+    parts_list = get_parts_list()
+
+    selected_part = None
+    graph_url = None
+
+    if request.method == 'POST':
+        selected_part = request.form.get('part')
+
+        df = load_parts_forecast_data()
+
+        part_df = df[df['part_name'] == selected_part]
+
+        # Simple aggregation (adjust column names if needed)
+        part_df = part_df.groupby('date').sum().reset_index()
+
+        # Plot
+        plt.figure()
+        plt.plot(part_df['date'], part_df['demand'], label='Demand')
+        plt.plot(part_df['date'], part_df['supply'], label='Supply')
+        plt.legend()
+
+        img = io.BytesIO()
+        plt.savefig(img, format='png')
+        img.seek(0)
+
+        graph_url = base64.b64encode(img.getvalue()).decode()
+
+    return render_template(
+        'parts_procurement.html',
+        parts=parts_list,
+        selected_part=selected_part,
+        graph_url=graph_url
+    )
+
+@main.route('/download_parts_csv/<part_name>')
+@login_required
+def download_parts_csv(part_name):
+    df = load_parts_forecast_data()
+    part_df = df[df['part_name'] == part_name]
+
+    csv_data = part_df.to_csv(index=False)
+
+    return Response(
+        csv_data,
+        mimetype="text/csv",
+        headers={"Content-Disposition": f"attachment;filename={part_name}_forecast.csv"}
+    )
+
