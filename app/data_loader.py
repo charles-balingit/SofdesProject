@@ -52,23 +52,6 @@ def get_vehicle_models():
 
     return models
 
-
-def get_parts_list():
-    df = load_parts_forecast_data()
-
-    if "part_id" not in df.columns or "part_name" not in df.columns:
-        return []
-
-    parts = (
-        df[["part_id", "part_name"]]
-        .dropna()
-        .drop_duplicates()
-        .sort_values("part_name")
-        .to_dict(orient="records")
-    )
-
-    return parts
-
 def get_parts_list():
     df = load_parts_forecast_data()
     return df['part_name'].unique().tolist()
