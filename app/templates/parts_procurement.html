@@ -41,7 +41,43 @@
         </div>
         {% endif %}
     </main>
-
 </div>
+
+<canvas id="partsChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+async function loadChart(partName) {
+    const response = await fetch("/api/parts-chart", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ part_name: partName })
+    });
+
+    const data = await response.json();
+
+    const ctx = document.getElementById('partsChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: data.labels,
+            datasets: [
+                {
+                    label: 'Demand',
+                    data: data.demand
+                },
+                {
+                    label: 'Supply',
+                    data: data.supply
+                }
+            ]
+        }
+    });
+}
+</script>
 
 {% endblock %}
