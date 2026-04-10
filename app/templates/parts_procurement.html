@@ -2,7 +2,6 @@
 {% block content %}
 
 <div class="dashboard-shell">
-
     <nav class="dashboard-tabs">
         <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
         <a href="{{ url_for('main.ev_routing') }}">EV Smart Routing</a>
@@ -14,71 +13,133 @@
 
     <main class="dashboard-page">
         <h1>Parts Procurement</h1>
-        <p>Select a vehicle part to forecast supply and demand.</p>
+        <p>Select a vehicle part to view forecasted demand and download the result as CSV.</p>
 
-        <select onchange="loadChart(this.value)">
-            <option value="">Select Part</option>
-            {% for part in parts %}
-                <option value="{{ part }}">
-                    {{ part }}
-                </option>
-            {% endfor %}
-        </select>
+        <div class="forecast-controls">
+            <form method="POST" action="{{ url_for('main.parts_procurement') }}" class="forecast-form">
+                <label for="part_name">Select Part</label>
+                <select name="part_name" id="part_name" required>
+                    <option value="">Select Part</option>
+                    {% for part in parts %}
+                        <option value="{{ part }}" {% if selected_part == part %}selected{% endif %}>
+                            {{ part }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Generate Forecast</button>
+            </form>
 
-        {% if graph_url %}
+            {% if selected_part %}
+            <form method="POST" action="{{ url_for('main.download_parts_procurement_csv') }}">
+                <input type="hidden" name="part_name" value="{{ selected_part }}">
+                <button type="submit">Download CSV</button>
+            </form>
+            {% endif %}
+        </div>
+
+        {% if selected_part %}
         <div class="preview-card">
-            <h3>Forecast Result: {{ selected_part }}</h3>
-            <img src="data:image/png;base64,{{ graph_url }}" />
-            
-            <br><br>
-            <a href="{{ url_for('main.download_parts_csv', part_name=selected_part) }}">
-                Download CSV
-            </a>
+            <h3>{{ selected_part }} Forecast</h3>
+            <canvas id="partsForecastChart" height="110"></canvas>
+        </div>
+
+        <div class="preview-card">
+            <h3>Forecast Table</h3>
+            <div class="table-wrap">
+                <table class="forecast-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Part ID</th>
+                            <th>Part Name</th>
+                            <th>Category</th>
+                            <th>Step</th>
+                            <th>Horizon</th>
+                            <th>Date</th>
+                            <th>Forecast Demand</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in table_rows %}
+                        <tr>
+                            <td>{{ row.model_key }}</td>
+                            <td>{{ row.part_id }}</td>
+                            <td>{{ row.part_name }}</td>
+                            <td>{{ row.category }}</td>
+                            <td>{{ row.forecast_step }}</td>
+                            <td>{{ row.forecast_horizon_label }}</td>
+                            <td>{{ row.forecast_date }}</td>
+                            <td>{{ row.forecast_demand }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
         {% endif %}
     </main>
 </div>
 
-<canvas id="partsChart"></canvas>
-
+{% if selected_part %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-let chart;
+    const labels = {{ chart_labels|tojson }};
+    const datasets = {{ chart_datasets|tojson }};
 
-async function loadChart(partName) {
-    const response = await fetch("/api/parts-chart", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ part_name: partName })
-    });
+    const ctx = document.getElementById("partsForecastChart").getContext("2d");
 
-    const data = await response.json();
-
-    const ctx = document.getElementById('partsChart').getContext('2d');
-
-    if (chart) {
-        chart.destroy();
-    }
-
-    chart = new Chart(ctx, {
-        type: 'line',
+    new Chart(ctx, {
+        type: "line",
         data: {
-            labels: data.labels,
-            datasets: [
-                {
-                    label: 'Demand',
-                    data: data.demand
+            labels: labels,
+            datasets: datasets.map((item, index) => ({
+                label: item.label,
+                data: item.data,
+                borderWidth: 2,
+                tension: 0.3,
+                fill: false
+            }))
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: "#ffffff"
+                    }
                 },
-                {
-                    label: 'Supply',
-                    data: data.supply
+                title: {
+                    display: true,
+                    text: "Forecasted Demand by Model",
+                    color: "#ffffff"
                 }
-            ]
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: "#ffffff"
+                    },
+                    grid: {
+                        color: "rgba(255,255,255,0.08)"
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: "#ffffff"
+                    },
+                    grid: {
+                        color: "rgba(255,255,255,0.08)"
+                    },
+                    title: {
+                        display: true,
+                        text: "Forecast Demand",
+                        color: "#ffffff"
+                    }
+                }
+            }
         }
     });
-}
 </script>
+{% endif %}
+
 {% endblock %}
