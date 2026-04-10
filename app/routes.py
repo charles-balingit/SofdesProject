@@ -332,28 +332,50 @@ def download_parts_csv(part_name):
 @main.route('/api/parts-chart', methods=['POST'])
 @login_required
 def api_parts_chart():
-    data = request.get_json()
-    if not data or "part_name" not in data:
-        return jsonify({"error": "Missing part_name"}), 400
-    part_name = data.get("part_name")
+    try:
+        data = request.get_json()
+        if not data or "part_name" not in data:
+            return jsonify({"error": "Missing part_name"}), 400
 
-    df = load_parts_forecast_data()
-    part_df = df[df['part_name'] == part_name]
+        part_name = data.get("part_name")
 
-    if part_df.empty:
-        return jsonify({"error": "No data found"}), 404
+        df = load_parts_forecast_data()
 
-    # ✅ FIX COLUMN NAME HERE
-    part_df = part_df.groupby('forecast_date').sum().reset_index()
+        if df is None or df.empty:
+            return jsonify({"error": "Dataset empty"}), 500
 
-    labels = part_df['forecast_date'].astype(str).tolist()
-    demand = part_df['forecast_demand'].tolist()
+        if "part_name" not in df.columns:
+            return jsonify({"error": "Missing part_name column"}), 500
 
-    # ⚠️ Only include supply if it exists
-    supply = part_df['supply'].tolist() if 'supply' in part_df.columns else []
+        part_df = df[df['part_name'] == part_name]
 
-    return jsonify({
-        "labels": labels,
-        "demand": demand,
-        "supply": supply
-    })
+        if part_df.empty:
+            return jsonify({"error": "No data found"}), 404
+
+        # ✅ Ensure date column exists
+        if "forecast_date" not in part_df.columns:
+            return jsonify({"error": "Missing forecast_date column"}), 500
+
+        # ✅ Convert to datetime (VERY IMPORTANT)
+        part_df["forecast_date"] = pd.to_datetime(part_df["forecast_date"], errors='coerce')
+
+        # ✅ Drop invalid dates
+        part_df = part_df.dropna(subset=["forecast_date"])
+
+        # ✅ Only sum numeric columns
+        part_df = part_df.groupby("forecast_date", as_index=False).sum(numeric_only=True)
+
+        labels = part_df["forecast_date"].dt.strftime("%b %Y").tolist()
+
+        demand = part_df["forecast_demand"].tolist() if "forecast_demand" in part_df.columns else []
+        supply = part_df["supply"].tolist() if "supply" in part_df.columns else []
+
+        return jsonify({
+            "labels": labels,
+            "demand": demand,
+            "supply": supply
+        })
+
+    except Exception as e:
+        print("ERROR:", str(e))
+        return jsonify({"error": str(e)}), 500
