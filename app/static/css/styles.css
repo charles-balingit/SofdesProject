@@ -1306,11 +1306,14 @@ select {
 /* Controls (top form area) */
 .forecast-controls {
     width: 80%;
-    margin: 15px auto;
+    margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
     align-items: flex-end;
+    background:#020617;
+    padding:28px;
+    border-radius:14px;
+    border:1px solid #1f2937;
 }
 
 /* Form layout */
