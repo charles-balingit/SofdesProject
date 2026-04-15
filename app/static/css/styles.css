@@ -331,6 +331,7 @@ body {
 /* center container */
 .auth-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 90vh;
@@ -352,7 +353,15 @@ body {
 /* title */
 .auth-container h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.auth-subtitle {
+    font-size: 13px;
+    color: #9aa4b2;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 /* labels */
@@ -382,26 +391,6 @@ body {
     padding-right: 35px;
 }
 
-/* button */
-.auth-btn {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-
-    border-radius: 10px;
-    border: none;
-
-    background: #111827;
-    color: white;
-    font-weight: 600;
-
-    transition: 0.25s ease;
-}
-
-.auth-btn:hover {
-    background: #2563eb;
-}
-
 /* checkbox row + links */
 .checkbox {
     font-size: 12px;
@@ -414,6 +403,26 @@ body {
     font-size: 13px;
     color: #cbd5e1;
     text-align: center;
+}
+
+.auth-btn {
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: #2563eb;
+    border-color: #2563eb;
 }
 
 /* ---------- TABS ---------- */
@@ -437,13 +446,6 @@ body {
 }
 
 /* ---------- FORM ---------- */
-
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
 .auth-form label {
     font-size: 14px;
 }
