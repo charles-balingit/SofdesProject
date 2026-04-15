@@ -343,12 +343,11 @@ body {
 
 .auth-container h1 {
     font-size: 32px;
-    margin-bottom: 10px;
 }
 
-.auth-subtitle {
+.auth-container p {
     color: #9aa4b2;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* ---------- TABS ---------- */
