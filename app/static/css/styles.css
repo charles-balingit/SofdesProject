@@ -362,6 +362,7 @@ body {
     text-decoration: none;
     color: #9aa4b2;
     padding-bottom: 10px;
+    font-size: 14px;
 }
 
 .auth-tabs a.active {
