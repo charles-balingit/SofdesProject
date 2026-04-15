@@ -366,6 +366,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background:#020617;
+    width:80%;
+    margin:10px auto;
+    padding:28px;
+    border-radius:14px;
+    border:1px solid #1f2937;
 }
 
 .auth-form label {
