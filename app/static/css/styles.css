@@ -301,11 +301,9 @@ body {
 }
 
 /* LOGIN BUTTON */
-
 .btn-login {
     color: white;
     padding: 8px 16px;
-    
     transition: 0.1s;
 }
 
@@ -329,6 +327,18 @@ body {
     max-width: 1500px;
     margin: 10px auto;
     padding-top: 10px;
+}
+
+.auth-container-reg {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background:#020617;
+    width:50%;
+    margin:10px auto;
+    padding:28px;
+    border-radius:14px;
+    border:1px solid #1f2937;
 }
 
 .auth-container h1 {
@@ -366,12 +376,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background:#020617;
-    width:80%;
-    margin:10px auto;
-    padding:28px;
-    border-radius:14px;
-    border:1px solid #1f2937;
 }
 
 .auth-form label {
