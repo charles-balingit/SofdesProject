@@ -334,7 +334,7 @@ body {
     flex-direction: column;
     gap: 15px;
     background:#020617;
-    width:50%;
+    width:30%;
     margin:10px auto;
     padding:28px;
     border-radius:14px;
@@ -343,6 +343,7 @@ body {
 
 .auth-container h1 {
     font-size: 32px;
+    margin-bottom: 10px;
 }
 
 .auth-subtitle {
