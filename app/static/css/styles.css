@@ -1048,15 +1048,6 @@ select {
     font-size: 14px;
 }
 
-/* Content cards */
-.content-card {
-    background: #020617;
-    border: 1px solid #1f2937;
-    border-radius: 14px;
-    padding: 26px;
-    margin-top: 20px;
-}
-
 /* Form layout */
 .form-group {
     display: flex;
@@ -1256,34 +1247,6 @@ select {
     background: transparent;
 }
 
-/* ================= TABLE ================= */
-
-.forecast-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.forecast-table thead {
-    background: #111827;
-}
-
-.forecast-table th,
-.forecast-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #1f2937;
-}
-
-.forecast-table th {
-    font-weight: 600;
-    color: #e5e7eb;
-}
-
-.forecast-table tbody tr:hover {
-    background: rgba(255,255,255,0.05);
-}
-
 /* ================= ALERT FIX ================= */
 
 .alert.danger {
@@ -1329,20 +1292,126 @@ select {
     overflow-x: auto;
 }
 
+/* =====================================
+   PARTS PROCUREMENT (MATCH EV ROUTING)
+===================================== */
+
+/* Main container alignment */
+.dashboard-page {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
+/* Controls (top form area) */
+.forecast-controls {
+    width: 80%;
+    margin: 15px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+/* Form layout */
+.forecast-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
+/* Labels */
+.forecast-form label {
+    font-size: 13px;
+    color: white;
+    font-weight: 500;
+}
+
+/* Inputs */
+.forecast-form select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #374151;
+    background: #020617;
+    color: white;
+}
+
+/* Buttons (same feel as EV routing buttons) */
+.forecast-controls button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: #111827;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.forecast-controls button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Chart card (same as route-card / preview-card) */
+.preview-card {
+    width: 80%;
+    margin: 20px auto;
+    background: #020617;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
+}
+
+/* Chart spacing */
+#partsForecastChart {
+    margin-top: 15px;
+}
+
+/* Table wrapper */
+.table-wrap {
+    margin-top: 10px;
+    overflow-x: auto;
+}
+
+/* Table styling (same as EV + Sales unified) */
 .forecast-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
-.forecast-table th,
-.forecast-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #2b3548;
-    text-align: left;
-    color: #fff;
+.forecast-table thead {
+    background: #020617;
 }
 
 .forecast-table th {
-    background: #0f172a;
+    padding: 12px;
+    font-size: 13px;
+    color: #9ca3af;
+    border-bottom: 1px solid #1f2937;
+    text-align: left;
+}
+
+.forecast-table td {
+    padding: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid #111827;
+    color: white;
+}
+
+.forecast-table tbody tr:hover {
+    background-color: #0f172a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .forecast-controls {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .preview-card {
+        width: 90%;
+    }
 }
