@@ -12,8 +12,10 @@
     </nav>
 
     <main class="dashboard-page">
-        <h1>Parts Procurement</h1>
-        <p>Select a vehicle part to view forecasted demand and download the result as CSV.</p>
+        <div class="page-header">
+            <h1>Parts Procurement</h1>
+            <p>Select a vehicle part to view forecasted demand and download the result as CSV.</p>
+        </div>
 
         <div class="forecast-controls">
             <form method="POST" action="{{ url_for('main.parts_procurement') }}" class="forecast-form">
