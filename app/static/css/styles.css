@@ -836,7 +836,12 @@ select {
     margin:10px 10px auto;  
 }
 
-/* STATUS PANEL */
+.page-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
 /* ROUTE INPUT CARD */
 .ev-status{
     background:#020617;
@@ -1301,6 +1306,17 @@ select {
     display: flex;
     flex-direction: column;
     margin: 10px auto;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: #9ca3af;
+    font-size: 14px;
 }
 
 /* Controls (top form area) */
