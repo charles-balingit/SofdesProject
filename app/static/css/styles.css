@@ -802,6 +802,12 @@ select {
     background-repeat: no-repeat;
 }
 
+.page-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
 .profile-container {
     width: 60%;
     margin: 20px auto;
@@ -1343,8 +1349,8 @@ select {
 /* Labels */
 .forecast-form label {
     font-size: 13px;
-    color: white;
-    font-weight: 500;
+    color: #e5e7eb;
+    margin-bottom: 6px;
 }
 
 /* Inputs */
