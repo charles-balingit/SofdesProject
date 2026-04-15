@@ -332,7 +332,6 @@ body {
 .auth-container-reg {
     display: flex;
     flex-direction: column;
-    gap: 15px;
     background:#020617;
     width:30%;
     margin:10px auto;
