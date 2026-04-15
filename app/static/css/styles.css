@@ -1030,16 +1030,10 @@ select {
 /* =====================================
    SALES FORECASTING PAGE
 ===================================== */
-/* ==============================
-   SALES FORECASTING (Dashboard Style)
-   Matches EV Smart Routing
-================================= */
-
-/* Page spacing inside dashboard */
-.dashboard-page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 30px 40px;
+.dashboard-page{
+    display:flex;
+    flex-direction:column;
+    margin:10px 10px auto;  
 }
 
 /* Header spacing */
