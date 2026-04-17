@@ -248,7 +248,7 @@ def api_sales_forecast():
         return jsonify({"error": f"No forecast rows found for vehicle model '{vehicle_model}'"}), 404
 
     if "forecast_step" in filtered.columns:
-        filtered = filtered.sort_values("forecast_steps")
+        filtered = filtered.sort_values("forecast_step")
     elif "month" in filtered.columns:
         filtered = filtered.sort_values("month")
 
