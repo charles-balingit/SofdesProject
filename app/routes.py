@@ -239,6 +239,7 @@ def api_sales_forecast():
     if filtered.empty:
         return jsonify({"error": f"No sales data found for vehicle model '{vehicle_model}'"}), 404
 
+    # Remove actual rows, keep only forecast rows
     if "series_type" in filtered.columns:
         filtered = filtered[
             filtered["series_type"].astype(str).str.lower() != "actual"
@@ -247,15 +248,40 @@ def api_sales_forecast():
     if filtered.empty:
         return jsonify({"error": f"No forecast rows found for vehicle model '{vehicle_model}'"}), 404
 
-    if "forecast_step" in filtered.columns:
-        filtered = filtered.sort_values("forecast_step")
-    elif "month" in filtered.columns:
-        filtered = filtered.sort_values("month")
+    # Ensure month is datetime
+    if "month" not in filtered.columns:
+        return jsonify({"error": "month column is required for forecasting output"}), 500
 
-    filtered = filtered.head(horizon)
+    filtered["month"] = pd.to_datetime(filtered["month"], errors="coerce")
+    filtered = filtered.dropna(subset=["month"])
+
+    if filtered.empty:
+        return jsonify({"error": f"No valid forecast months found for vehicle model '{vehicle_model}'"}), 404
+
+    # Sort chronologically by month
+    filtered = filtered.sort_values("month")
+
+    # Keep only one row per month
+    # If multiple forecast rows exist for the same month, keep the latest / most relevant one
+    if "created_at" in filtered.columns:
+        filtered["created_at"] = pd.to_datetime(filtered["created_at"], errors="coerce")
+        filtered = (
+            filtered.sort_values(["month", "created_at"])
+                    .drop_duplicates(subset=["month"], keep="last")
+        )
+    elif "forecast_step" in filtered.columns:
+        filtered = (
+            filtered.sort_values(["month", "forecast_step"])
+                    .drop_duplicates(subset=["month"], keep="last")
+        )
+    else:
+        filtered = filtered.drop_duplicates(subset=["month"], keep="last")
+
+    # After deduping, sort again and limit by number of months requested
+    filtered = filtered.sort_values("month").head(horizon)
 
     labels = filtered["month"].dt.strftime("%b %Y").tolist()
-    values = filtered["value"].tolist()
+    values = filtered["value"].astype(float).round(2).tolist()
 
     return jsonify({
         "vehicle_model": vehicle_model,
