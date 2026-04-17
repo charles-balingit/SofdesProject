@@ -189,10 +189,11 @@ def parts_procurement():
                     else:
                         values.append(None)
 
-                chart_datasets.append({
-                    "label": model.replace("_", " ").title(),
-                    "data": values
-                })
+                for i, (model, values) in enumerate(model_results.items()):
+                    chart_datasets.append({
+                        "label": f"Supplier {i+1}",
+                        "data": values
+                    })
 
             table_rows = part_df.to_dict(orient="records")
 
