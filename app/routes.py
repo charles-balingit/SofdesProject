@@ -239,7 +239,6 @@ def api_sales_forecast():
     if filtered.empty:
         return jsonify({"error": f"No sales data found for vehicle model '{vehicle_model}'"}), 404
 
-    # Remove actual rows, keep only forecast rows
     if "series_type" in filtered.columns:
         filtered = filtered[
             filtered["series_type"].astype(str).str.lower() != "actual"
@@ -248,40 +247,50 @@ def api_sales_forecast():
     if filtered.empty:
         return jsonify({"error": f"No forecast rows found for vehicle model '{vehicle_model}'"}), 404
 
-    # Ensure month is datetime
     if "month" not in filtered.columns:
-        return jsonify({"error": "month column is required for forecasting output"}), 500
+        return jsonify({"error": "month column is required"}), 500
 
+    # Normalize month column
     filtered["month"] = pd.to_datetime(filtered["month"], errors="coerce")
     filtered = filtered.dropna(subset=["month"])
 
     if filtered.empty:
         return jsonify({"error": f"No valid forecast months found for vehicle model '{vehicle_model}'"}), 404
 
-    # Sort chronologically by month
-    filtered = filtered.sort_values("month")
-
-    # Keep only one row per month
-    # If multiple forecast rows exist for the same month, keep the latest / most relevant one
-    if "created_at" in filtered.columns:
-        filtered["created_at"] = pd.to_datetime(filtered["created_at"], errors="coerce")
-        filtered = (
-            filtered.sort_values(["month", "created_at"])
-                    .drop_duplicates(subset=["month"], keep="last")
-        )
-    elif "forecast_step" in filtered.columns:
-        filtered = (
-            filtered.sort_values(["month", "forecast_step"])
-                    .drop_duplicates(subset=["month"], keep="last")
-        )
+    # Initial ordering
+    if "forecast_step" in filtered.columns:
+        filtered = filtered.sort_values(["month", "forecast_step"]).copy()
     else:
-        filtered = filtered.drop_duplicates(subset=["month"], keep="last")
+        filtered = filtered.sort_values("month").copy()
 
-    # After deduping, sort again and limit by number of months requested
-    filtered = filtered.sort_values("month").head(horizon)
+    # Keep only requested number of forecast rows
+    filtered = filtered.head(horizon).copy()
+
+    # Force strict month-to-month sequence
+    fixed_months = []
+    prev_month = None
+
+    for current_month in filtered["month"]:
+        current_month = pd.Timestamp(current_month).replace(day=1)
+
+        if prev_month is None:
+            fixed_month = current_month
+        else:
+            next_expected = prev_month + pd.DateOffset(months=1)
+
+            # If duplicate or out of order, push it forward
+            if current_month <= prev_month:
+                fixed_month = next_expected
+            else:
+                fixed_month = current_month
+
+        fixed_months.append(fixed_month)
+        prev_month = fixed_month
+
+    filtered["month"] = fixed_months
 
     labels = filtered["month"].dt.strftime("%b %Y").tolist()
-    values = filtered["value"].astype(float).round(2).tolist()
+    values = pd.to_numeric(filtered["value"], errors="coerce").fillna(0).round(2).tolist()
 
     return jsonify({
         "vehicle_model": vehicle_model,
@@ -289,7 +298,7 @@ def api_sales_forecast():
         "labels": labels,
         "values": values
     })
-
+    
 @main.route('/api/parts-forecast', methods=['POST'])
 @login_required
 def api_parts_forecast():
