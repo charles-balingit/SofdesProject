@@ -119,7 +119,6 @@ def logout():
 def dashboard():
     return render_template('dashboard.html')
 
-
 @main.route('/ev-routing')
 @login_required
 def ev_routing():
