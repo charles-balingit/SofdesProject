@@ -193,7 +193,27 @@ def parts_procurement():
                    "data": values
                 })
 
-            table_rows = part_df.to_dict(orient="records")
+            clean_rows = []
+
+            supplier_index_map = {
+                "extra_trees": "Supplier 1",
+                "gradient_boosting": "Supplier 2",
+                "random_forest": "Supplier 3"
+            }
+
+            # Group by model + forecast step (month)
+            grouped = part_df.groupby(["model_key", "forecast_step"], as_index=False).first()
+
+            for _, row in grouped.iterrows():
+                row_dict = row.to_dict()
+
+                # Rename model → supplier
+                model = str(row_dict.get("model_key"))
+                row_dict["model_key"] = supplier_index_map.get(model, model)
+
+                clean_rows.append(row_dict)
+
+            table_rows = clean_rows
 
     return render_template(
         "parts_procurement.html",
