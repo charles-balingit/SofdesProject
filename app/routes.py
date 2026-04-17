@@ -264,7 +264,6 @@ def api_sales_forecast():
         "values": values
     })
 
-
 @main.route('/api/parts-forecast', methods=['POST'])
 @login_required
 def api_parts_forecast():
