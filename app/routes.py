@@ -190,7 +190,7 @@ def parts_procurement():
                         values.append(None)
 
                 chart_datasets.append({
-                   "label": f"supplier {len(chart_datasets) + 1}",
+                   "label": f"Supplier {len(chart_datasets) + 1}",
                    "data": values
                 })
 
