@@ -248,10 +248,18 @@ def api_sales_forecast():
     if filtered.empty:
         return jsonify({"error": f"No forecast rows found for vehicle model '{vehicle_model}'"}), 404
 
-    if "forecast_step" in filtered.columns:
-        filtered = filtered.sort_values("forecast_step")
-    elif "month" in filtered.columns:
-        filtered = filtered.sort_values("month")
+    # Ensure month is datetime
+    if "month" in filtered.columns:
+        filtered["month"] = pd.to_datetime(filtered["month"], errors="coerce")
+
+        # Drop invalid dates
+    filtered = filtered.dropna(subset=["month"])
+
+    # Sort strictly by time
+    filtered = filtered.sort_values("month")
+
+    # Optional: ensure continuous monthly sequence
+    filtered = filtered.set_index("month").asfreq("MS").reset_index()
 
     filtered = filtered.head(horizon)
 
